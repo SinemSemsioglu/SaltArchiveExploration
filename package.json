@@ -1,7 +1,7 @@
 {
-  "name": "salt_archive_exploration",
+  "name": "salt_analysis",
   "version": "1.0.0",
-  "description": "Salt Archive Exploration",
+  "description": "Salt Data Analysis",
   "main": "app.js",
   "directories": {
     "test": "test"
@@ -22,6 +22,7 @@
   "dependencies": {
     "body-parser": "^1.19.0",
     "csv-parser": "^2.3.3",
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "moment": "^2.27.0"
   }
 }
