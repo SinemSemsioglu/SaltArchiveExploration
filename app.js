@@ -21,6 +21,7 @@ app.use(bodyParser.json({
 
 // ROUTING
 app.use('/', routes); // requests are handled here
+app.use(express.static('public')); // static pages are served
 app.get('/', function (req, res) {
     res.send("Hello there :)");
 });
