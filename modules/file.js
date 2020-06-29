@@ -1,6 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 const csv = require('csv-parser');
+const moment = require('moment');
 const config = require('../config.js').config;
 
 //joining path of directory
@@ -61,7 +62,8 @@ const getFilesFlat = async() => {
                 await asyncForEach(csvFiles, async (file) => {
                     let filePath = path.join(subcategoryPath, file);
                     let _rows = await readCSV(filePath);
-                    rows = [...rows, ..._rows];
+                    Object.assign(rows, _rows);
+                    //rows = [...rows, ..._rows];
                     /*row.category = category;
                     row.subcategory = subcategory;
                     rows.push(row);*/
@@ -77,16 +79,19 @@ const getFilesFlat = async() => {
 };
 
 const readCSV = async (filePath) => {
-    let rows = [];
+    let rows = {};
+    let dataId = [config.fieldConversion.serverToData.id];
     return new Promise((resolve, reject) => {
         fs.createReadStream(filePath)
             .pipe(csv())
             .on('data', (row) => {
                 let _row = {};
                 config.csv.fields.forEach((fieldKey) => {
-                    _row[fieldKey] = row[fieldKey];
+                    let val = row[config.fieldConversion.serverToData[fieldKey]];
+                    if (fieldKey == "issue_date") val = clusterYears(val);
+                    _row[fieldKey] = val;
                 });
-                rows.push(_row);
+                rows[row[dataId]] = _row;
             })
             .on('end', () => {
                 //console.log('CSV file successfully processed');
@@ -97,6 +102,17 @@ const readCSV = async (filePath) => {
             });
     })
 
+};
+
+
+const clusterYears = (dateString) => {
+    let year = "";
+    if (dateString !== "") {
+        // todo figure out potential date formats and try them out here
+        year = moment(dateString).year();
+    }
+    //console.log("in cluster years func: " + year);
+    return year;
 };
 
 async function asyncForEach(array, callback) {
