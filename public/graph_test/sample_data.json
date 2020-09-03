@@ -1,0 +1,74 @@
+{
+  "nodes": [
+    {
+      "id": "EMH003",
+      "handle": "123456789/103289",
+      "group": "1",
+      "description": "Sarar İlkokulu'nda uçak model dersi - Airplane model lesson at Sarar Primary School",
+      "url": "https://archives.saltresearch.org/bitstream/123456789/103289/1/EMH003.jpg"
+    },
+    {
+      "id" : "TMGCH0148",
+      "handle": "123456789/87145",
+      "group": "1",
+      "description": "Eskişehirin genel görünümü - A general view of Eskişehir",
+      "url": "https://archives.saltresearch.org/bitstream/123456789/87145/1/TMGCH0148001.jpg"
+    },
+    {
+      "id": "AFMSBDIVH050",
+      "handle": "123456789/31745",
+      "group": "1",
+      "description": "Bülent Arel'in oğlu Emre Arel'in çocukluk fotoğrafı",
+      "url": "https://archives.saltresearch.org/bitstream/123456789/31745/1/AFMSBDIVH050.jpg"
+    },
+    {
+      "id": "TMGCH0076",
+      "handle": "123456789/80225",
+      "group": "1",
+      "description": "İstanbul Atatürk Havalimanı - İstanbul Atatürk Airport",
+      "url": "https://archives.saltresearch.org/bitstream/123456789/80225/1/TMGCH0076001.jpg"
+    },
+    {
+      "id": "EMH005",
+      "handle": "123456789/97235",
+      "group": "1",
+      "description": "Bir ilkokulda öğrenci tahtaya yazı yazarken - Student writing on a blackboard in a primary school classroom",
+      "url": "https://archives.saltresearch.org/bitstream/123456789/97235/1/EMH005.jpg"
+    },
+    {
+      "id": "TMKTH0211",
+      "handle": "123456789/92043",
+      "group": "1",
+      "description": "Çivi yazısı - Cuneiform script",
+      "url": "https://archives.saltresearch.org/bitstream/123456789/92043/1/TMKTH0211.jpg"
+    },
+    {
+      "id": "EDH0031",
+      "handle": "123456789/10974",
+      "group": "1",
+      "description": "İdil Biret'in piyanosu - İdil Biret's piano",
+      "url": "https://archives.saltresearch.org/bitstream/123456789/10974/1/EDH0031001.jpg"
+    },
+    {
+      "id": "EDH0001",
+      "handle": "123456789/10944",
+      "group": "1",
+      "description": "Narmanlı Han'da yangın - Fire in Narmanlı Inn",
+      "url": "https://archives.saltresearch.org/bitstream/123456789/10944/1/EDH0001001.jpg"
+    },
+    {
+      "id": "EDH0008",
+      "handle": "123456789/10951",
+      "group": "1",
+      "description": "Ayla Erduran, Narmanlı Han’daki Aliye Berger’in atölyesinin balkonunda keman çalarken - Ayla Erduran playing the violin on the balcony of Aliye Berger's studio/atelier in Narmanlı Inn",
+      "url": "https://archives.saltresearch.org/bitstream/123456789/10951/1/EDH0008001.jpg"
+    },
+    {
+      "id": "TMKTH0094",
+      "handle": "123456789/92578",
+      "group": "1",
+      "description": "Sahne Sokağı - Sahne Street",
+      "url": "https://archives.saltresearch.org/bitstream/123456789/92578/1/TMKTH0094001.jpg"
+    }
+  ]
+}
