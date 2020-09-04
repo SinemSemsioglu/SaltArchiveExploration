@@ -1,742 +1,742 @@
 {
-    "TMGCH0076": {
-        "EMH005": {
-            "vis_similarity": 0.6187519590463607,
-            "object_match": 0,
-            "user_connection": 10,
-            "search_res": 0,
-            "salt_metadata": 21,
-            "overall": 31.61875195904636
-        },
-        "TMGCH0148": {
-            "vis_similarity": 0.864695118866508,
-            "object_match": 1,
-            "user_connection": 6,
-            "search_res": 0,
-            "salt_metadata": 22,
-            "overall": 29.864695118866507
-        },
-        "EDH0001": {
-            "vis_similarity": 0.8986461289738259,
-            "object_match": 0,
-            "user_connection": 3,
-            "search_res": 0,
-            "salt_metadata": 24,
-            "overall": 27.898646128973827
-        },
-        "EDH0008": {
-            "vis_similarity": 0.4566091131491685,
-            "object_match": 1,
-            "user_connection": 10,
-            "search_res": 0,
-            "salt_metadata": 23,
-            "overall": 34.45660911314917
-        },
-        "AFMSBDIVH050": {
-            "vis_similarity": 0.286854695996688,
-            "object_match": 1,
-            "user_connection": 3,
-            "search_res": 0,
-            "salt_metadata": 15,
-            "overall": 19.286854695996688
-        },
-        "EDH0031": {
-            "vis_similarity": 0.2885649897954239,
+    "80225": {
+        "97235": {
+            "vis_similarity": 0.724160227842221,
             "object_match": 0,
             "user_connection": 6,
             "search_res": 0,
-            "salt_metadata": 22,
-            "overall": 28.288564989795425
+            "salt_metadata": 0.034482758620689655,
+            "overall": 24.75864298646291
         },
-        "TMKTH0094": {
-            "vis_similarity": 0.3857012636145599,
-            "object_match": 0,
-            "user_connection": 8,
-            "search_res": 0,
-            "salt_metadata": 20,
-            "overall": 28.38570126361456
+        "87145": {
+            "vis_similarity": 0.19275696862092473,
+            "object_match": 1,
+            "user_connection": 3,
+            "search_res": 0.0,
+            "salt_metadata": 0.047619047619047616,
+            "overall": 18.24037601623997
         },
-        "TMKTH0211": {
-            "vis_similarity": 0.33565014873678967,
+        "10944": {
+            "vis_similarity": 0.646431328876996,
             "object_match": 0,
             "user_connection": 10,
-            "search_res": 0,
-            "salt_metadata": 16,
-            "overall": 26.33565014873679
+            "search_res": 0.0,
+            "salt_metadata": 0.034482758620689655,
+            "overall": 40.68091408749768
         },
-        "EMH003": {
-            "vis_similarity": 0.47320983790580895,
+        "10951": {
+            "vis_similarity": 0.29507394862669545,
+            "object_match": 0,
+            "user_connection": 9,
+            "search_res": 0.0,
+            "salt_metadata": 0.02127659574468085,
+            "overall": 36.316350544371375
+        },
+        "31745": {
+            "vis_similarity": 0.19315949660297116,
             "object_match": 1,
-            "user_connection": 1,
-            "search_res": 0,
-            "salt_metadata": 19,
-            "overall": 21.47320983790581
-        }
-    },
-    "EMH005": {
-        "TMGCH0076": {
-            "vis_similarity": 0.05265772991355444,
+            "user_connection": 10,
+            "search_res": 0.0,
+            "salt_metadata": 0.0,
+            "overall": 46.19315949660297
+        },
+        "10974": {
+            "vis_similarity": 0.3087668480385103,
+            "object_match": 0,
+            "user_connection": 3,
+            "search_res": 0.0,
+            "salt_metadata": 0.08,
+            "overall": 12.388766848038511
+        },
+        "92578": {
+            "vis_similarity": 0.21864884212166358,
             "object_match": 0,
             "user_connection": 7,
             "search_res": 0,
-            "salt_metadata": 21,
-            "overall": 28.052657729913555
+            "salt_metadata": 0.07407407407407407,
+            "overall": 28.29272291619574
         },
-        "TMGCH0148": {
-            "vis_similarity": 0.20090631453278462,
+        "92043": {
+            "vis_similarity": 0.26429452242790474,
+            "object_match": 0,
+            "user_connection": 0,
+            "search_res": 0,
+            "salt_metadata": 0.07692307692307693,
+            "overall": 0.34121759935098167
+        },
+        "103289": {
+            "vis_similarity": 0.6224314175095174,
+            "object_match": 0,
+            "user_connection": 1,
+            "search_res": 0,
+            "salt_metadata": 0.043478260869565216,
+            "overall": 4.665909678379083
+        }
+    },
+    "97235": {
+        "80225": {
+            "vis_similarity": 0.8142014533016617,
+            "object_match": 0,
+            "user_connection": 7,
+            "search_res": 0,
+            "salt_metadata": 0.034482758620689655,
+            "overall": 28.84868421192235
+        },
+        "87145": {
+            "vis_similarity": 0.980264898274863,
+            "object_match": 0,
+            "user_connection": 0,
+            "search_res": 0.0,
+            "salt_metadata": 0.058823529411764705,
+            "overall": 1.0390884276866277
+        },
+        "10944": {
+            "vis_similarity": 0.23418880835476708,
+            "object_match": 1,
+            "user_connection": 0,
+            "search_res": 0.0,
+            "salt_metadata": 0.047619047619047616,
+            "overall": 6.281807855973814
+        },
+        "10951": {
+            "vis_similarity": 0.19949740614081435,
+            "object_match": 0,
+            "user_connection": 4,
+            "search_res": 0.0,
+            "salt_metadata": 0.05,
+            "overall": 16.249497406140815
+        },
+        "31745": {
+            "vis_similarity": 0.03996507486283685,
+            "object_match": 1,
+            "user_connection": 0,
+            "search_res": 0.0,
+            "salt_metadata": 0.0,
+            "overall": 6.039965074862836
+        },
+        "10974": {
+            "vis_similarity": 0.769079403526439,
+            "object_match": 0,
+            "user_connection": 0,
+            "search_res": 0.0,
+            "salt_metadata": 0.02631578947368421,
+            "overall": 0.7953951930001232
+        },
+        "92578": {
+            "vis_similarity": 0.9947704455846734,
+            "object_match": 1,
+            "user_connection": 7,
+            "search_res": 0,
+            "salt_metadata": 0.025,
+            "overall": 35.019770445584676
+        },
+        "92043": {
+            "vis_similarity": 0.14775605026079075,
+            "object_match": 0,
+            "user_connection": 0,
+            "search_res": 0,
+            "salt_metadata": 0.038461538461538464,
+            "overall": 0.1862175887223292
+        },
+        "103289": {
+            "vis_similarity": 0.7560097749234623,
+            "object_match": 0,
+            "user_connection": 6,
+            "search_res": 0,
+            "salt_metadata": 0.1388888888888889,
+            "overall": 24.894898663812352
+        }
+    },
+    "87145": {
+        "80225": {
+            "vis_similarity": 0.9253232500702028,
+            "object_match": 1,
+            "user_connection": 8,
+            "search_res": 0.0,
+            "salt_metadata": 0.047619047619047616,
+            "overall": 38.97294229768925
+        },
+        "97235": {
+            "vis_similarity": 0.12734900171114472,
+            "object_match": 0,
+            "user_connection": 3,
+            "search_res": 0.0,
+            "salt_metadata": 0.058823529411764705,
+            "overall": 12.18617253112291
+        },
+        "10944": {
+            "vis_similarity": 0.7748473172940153,
+            "object_match": 1,
+            "user_connection": 10,
+            "search_res": 0.0,
+            "salt_metadata": 0.029411764705882353,
+            "overall": 46.804259081999895
+        },
+        "10951": {
+            "vis_similarity": 0.3577526058199856,
+            "object_match": 1,
+            "user_connection": 9,
+            "search_res": 0.0,
+            "salt_metadata": 0.038461538461538464,
+            "overall": 42.39621414428152
+        },
+        "31745": {
+            "vis_similarity": 0.6351698305133476,
+            "object_match": 0,
+            "user_connection": 2,
+            "search_res": 0.0,
+            "salt_metadata": 0.0,
+            "overall": 8.635169830513348
+        },
+        "10974": {
+            "vis_similarity": 0.7356595226224342,
+            "object_match": 0,
+            "user_connection": 1,
+            "search_res": 0.0,
+            "salt_metadata": 0.03333333333333333,
+            "overall": 4.7689928559557675
+        },
+        "92578": {
+            "vis_similarity": 0.19494414723122389,
+            "object_match": 1,
+            "user_connection": 2,
+            "search_res": 0.0,
+            "salt_metadata": 0.03125,
+            "overall": 14.226194147231224
+        },
+        "92043": {
+            "vis_similarity": 0.6342717467024035,
+            "object_match": 0,
+            "user_connection": 4,
+            "search_res": 0.0,
+            "salt_metadata": 0.05555555555555555,
+            "overall": 16.68982730225796
+        },
+        "103289": {
+            "vis_similarity": 0.8355555432876273,
+            "object_match": 0,
+            "user_connection": 9,
+            "search_res": 0.0,
+            "salt_metadata": 0.03571428571428571,
+            "overall": 36.87126982900191
+        }
+    },
+    "10944": {
+        "80225": {
+            "vis_similarity": 0.0007185536670686332,
+            "object_match": 0,
+            "user_connection": 2,
+            "search_res": 0.0,
+            "salt_metadata": 0.034482758620689655,
+            "overall": 8.035201312287759
+        },
+        "97235": {
+            "vis_similarity": 0.7335132266808562,
+            "object_match": 0,
+            "user_connection": 7,
+            "search_res": 0.0,
+            "salt_metadata": 0.047619047619047616,
+            "overall": 28.781132274299903
+        },
+        "87145": {
+            "vis_similarity": 0.23789086399910875,
+            "object_match": 0,
+            "user_connection": 5,
+            "search_res": 0.0,
+            "salt_metadata": 0.029411764705882353,
+            "overall": 20.26730262870499
+        },
+        "10951": {
+            "vis_similarity": 0.5348352063436891,
+            "object_match": 0,
+            "user_connection": 7,
+            "search_res": 0.0,
+            "salt_metadata": 0.1,
+            "overall": 28.634835206343688
+        },
+        "31745": {
+            "vis_similarity": 0.8904955853775803,
+            "object_match": 1,
+            "user_connection": 0,
+            "search_res": 0.0,
+            "salt_metadata": 0.0,
+            "overall": 6.890495585377581
+        },
+        "10974": {
+            "vis_similarity": 0.011893893993583537,
+            "object_match": 1,
+            "user_connection": 5,
+            "search_res": 0.0,
+            "salt_metadata": 0.07894736842105263,
+            "overall": 26.090841262414635
+        },
+        "92578": {
+            "vis_similarity": 0.630730501927799,
+            "object_match": 0,
+            "user_connection": 1,
+            "search_res": 0.0,
+            "salt_metadata": 0.05,
+            "overall": 4.680730501927799
+        },
+        "92043": {
+            "vis_similarity": 0.8820159971221001,
+            "object_match": 1,
+            "user_connection": 9,
+            "search_res": 0.0,
+            "salt_metadata": 0.038461538461538464,
+            "overall": 42.920477535583636
+        },
+        "103289": {
+            "vis_similarity": 0.5045209071070272,
+            "object_match": 1,
+            "user_connection": 10,
+            "search_res": 0.0,
+            "salt_metadata": 0.027777777777777776,
+            "overall": 46.53229868488481
+        }
+    },
+    "10951": {
+        "80225": {
+            "vis_similarity": 0.6494947849966811,
+            "object_match": 0,
+            "user_connection": 1,
+            "search_res": 0.0,
+            "salt_metadata": 0.02127659574468085,
+            "overall": 4.670771380741362
+        },
+        "97235": {
+            "vis_similarity": 0.02760864005140129,
+            "object_match": 1,
+            "user_connection": 8,
+            "search_res": 0.0,
+            "salt_metadata": 0.05,
+            "overall": 38.0776086400514
+        },
+        "87145": {
+            "vis_similarity": 0.9598681229527338,
+            "object_match": 0,
+            "user_connection": 3,
+            "search_res": 0.0,
+            "salt_metadata": 0.038461538461538464,
+            "overall": 12.998329661414273
+        },
+        "10944": {
+            "vis_similarity": 0.4139250411336177,
+            "object_match": 1,
+            "user_connection": 10,
+            "search_res": 0.0,
+            "salt_metadata": 0.1,
+            "overall": 46.51392504113362
+        },
+        "31745": {
+            "vis_similarity": 0.07091393447496341,
+            "object_match": 1,
+            "user_connection": 1,
+            "search_res": 0.15492957746478872,
+            "salt_metadata": 0.0,
+            "overall": 10.132885765460879
+        },
+        "10974": {
+            "vis_similarity": 0.5228835068493345,
+            "object_match": 1,
+            "user_connection": 8,
+            "search_res": 0.17543859649122806,
+            "salt_metadata": 0.017857142857142856,
+            "overall": 38.61091608830297
+        },
+        "92578": {
+            "vis_similarity": 0.769178013147923,
+            "object_match": 0,
+            "user_connection": 5,
+            "search_res": 0.0,
+            "salt_metadata": 0.06896551724137931,
+            "overall": 20.838143530389303
+        },
+        "92043": {
+            "vis_similarity": 0.33167955119742487,
+            "object_match": 1,
+            "user_connection": 1,
+            "search_res": 0.0,
+            "salt_metadata": 0.022727272727272728,
+            "overall": 10.354406823924698
+        },
+        "103289": {
+            "vis_similarity": 0.10651234174680813,
+            "object_match": 1,
+            "user_connection": 2,
+            "search_res": 0.0,
+            "salt_metadata": 0.018518518518518517,
+            "overall": 14.125030860265326
+        }
+    },
+    "31745": {
+        "80225": {
+            "vis_similarity": 0.9773247382636148,
+            "object_match": 1,
+            "user_connection": 5,
+            "search_res": 0.0,
+            "salt_metadata": 0.0,
+            "overall": 26.977324738263615
+        },
+        "97235": {
+            "vis_similarity": 0.8752170275725295,
+            "object_match": 0,
+            "user_connection": 0,
+            "search_res": 0.0,
+            "salt_metadata": 0.0,
+            "overall": 0.8752170275725295
+        },
+        "87145": {
+            "vis_similarity": 0.8012281841832242,
+            "object_match": 0,
+            "user_connection": 1,
+            "search_res": 0.0,
+            "salt_metadata": 0.0,
+            "overall": 4.801228184183224
+        },
+        "10944": {
+            "vis_similarity": 0.8121089096583507,
+            "object_match": 1,
+            "user_connection": 10,
+            "search_res": 0.0,
+            "salt_metadata": 0.0,
+            "overall": 46.81210890965835
+        },
+        "10951": {
+            "vis_similarity": 0.5814210332612126,
+            "object_match": 1,
+            "user_connection": 9,
+            "search_res": 0.15492957746478872,
+            "salt_metadata": 0.0,
+            "overall": 42.643392864247126
+        },
+        "10974": {
+            "vis_similarity": 0.6564788168633942,
+            "object_match": 1,
+            "user_connection": 0,
+            "search_res": 0.08695652173913043,
+            "salt_metadata": 0.0,
+            "overall": 6.691261425559047
+        },
+        "92578": {
+            "vis_similarity": 0.5727945602102853,
+            "object_match": 0,
+            "user_connection": 6,
+            "search_res": 0.0,
+            "salt_metadata": 0.0,
+            "overall": 24.572794560210284
+        },
+        "92043": {
+            "vis_similarity": 0.19997969683078787,
+            "object_match": 1,
+            "user_connection": 10,
+            "search_res": 0.0,
+            "salt_metadata": 0.0,
+            "overall": 46.19997969683079
+        },
+        "103289": {
+            "vis_similarity": 0.22479352854857004,
+            "object_match": 0,
+            "user_connection": 9,
+            "search_res": 0.0,
+            "salt_metadata": 0.0,
+            "overall": 36.22479352854857
+        }
+    },
+    "10974": {
+        "80225": {
+            "vis_similarity": 0.6914526062410574,
+            "object_match": 0,
+            "user_connection": 6,
+            "search_res": 0.0,
+            "salt_metadata": 0.08,
+            "overall": 24.771452606241056
+        },
+        "97235": {
+            "vis_similarity": 0.26819345070545064,
+            "object_match": 0,
+            "user_connection": 4,
+            "search_res": 0.0,
+            "salt_metadata": 0.02631578947368421,
+            "overall": 16.294509240179135
+        },
+        "87145": {
+            "vis_similarity": 0.1265364924826432,
+            "object_match": 1,
+            "user_connection": 0,
+            "search_res": 0.0,
+            "salt_metadata": 0.03333333333333333,
+            "overall": 6.159869825815976
+        },
+        "10944": {
+            "vis_similarity": 0.6597020565951541,
+            "object_match": 0,
+            "user_connection": 10,
+            "search_res": 0.0,
+            "salt_metadata": 0.07894736842105263,
+            "overall": 40.738649425016206
+        },
+        "10951": {
+            "vis_similarity": 0.7483589053735835,
+            "object_match": 1,
+            "user_connection": 10,
+            "search_res": 0.17543859649122806,
+            "salt_metadata": 0.017857142857142856,
+            "overall": 46.83639148682722
+        },
+        "31745": {
+            "vis_similarity": 0.5709231046381563,
+            "object_match": 1,
+            "user_connection": 3,
+            "search_res": 0.08695652173913043,
+            "salt_metadata": 0.0,
+            "overall": 18.60570571333381
+        },
+        "92578": {
+            "vis_similarity": 0.5776455746704465,
+            "object_match": 0,
+            "user_connection": 9,
+            "search_res": 0.0,
+            "salt_metadata": 0.05555555555555555,
+            "overall": 36.633201130226
+        },
+        "92043": {
+            "vis_similarity": 0.07415070186086103,
+            "object_match": 1,
+            "user_connection": 1,
+            "search_res": 0.0,
+            "salt_metadata": 0.045454545454545456,
+            "overall": 10.119605247315407
+        },
+        "103289": {
+            "vis_similarity": 0.9128484373507905,
+            "object_match": 0,
+            "user_connection": 8,
+            "search_res": 0.0,
+            "salt_metadata": 0.03125,
+            "overall": 32.94409843735079
+        }
+    },
+    "92578": {
+        "80225": {
+            "vis_similarity": 0.5657207798306427,
             "object_match": 0,
             "user_connection": 9,
             "search_res": 0,
-            "salt_metadata": 22,
-            "overall": 31.200906314532784
+            "salt_metadata": 0.07407407407407407,
+            "overall": 36.63979485390472
         },
-        "EDH0001": {
-            "vis_similarity": 0.21487986529997383,
+        "97235": {
+            "vis_similarity": 0.7606671004296406,
             "object_match": 0,
-            "user_connection": 5,
+            "user_connection": 7,
             "search_res": 0,
-            "salt_metadata": 26,
-            "overall": 31.214879865299974
+            "salt_metadata": 0.025,
+            "overall": 28.78566710042964
         },
-        "EDH0008": {
-            "vis_similarity": 0.317696233212716,
+        "87145": {
+            "vis_similarity": 0.44692161891485604,
+            "object_match": 0,
+            "user_connection": 7,
+            "search_res": 0.0,
+            "salt_metadata": 0.03125,
+            "overall": 28.478171618914857
+        },
+        "10944": {
+            "vis_similarity": 0.6545642790513111,
+            "object_match": 0,
+            "user_connection": 7,
+            "search_res": 0.0,
+            "salt_metadata": 0.05,
+            "overall": 28.70456427905131
+        },
+        "10951": {
+            "vis_similarity": 0.9355654437787427,
             "object_match": 0,
             "user_connection": 3,
-            "search_res": 0,
-            "salt_metadata": 26,
-            "overall": 29.317696233212715
+            "search_res": 0.0,
+            "salt_metadata": 0.06896551724137931,
+            "overall": 13.004530961020123
         },
-        "AFMSBDIVH050": {
-            "vis_similarity": 0.9820085092876902,
+        "31745": {
+            "vis_similarity": 0.6290754140305088,
             "object_match": 1,
-            "user_connection": 10,
-            "search_res": 0,
-            "salt_metadata": 16,
-            "overall": 27.98200850928769
+            "user_connection": 5,
+            "search_res": 0.0,
+            "salt_metadata": 0.0,
+            "overall": 26.62907541403051
         },
-        "EDH0031": {
-            "vis_similarity": 0.6223626353016991,
-            "object_match": 1,
-            "user_connection": 0,
-            "search_res": 0,
-            "salt_metadata": 23,
-            "overall": 24.622362635301698
-        },
-        "TMKTH0094": {
-            "vis_similarity": 0.6559917577355602,
+        "10974": {
+            "vis_similarity": 0.8792444517827842,
             "object_match": 0,
-            "user_connection": 10,
-            "search_res": 0,
-            "salt_metadata": 24,
-            "overall": 34.65599175773556
+            "user_connection": 8,
+            "search_res": 0.0,
+            "salt_metadata": 0.05555555555555555,
+            "overall": 32.93480000733834
         },
-        "TMKTH0211": {
-            "vis_similarity": 0.4966579582109455,
+        "92043": {
+            "vis_similarity": 0.8316764391040803,
             "object_match": 0,
-            "user_connection": 4,
+            "user_connection": 2,
             "search_res": 0,
-            "salt_metadata": 17,
-            "overall": 21.496657958210946
+            "salt_metadata": 0.041666666666666664,
+            "overall": 8.873343105770747
         },
-        "EMH003": {
-            "vis_similarity": 0.3148426501708148,
-            "object_match": 1,
-            "user_connection": 4,
-            "search_res": 0,
-            "salt_metadata": 21,
-            "overall": 26.314842650170814
-        }
-    },
-    "TMGCH0148": {
-        "TMGCH0076": {
-            "vis_similarity": 0.6689128854489652,
-            "object_match": 0,
-            "user_connection": 6,
-            "search_res": 0,
-            "salt_metadata": 22,
-            "overall": 28.668912885448965
-        },
-        "EMH005": {
-            "vis_similarity": 0.885995177096557,
-            "object_match": 1,
-            "user_connection": 6,
-            "search_res": 0,
-            "salt_metadata": 22,
-            "overall": 29.885995177096557
-        },
-        "EDH0001": {
-            "vis_similarity": 0.12444076075238475,
-            "object_match": 0,
-            "user_connection": 6,
-            "search_res": 0,
-            "salt_metadata": 27,
-            "overall": 33.124440760752385
-        },
-        "EDH0008": {
-            "vis_similarity": 0.5503879293952494,
+        "103289": {
+            "vis_similarity": 0.14370299415447707,
             "object_match": 1,
             "user_connection": 9,
             "search_res": 0,
-            "salt_metadata": 25,
-            "overall": 35.55038792939525
-        },
-        "AFMSBDIVH050": {
-            "vis_similarity": 0.47305137780684836,
-            "object_match": 1,
-            "user_connection": 7,
-            "search_res": 0,
-            "salt_metadata": 16,
-            "overall": 24.473051377806847
-        },
-        "EDH0031": {
-            "vis_similarity": 0.956655707353971,
-            "object_match": 1,
-            "user_connection": 6,
-            "search_res": 0,
-            "salt_metadata": 21,
-            "overall": 28.95665570735397
-        },
-        "TMKTH0094": {
-            "vis_similarity": 0.16783524369131697,
-            "object_match": 1,
-            "user_connection": 2,
-            "search_res": 0,
-            "salt_metadata": 20,
-            "overall": 23.167835243691318
-        },
-        "TMKTH0211": {
-            "vis_similarity": 0.6020947361763891,
-            "object_match": 0,
-            "user_connection": 7,
-            "search_res": 0,
-            "salt_metadata": 18,
-            "overall": 25.60209473617639
-        },
-        "EMH003": {
-            "vis_similarity": 0.7779246963595405,
-            "object_match": 1,
-            "user_connection": 3,
-            "search_res": 0,
-            "salt_metadata": 19,
-            "overall": 23.77792469635954
+            "salt_metadata": 0.029411764705882353,
+            "overall": 42.17311475886036
         }
     },
-    "EDH0001": {
-        "TMGCH0076": {
-            "vis_similarity": 0.3364677638789204,
-            "object_match": 1,
-            "user_connection": 6,
-            "search_res": 0,
-            "salt_metadata": 24,
-            "overall": 31.33646776387892
-        },
-        "EMH005": {
-            "vis_similarity": 0.7729937366690867,
-            "object_match": 1,
-            "user_connection": 1,
-            "search_res": 0,
-            "salt_metadata": 26,
-            "overall": 28.772993736669086
-        },
-        "TMGCH0148": {
-            "vis_similarity": 0.45026255817030447,
+    "92043": {
+        "80225": {
+            "vis_similarity": 0.38074994287520414,
             "object_match": 0,
-            "user_connection": 4,
+            "user_connection": 8,
             "search_res": 0,
-            "salt_metadata": 27,
-            "overall": 31.450262558170305
+            "salt_metadata": 0.07692307692307693,
+            "overall": 32.45767301979828
         },
-        "EDH0008": {
-            "vis_similarity": 0.916960512950596,
-            "object_match": 0,
-            "user_connection": 1,
-            "search_res": 0,
-            "salt_metadata": 30,
-            "overall": 31.916960512950595
-        },
-        "AFMSBDIVH050": {
-            "vis_similarity": 0.2833986063007278,
-            "object_match": 0,
-            "user_connection": 2,
-            "search_res": 0,
-            "salt_metadata": 20,
-            "overall": 22.28339860630073
-        },
-        "EDH0031": {
-            "vis_similarity": 0.4031541996298822,
+        "97235": {
+            "vis_similarity": 0.1692251068710977,
             "object_match": 1,
             "user_connection": 4,
             "search_res": 0,
-            "salt_metadata": 26,
-            "overall": 31.40315419962988
+            "salt_metadata": 0.038461538461538464,
+            "overall": 22.207686645332636
         },
-        "TMKTH0094": {
-            "vis_similarity": 0.04978535495588965,
-            "object_match": 1,
-            "user_connection": 8,
-            "search_res": 0,
-            "salt_metadata": 24,
-            "overall": 33.04978535495589
-        },
-        "TMKTH0211": {
-            "vis_similarity": 0.7638394581460004,
-            "object_match": 0,
-            "user_connection": 5,
-            "search_res": 0,
-            "salt_metadata": 19,
-            "overall": 24.763839458146002
-        },
-        "EMH003": {
-            "vis_similarity": 0.48409388723888014,
-            "object_match": 1,
-            "user_connection": 1,
-            "search_res": 0,
-            "salt_metadata": 23,
-            "overall": 25.48409388723888
-        }
-    },
-    "EDH0008": {
-        "TMGCH0076": {
-            "vis_similarity": 0.05767438773210798,
-            "object_match": 0,
-            "user_connection": 8,
-            "search_res": 0,
-            "salt_metadata": 23,
-            "overall": 31.057674387732106
-        },
-        "EMH005": {
-            "vis_similarity": 0.6704057723678153,
-            "object_match": 1,
-            "user_connection": 0,
-            "search_res": 0,
-            "salt_metadata": 26,
-            "overall": 27.670405772367815
-        },
-        "TMGCH0148": {
-            "vis_similarity": 0.11562444010180284,
+        "87145": {
+            "vis_similarity": 0.5217041920786922,
             "object_match": 1,
             "user_connection": 3,
-            "search_res": 0,
-            "salt_metadata": 25,
-            "overall": 29.115624440101804
+            "search_res": 0.0,
+            "salt_metadata": 0.05555555555555555,
+            "overall": 18.577259747634248
         },
-        "EDH0001": {
-            "vis_similarity": 0.6318216156847021,
-            "object_match": 1,
-            "user_connection": 1,
-            "search_res": 0,
-            "salt_metadata": 30,
-            "overall": 32.6318216156847
-        },
-        "AFMSBDIVH050": {
-            "vis_similarity": 0.6174740849253582,
+        "10944": {
+            "vis_similarity": 0.24990616121705223,
             "object_match": 0,
-            "user_connection": 1,
-            "search_res": 11,
-            "salt_metadata": 19,
-            "overall": 31.61747408492536
+            "user_connection": 4,
+            "search_res": 0.0,
+            "salt_metadata": 0.038461538461538464,
+            "overall": 16.28836769967859
         },
-        "EDH0031": {
-            "vis_similarity": 0.47431321740374244,
+        "10951": {
+            "vis_similarity": 0.12936987837002556,
             "object_match": 0,
-            "user_connection": 9,
-            "search_res": 10,
-            "salt_metadata": 27,
-            "overall": 46.47431321740374
+            "user_connection": 7,
+            "search_res": 0.0,
+            "salt_metadata": 0.022727272727272728,
+            "overall": 28.152097151097298
         },
-        "TMKTH0094": {
-            "vis_similarity": 0.2553527970068509,
+        "31745": {
+            "vis_similarity": 0.9259136996073057,
             "object_match": 0,
             "user_connection": 0,
-            "search_res": 0,
-            "salt_metadata": 25,
-            "overall": 25.25535279700685
+            "search_res": 0.0,
+            "salt_metadata": 0.0,
+            "overall": 0.9259136996073057
         },
-        "TMKTH0211": {
-            "vis_similarity": 0.44158313615410827,
+        "10974": {
+            "vis_similarity": 0.12479762364041869,
             "object_match": 1,
-            "user_connection": 8,
-            "search_res": 0,
-            "salt_metadata": 19,
-            "overall": 28.441583136154108
+            "user_connection": 0,
+            "search_res": 0.0,
+            "salt_metadata": 0.045454545454545456,
+            "overall": 6.170252169094964
         },
-        "EMH003": {
-            "vis_similarity": 0.5387224070140328,
-            "object_match": 1,
-            "user_connection": 5,
-            "search_res": 0,
-            "salt_metadata": 24,
-            "overall": 30.53872240701403
-        }
-    },
-    "AFMSBDIVH050": {
-        "TMGCH0076": {
-            "vis_similarity": 0.7282316721280875,
+        "92578": {
+            "vis_similarity": 0.7705093820878639,
             "object_match": 0,
+            "user_connection": 3,
+            "search_res": 0,
+            "salt_metadata": 0.041666666666666664,
+            "overall": 12.81217604875453
+        },
+        "103289": {
+            "vis_similarity": 0.14621315246987587,
+            "object_match": 1,
             "user_connection": 6,
             "search_res": 0,
-            "salt_metadata": 15,
-            "overall": 21.72823167212809
-        },
-        "EMH005": {
-            "vis_similarity": 0.5810813031385079,
-            "object_match": 1,
+            "salt_metadata": 0.05,
+            "overall": 30.196213152469877
+        }
+    },
+    "103289": {
+        "80225": {
+            "vis_similarity": 0.25237285681776656,
+            "object_match": 0,
             "user_connection": 7,
             "search_res": 0,
-            "salt_metadata": 16,
-            "overall": 24.581081303138507
+            "salt_metadata": 0.043478260869565216,
+            "overall": 28.29585111768733
         },
-        "TMGCH0148": {
-            "vis_similarity": 0.2024349214462493,
+        "97235": {
+            "vis_similarity": 0.1589526923236262,
             "object_match": 1,
             "user_connection": 8,
             "search_res": 0,
-            "salt_metadata": 16,
-            "overall": 25.202434921446248
+            "salt_metadata": 0.1388888888888889,
+            "overall": 38.297841581212516
         },
-        "EDH0001": {
-            "vis_similarity": 0.6672131728814245,
+        "87145": {
+            "vis_similarity": 0.9871308569609671,
+            "object_match": 0,
+            "user_connection": 8,
+            "search_res": 0.0,
+            "salt_metadata": 0.03571428571428571,
+            "overall": 33.02284514267525
+        },
+        "10944": {
+            "vis_similarity": 0.7639096676733994,
+            "object_match": 1,
+            "user_connection": 1,
+            "search_res": 0.0,
+            "salt_metadata": 0.027777777777777776,
+            "overall": 10.791687445451178
+        },
+        "10951": {
+            "vis_similarity": 0.12881060501170916,
+            "object_match": 1,
+            "user_connection": 0,
+            "search_res": 0.0,
+            "salt_metadata": 0.018518518518518517,
+            "overall": 6.147329123530227
+        },
+        "31745": {
+            "vis_similarity": 0.2960664535724229,
             "object_match": 0,
             "user_connection": 5,
+            "search_res": 0.0,
+            "salt_metadata": 0.0,
+            "overall": 20.296066453572422
+        },
+        "10974": {
+            "vis_similarity": 0.20862114567909074,
+            "object_match": 1,
+            "user_connection": 1,
+            "search_res": 0.0,
+            "salt_metadata": 0.03125,
+            "overall": 10.239871145679091
+        },
+        "92578": {
+            "vis_similarity": 0.33906044600456864,
+            "object_match": 1,
+            "user_connection": 6,
             "search_res": 0,
-            "salt_metadata": 20,
-            "overall": 25.667213172881425
+            "salt_metadata": 0.029411764705882353,
+            "overall": 30.36847221071045
         },
-        "EDH0008": {
-            "vis_similarity": 0.596337781566638,
-            "object_match": 0,
-            "user_connection": 2,
-            "search_res": 11,
-            "salt_metadata": 19,
-            "overall": 32.59633778156664
-        },
-        "EDH0031": {
-            "vis_similarity": 0.5014757577067421,
+        "92043": {
+            "vis_similarity": 0.2021107017104593,
             "object_match": 1,
             "user_connection": 9,
-            "search_res": 4,
-            "salt_metadata": 16,
-            "overall": 30.501475757706743
-        },
-        "TMKTH0094": {
-            "vis_similarity": 0.7226491817782236,
-            "object_match": 0,
-            "user_connection": 8,
             "search_res": 0,
-            "salt_metadata": 16,
-            "overall": 24.722649181778223
-        },
-        "TMKTH0211": {
-            "vis_similarity": 0.15012809006956496,
-            "object_match": 1,
-            "user_connection": 6,
-            "search_res": 0,
-            "salt_metadata": 14,
-            "overall": 21.150128090069565
-        },
-        "EMH003": {
-            "vis_similarity": 0.45053963472700753,
-            "object_match": 1,
-            "user_connection": 10,
-            "search_res": 0,
-            "salt_metadata": 16,
-            "overall": 27.450539634727008
-        }
-    },
-    "EDH0031": {
-        "TMGCH0076": {
-            "vis_similarity": 0.21044592714445887,
-            "object_match": 0,
-            "user_connection": 1,
-            "search_res": 0,
-            "salt_metadata": 22,
-            "overall": 23.21044592714446
-        },
-        "EMH005": {
-            "vis_similarity": 0.833196439431287,
-            "object_match": 0,
-            "user_connection": 3,
-            "search_res": 0,
-            "salt_metadata": 23,
-            "overall": 26.833196439431287
-        },
-        "TMGCH0148": {
-            "vis_similarity": 0.6215452300931728,
-            "object_match": 0,
-            "user_connection": 5,
-            "search_res": 0,
-            "salt_metadata": 21,
-            "overall": 26.621545230093172
-        },
-        "EDH0001": {
-            "vis_similarity": 0.704248231661749,
-            "object_match": 0,
-            "user_connection": 0,
-            "search_res": 0,
-            "salt_metadata": 26,
-            "overall": 26.704248231661747
-        },
-        "EDH0008": {
-            "vis_similarity": 0.7095557899337053,
-            "object_match": 0,
-            "user_connection": 10,
-            "search_res": 10,
-            "salt_metadata": 27,
-            "overall": 47.7095557899337
-        },
-        "AFMSBDIVH050": {
-            "vis_similarity": 0.6393360035187833,
-            "object_match": 1,
-            "user_connection": 7,
-            "search_res": 4,
-            "salt_metadata": 16,
-            "overall": 28.639336003518785
-        },
-        "TMKTH0094": {
-            "vis_similarity": 0.32436990789441555,
-            "object_match": 0,
-            "user_connection": 3,
-            "search_res": 0,
-            "salt_metadata": 23,
-            "overall": 26.324369907894415
-        },
-        "TMKTH0211": {
-            "vis_similarity": 0.9166589282616604,
-            "object_match": 1,
-            "user_connection": 3,
-            "search_res": 0,
-            "salt_metadata": 16,
-            "overall": 20.91665892826166
-        },
-        "EMH003": {
-            "vis_similarity": 0.13311585933650805,
-            "object_match": 0,
-            "user_connection": 1,
-            "search_res": 0,
-            "salt_metadata": 21,
-            "overall": 22.13311585933651
-        }
-    },
-    "TMKTH0094": {
-        "TMGCH0076": {
-            "vis_similarity": 0.7647895226699604,
-            "object_match": 0,
-            "user_connection": 1,
-            "search_res": 0,
-            "salt_metadata": 20,
-            "overall": 21.76478952266996
-        },
-        "EMH005": {
-            "vis_similarity": 0.838119564072276,
-            "object_match": 0,
-            "user_connection": 0,
-            "search_res": 0,
-            "salt_metadata": 24,
-            "overall": 24.838119564072276
-        },
-        "TMGCH0148": {
-            "vis_similarity": 0.22139891014161772,
-            "object_match": 0,
-            "user_connection": 3,
-            "search_res": 0,
-            "salt_metadata": 20,
-            "overall": 23.221398910141616
-        },
-        "EDH0001": {
-            "vis_similarity": 0.8968811212319705,
-            "object_match": 0,
-            "user_connection": 7,
-            "search_res": 0,
-            "salt_metadata": 24,
-            "overall": 31.89688112123197
-        },
-        "EDH0008": {
-            "vis_similarity": 0.8945751804264453,
-            "object_match": 0,
-            "user_connection": 5,
-            "search_res": 0,
-            "salt_metadata": 25,
-            "overall": 30.894575180426447
-        },
-        "AFMSBDIVH050": {
-            "vis_similarity": 0.9716312198757372,
-            "object_match": 0,
-            "user_connection": 0,
-            "search_res": 0,
-            "salt_metadata": 16,
-            "overall": 16.971631219875736
-        },
-        "EDH0031": {
-            "vis_similarity": 0.35653322204071236,
-            "object_match": 1,
-            "user_connection": 10,
-            "search_res": 0,
-            "salt_metadata": 23,
-            "overall": 34.35653322204071
-        },
-        "TMKTH0211": {
-            "vis_similarity": 0.07276359673605903,
-            "object_match": 0,
-            "user_connection": 0,
-            "search_res": 0,
-            "salt_metadata": 17,
-            "overall": 17.07276359673606
-        },
-        "EMH003": {
-            "vis_similarity": 0.8673293683742377,
-            "object_match": 1,
-            "user_connection": 7,
-            "search_res": 0,
-            "salt_metadata": 21,
-            "overall": 29.867329368374236
-        }
-    },
-    "TMKTH0211": {
-        "TMGCH0076": {
-            "vis_similarity": 0.2238628648550709,
-            "object_match": 1,
-            "user_connection": 7,
-            "search_res": 0,
-            "salt_metadata": 16,
-            "overall": 24.22386286485507
-        },
-        "EMH005": {
-            "vis_similarity": 0.27897858271074993,
-            "object_match": 0,
-            "user_connection": 4,
-            "search_res": 0,
-            "salt_metadata": 17,
-            "overall": 21.27897858271075
-        },
-        "TMGCH0148": {
-            "vis_similarity": 0.4369560326789915,
-            "object_match": 0,
-            "user_connection": 6,
-            "search_res": 0,
-            "salt_metadata": 18,
-            "overall": 24.436956032678992
-        },
-        "EDH0001": {
-            "vis_similarity": 0.7884263533674898,
-            "object_match": 1,
-            "user_connection": 2,
-            "search_res": 0,
-            "salt_metadata": 19,
-            "overall": 22.78842635336749
-        },
-        "EDH0008": {
-            "vis_similarity": 0.7775691541161474,
-            "object_match": 1,
-            "user_connection": 3,
-            "search_res": 0,
-            "salt_metadata": 19,
-            "overall": 23.777569154116147
-        },
-        "AFMSBDIVH050": {
-            "vis_similarity": 0.711473697877254,
-            "object_match": 1,
-            "user_connection": 7,
-            "search_res": 0,
-            "salt_metadata": 14,
-            "overall": 22.711473697877253
-        },
-        "EDH0031": {
-            "vis_similarity": 0.5721742494479757,
-            "object_match": 1,
-            "user_connection": 1,
-            "search_res": 0,
-            "salt_metadata": 16,
-            "overall": 18.572174249447976
-        },
-        "TMKTH0094": {
-            "vis_similarity": 0.7446947947491137,
-            "object_match": 0,
-            "user_connection": 2,
-            "search_res": 0,
-            "salt_metadata": 17,
-            "overall": 19.744694794749115
-        },
-        "EMH003": {
-            "vis_similarity": 0.43295309796781,
-            "object_match": 1,
-            "user_connection": 3,
-            "search_res": 0,
-            "salt_metadata": 16,
-            "overall": 20.43295309796781
-        }
-    },
-    "EMH003": {
-        "TMGCH0076": {
-            "vis_similarity": 0.987516630997872,
-            "object_match": 0,
-            "user_connection": 8,
-            "search_res": 0,
-            "salt_metadata": 19,
-            "overall": 27.987516630997874
-        },
-        "EMH005": {
-            "vis_similarity": 0.981781370532384,
-            "object_match": 0,
-            "user_connection": 4,
-            "search_res": 0,
-            "salt_metadata": 21,
-            "overall": 25.981781370532385
-        },
-        "TMGCH0148": {
-            "vis_similarity": 0.3135445168750072,
-            "object_match": 1,
-            "user_connection": 8,
-            "search_res": 0,
-            "salt_metadata": 19,
-            "overall": 28.313544516875005
-        },
-        "EDH0001": {
-            "vis_similarity": 0.9233455154271303,
-            "object_match": 0,
-            "user_connection": 5,
-            "search_res": 0,
-            "salt_metadata": 23,
-            "overall": 28.92334551542713
-        },
-        "EDH0008": {
-            "vis_similarity": 0.35171072677744253,
-            "object_match": 0,
-            "user_connection": 1,
-            "search_res": 0,
-            "salt_metadata": 24,
-            "overall": 25.351710726777444
-        },
-        "AFMSBDIVH050": {
-            "vis_similarity": 0.3775718250006981,
-            "object_match": 1,
-            "user_connection": 2,
-            "search_res": 0,
-            "salt_metadata": 16,
-            "overall": 19.377571825000697
-        },
-        "EDH0031": {
-            "vis_similarity": 0.6141457616976843,
-            "object_match": 1,
-            "user_connection": 8,
-            "search_res": 0,
-            "salt_metadata": 21,
-            "overall": 30.614145761697685
-        },
-        "TMKTH0094": {
-            "vis_similarity": 0.9598562886409543,
-            "object_match": 0,
-            "user_connection": 9,
-            "search_res": 0,
-            "salt_metadata": 21,
-            "overall": 30.959856288640953
-        },
-        "TMKTH0211": {
-            "vis_similarity": 0.654928423520882,
-            "object_match": 1,
-            "user_connection": 4,
-            "search_res": 0,
-            "salt_metadata": 16,
-            "overall": 21.654928423520882
+            "salt_metadata": 0.05,
+            "overall": 42.25211070171046
         }
     }
 }

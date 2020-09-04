@@ -7,49 +7,62 @@
     <script src="https://d3js.org/d3.v6.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
     <script type='text/javascript' src='../lib/knockout-3.5.1.js'></script>
+    <script type='text/javascript' src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="graph.css">
 </head>
-
 <body>
     <div id="chart">
     </div>
 
-    <div class="link-toggles" data-bind="foreach: scoreInfo">
+    <div class="link-toggles">
+        <!-- ko foreach:scoreInfo -->
         <div class="link-toggle">
             <div class="color-code score-component">
                 <span class="toggle" data-bind="attr: {id: (scoreType + '_toggle')}, css: {disabled: disabled()}, click: () => {$parent.toggleLinkVisibility($data)}"></span>
             </div>
 
-            <div class="score-weight score-component" data-bind="text: scoreWeight">
-
-            </div>
             <div class="score-name score-component" data-bind="text: scoreName">
                <!-- todo also add the score scale here !-->
             </div>
         </div>
-                <!--
-        <div class="link-toggle">
-            <span class="toggle" id="object_match_toggle"></span>
-            Object Match
-        </div>
-        <div class="link-toggle">
-            <span class="toggle" id="user_connection_toggle"></span>
-            User Connection
-        </div>
-        <div class="link-toggle">
-            <span class="toggle" id="search_res_toggle"></span>
-            Knowledge API
-        </div>
-        <div class="link-toggle">
-            <span class="toggle" id="salt_metadata_toggle"></span>
-            Salt Metadata
-        </div>
-        <div class="link-toggle" >
-            <span class="toggle" id="overall_toggle"></span>
-            Overall
-        </div> !-->
+        <!-- /ko -->
+        <button class="edit-button" type="button" data-toggle="modal" data-target="#scoreModal">Click to edit your Similarity Score</button>
+        <!--div class="click to edit"  data-target="#scoreModal"> Click to edit your Similarity Score </div-->
     </div>
 
-    <script src="graph.js"></script>
+    <div class="modal" id="scoreModal">
+        <div class="modal-inside">
+        <div class="similarity-score-calc">
+            <div class="header">Similarity Score</div>
+            <div class="desc">Coefficients allow us to tune the importance of different methods. Please edit the coefficient of connection </div>
+            <div class="calc">
+                <form class="form-inline">
+                    <input type="text" class="form-control mb-2 mr-sm-2" id="G" placeholder="a_G" data-bind="value: a_G">
+                    <label for="G">G</label>
+
+                    <input type="text" class="form-control mb-2 mr-sm-2" id="V" placeholder="a_V" data-bind="value: a_V">
+                    <label for="V">V</label>
+
+                    <input type="text" class="form-control mb-2 mr-sm-2" id="C" placeholder="a_C" data-bind="value: a_C">
+                    <label for="C">C</label>
+
+                    <input type="text" class="form-control mb-2 mr-sm-2" id="T" placeholder="a_T" data-bind="value: a_T">
+                    <label for="T">T</label>
+
+                    <input type="text" class="form-control mb-2 mr-sm-2" id="U" placeholder="a_U" data-bind="value: a_U">
+                    <label for="U">U</label>
+
+
+                    <button type="submit" class="btn btn-secondary mb-2" data-bind="click: getNewScores" data-toggle="modal" data-target="#scoreModal" >Submit</button>
+                </form>
+            </div>
+        </div>
+        </div>
+    </div>
+    <script src="graphv2.js"></script>
 </body>
 </html>

@@ -35,7 +35,7 @@ const main = async() => {
 }
 
 const random = (min, max) => {
-    return Math.random * (max - min) + min;
+    return Math.random() * (max - min) + min;
 
 }
 
@@ -194,19 +194,6 @@ const drawLinks = (visibleScoreTypes) => {
     $("#chart").append(svg.node());
 }
 
-function linkArc(d) {
-    var dx = (d.target.x - d.source.x),
-        dy = (d.target.y - d.source.y),
-        dr = Math.sqrt(dx * dx + dy * dy),
-        unevenCorrection = (d.sameUneven ? 0 : 0.5),
-        arc = ((dr * d.maxSameHalf) / (d.sameIndexCorrected - unevenCorrection));
-
-    if (d.sameMiddleLink) {
-        arc = 0;
-    }
-
-    return "M" + d.source.x + "," + d.source.y + "A" + arc + "," + arc + " 0 0," + d.sameArcDirection + " " + d.target.x + "," + d.target.y;
-}
 
 drag = simulation => {
 
