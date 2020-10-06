@@ -23,7 +23,7 @@ def main():
         f.close()
     data_ids = data.keys()
 
-    with open('./public/graph_test/similarity_scores.json', 'w') as f:
+    with open('./similarity_scores.json', 'w') as f:
         similarity_data = dict()
 
         for data_id1 in data_ids:
