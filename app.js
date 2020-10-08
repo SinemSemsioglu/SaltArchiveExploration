@@ -32,14 +32,5 @@ let server = app.listen(config.port, () => {
     console.log("Server initialization successful!")
 });
 
-const analyzeData = async() => {
-    console.log("in analyze data function");
-    let data = await dirModule.getFilesFlat();
-    //console.log(data);
-    analysisModule.main(data);
-};
-
-analyzeData();
-
 
 
