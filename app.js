@@ -2,10 +2,6 @@
 const express = require('express');
 const routes = require('./routes.js');
 const bodyParser = require('body-parser');
-const config = require('./config.js').config;
-
-const dirModule = require('./modules/file');
-const analysisModule = require('./modules/analysis');
 
 let app = express();
 
@@ -27,7 +23,7 @@ app.get('/', function (req, res) {
 });
 
 // START THE SERVER
-let server = app.listen(config.port, () => {
+let server = app.listen(process.env.PORT || config.port, () => {
     console.log('Listening on ' + config.port);
     console.log("Server initialization successful!")
 });
