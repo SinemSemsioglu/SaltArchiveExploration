@@ -11,7 +11,6 @@ const colorScoreMap = {
     "overall": "#9c1a27"
 }
 
-
 let nodes;
 let scores;
 
@@ -20,6 +19,7 @@ let koVals;
 let rootId = '80225';
 let squareSize = 60;
 let lastChangeRequest = moment();
+let visitedNodes = ko.observableArray([]);
 
 radiusOffset = 150;
 baseRadius = radiusOffset * 3 / 2; // 1 for radius of the root elm's circle 1/2 for half of the extra radius of each circle
@@ -162,7 +162,7 @@ const toggleHighlightedNodes = (scoreType, disabled) => {
 let connectedId = null;
 
 const initClick = () => {
-    $(".data-point").click((event)=> {
+    $(".data-point").not(".root-node").click((event)=> {
         let id = event.target.classList[0];
         connectedId = id;
         $($('.root-img')[0]).attr('src', findByProp(nodes, rootId, 'id','url'));
@@ -170,13 +170,17 @@ const initClick = () => {
         $('#connectionInfoModal').modal('show')
 
         let scoresObj = findByProp(scores[rootId].children, id, 'name');
-        $('.connection').text(scoresObj.overall.toFixed(2), 'name')
+        $('.connection').find('.overall-score').text(Math.round(scoresObj.overall * 100) + '%', 'name')
+        let percentVal = Math.round(scoresObj.vis_similarity * 100) + '%';
+        $('.scale-indicator').height(percentVal);
+        $('.scale-text').text(percentVal);
     })
 }
 
 // todo assuming we already have the data
 const centerConnectedImage = () => {
     if (connectedId != null) {
+        koVals.visitedNodes.push(findByProp(nodes, rootId, 'id','url'));
         rootId = connectedId;
         initializeGraph();
         initClick();
@@ -192,15 +196,8 @@ const initKO = () => {
             scoreWeight: ko.observable(25), // todo later on get/update this via backend
             scoreName: "Knowledge API",
             scoreScale: "binary",
-            disabled: ko.observable(true)
-        },
-        {
-            scoreType: "vis_similarity",
-            scoreCode: "a_V",
-            scoreWeight: ko.observable(25), // todo later on get/update this via backend
-            scoreName: "Visual Similarity",
-            scoreScale: "continuous",
-            disabled: ko.observable(true)
+            disabled: ko.observable(true),
+            scoreLocked: ko.observable(false)
         },
         {
             scoreType: "object_match",
@@ -208,7 +205,17 @@ const initKO = () => {
             scoreWeight: ko.observable(25), // todo later on get/update this via backend
             scoreName: "Object Recognition",
             scoreScale: "binary",
-            disabled: ko.observable(true)
+            disabled: ko.observable(true),
+            scoreLocked: ko.observable(false)
+        },
+        {
+            scoreType: "vis_similarity",
+            scoreCode: "a_V",
+            scoreWeight: ko.observable(25), // todo later on get/update this via backend
+            scoreName: "Visual Similarity",
+            scoreScale: "continuous",
+            disabled: ko.observable(true),
+            scoreLocked: ko.observable(false)
         },
         {
             scoreType: "salt_metadata",
@@ -216,7 +223,8 @@ const initKO = () => {
             scoreWeight: ko.observable(25), // todo later on get/update this via backend
             scoreName: "Metadata Tagging",
             scoreScale: "discrete",
-            disabled: ko.observable(true)
+            disabled: ko.observable(true),
+            scoreLocked: ko.observable(false)
         }
     ]
 
@@ -233,7 +241,8 @@ const initKO = () => {
             scoreInfo,
             toggleHighlightedNodes,
             getNewScores,
-            centerConnectedImage
+            centerConnectedImage,
+            visitedNodes,
         };
 
     ko.applyBindings(koVals);
@@ -254,16 +263,23 @@ const getData = async () => {
 // todo i'm sure there is a better way
 const calculateNewWeights = (changedScore) => {
     let totalWeight = 0;
+    let possibleScore = 100;
+    let numChangeableScores = 0;
 
     koVals.scoreInfo.forEach((scoreObj) => {
-        totalWeight += parseFloat(scoreObj.scoreWeight());
+        if (scoreObj.scoreLocked()) {
+            possibleScore -= 25;
+        } else {
+            totalWeight += parseFloat(scoreObj.scoreWeight());
+            numChangeableScores++;
+        }
     });
 
-    let overdrive = 100 - totalWeight;
+    let overdrive = possibleScore - totalWeight;
 
     koVals.scoreInfo.forEach((scoreObj) => {
-        if (scoreObj.scoreCode != changedScore) {
-            scoreObj.scoreWeight(parseFloat(scoreObj.scoreWeight()) + overdrive/3);
+        if (scoreObj.scoreCode != changedScore && !scoreObj.scoreLocked()) {
+            scoreObj.scoreWeight(parseFloat(scoreObj.scoreWeight()) + overdrive/numChangeableScores);
         }
     });
 

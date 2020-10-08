@@ -1,742 +1,742 @@
 {
     "80225": {
         "97235": {
-            "vis_similarity": 0.14192056979812417,
-            "object_match": 1,
-            "user_connection": 7,
+            "vis_similarity": 0.5062161534971286,
+            "object_match": 0,
+            "user_connection": 3,
             "search_res": 0,
             "salt_metadata": 0.034482758620689655,
-            "overall": 0.3357189425043183
+            "overall": 0.13885225185089925
         },
         "87145": {
-            "vis_similarity": 0.6691433539966092,
+            "vis_similarity": 0.7951142962364771,
             "object_match": 0,
-            "user_connection": 1,
+            "user_connection": 7,
             "search_res": 0.0,
             "salt_metadata": 0.047619047619047616,
-            "overall": 0.00048711029238598415
+            "overall": 0.21371154120048022
         },
         "10944": {
-            "vis_similarity": 0.9411972692465376,
-            "object_match": 1,
-            "user_connection": 10,
-            "search_res": 0.0,
-            "salt_metadata": 0.034482758620689655,
-            "overall": 0.3215120154063647
-        },
-        "10951": {
-            "vis_similarity": 0.5992033162199332,
+            "vis_similarity": 0.9296054035705893,
             "object_match": 0,
             "user_connection": 6,
             "search_res": 0.0,
+            "salt_metadata": 0.034482758620689655,
+            "overall": 0.2356622781686653
+        },
+        "10951": {
+            "vis_similarity": 0.32789674176361394,
+            "object_match": 1,
+            "user_connection": 8,
+            "search_res": 0.0,
             "salt_metadata": 0.02127659574468085,
-            "overall": -0.005118761944908847
+            "overall": 0.5678680731007895
         },
         "31745": {
-            "vis_similarity": 0.8637339362571866,
-            "object_match": 0,
-            "user_connection": 3,
+            "vis_similarity": 0.9930948678960113,
+            "object_match": 1,
+            "user_connection": 5,
             "search_res": 0.0,
             "salt_metadata": 0.0,
-            "overall": -0.0153526370440958
+            "overall": 0.7057135644618806
         },
         "10974": {
-            "vis_similarity": 0.9630380016507166,
+            "vis_similarity": 0.4918297130946446,
             "object_match": 0,
             "user_connection": 5,
             "search_res": 0.0,
             "salt_metadata": 0.08,
-            "overall": 0.0036822600590602148
+            "overall": 0.16605927349428576
         },
         "92578": {
-            "vis_similarity": 0.7600858524460594,
-            "object_match": 0,
-            "user_connection": 7,
+            "vis_similarity": 0.8655513921286874,
+            "object_match": 1,
+            "user_connection": 2,
             "search_res": 0,
             "salt_metadata": 0.07407407407407407,
-            "overall": 0.00574893886415806
+            "overall": 0.7261797534903339
         },
         "92043": {
-            "vis_similarity": 0.5692611202522527,
+            "vis_similarity": 0.6678953455190731,
             "object_match": 1,
-            "user_connection": 9,
+            "user_connection": 1,
             "search_res": 0,
             "salt_metadata": 0.07692307692307693,
-            "overall": 0.33915756259048657
+            "overall": 0.6828935619761047
         },
         "103289": {
-            "vis_similarity": 0.3733894226365406,
+            "vis_similarity": 0.022777924390828486,
             "object_match": 0,
-            "user_connection": 7,
+            "user_connection": 4,
             "search_res": 0,
             "salt_metadata": 0.043478260869565216,
-            "overall": 0.004667451854760463
+            "overall": 0.034338718789247
         }
     },
     "97235": {
         "80225": {
-            "vis_similarity": 0.6217028828304035,
-            "object_match": 1,
-            "user_connection": 6,
+            "vis_similarity": 0.8792648595016567,
+            "object_match": 0,
+            "user_connection": 5,
             "search_res": 0,
             "salt_metadata": 0.034482758620689655,
-            "overall": 0.3271909416895303
+            "overall": 0.22415166613654958
         },
         "87145": {
-            "vis_similarity": 0.9697849695628552,
-            "object_match": 0,
-            "user_connection": 7,
-            "search_res": 0.0,
-            "salt_metadata": 0.058823529411764705,
-            "overall": -0.0019435478232078338
-        },
-        "10944": {
-            "vis_similarity": 0.11186674453629464,
+            "vis_similarity": 0.5349845078692016,
             "object_match": 1,
-            "user_connection": 5,
-            "search_res": 0.0,
-            "salt_metadata": 0.047619047619047616,
-            "overall": 0.33966857625721775
-        },
-        "10951": {
-            "vis_similarity": 0.2793444198265328,
-            "object_match": 0,
             "user_connection": 4,
             "search_res": 0.0,
+            "salt_metadata": 0.058823529411764705,
+            "overall": 0.6403761509518736
+        },
+        "10944": {
+            "vis_similarity": 0.019384250369149703,
+            "object_match": 1,
+            "user_connection": 6,
+            "search_res": 0.0,
+            "salt_metadata": 0.047619047619047616,
+            "overall": 0.5149746232204051
+        },
+        "10951": {
+            "vis_similarity": 0.8052624609167631,
+            "object_match": 0,
+            "user_connection": 1,
+            "search_res": 0.0,
             "salt_metadata": 0.05,
-            "overall": 0.008034728510871808
+            "overall": 0.21762720686823003
         },
         "31745": {
-            "vis_similarity": 0.7185784602877994,
-            "object_match": 0,
-            "user_connection": 8,
+            "vis_similarity": 0.1661707276599773,
+            "object_match": 1,
+            "user_connection": 2,
             "search_res": 0.0,
             "salt_metadata": 0.0,
-            "overall": -0.01277253772881614
+            "overall": 0.5166333084913842
         },
         "10974": {
-            "vis_similarity": 0.38494371894354007,
+            "vis_similarity": 0.9768706763722709,
             "object_match": 1,
-            "user_connection": 9,
+            "user_connection": 3,
             "search_res": 0.0,
             "salt_metadata": 0.02631578947368421,
-            "overall": 0.32927585979704055
+            "overall": 0.7196354025310259
         },
         "92578": {
-            "vis_similarity": 0.5082305761405809,
-            "object_match": 0,
-            "user_connection": 5,
+            "vis_similarity": 0.5263743859021929,
+            "object_match": 1,
+            "user_connection": 4,
             "search_res": 0,
             "salt_metadata": 0.025,
-            "overall": -0.0025336609952010675
+            "overall": 0.6157456396751214
         },
         "92043": {
-            "vis_similarity": 0.04813002543337175,
+            "vis_similarity": 0.364053351408287,
             "object_match": 0,
-            "user_connection": 3,
+            "user_connection": 6,
             "search_res": 0,
             "salt_metadata": 0.038461538461538464,
-            "overall": 0.009144501818923978
+            "overall": 0.10901181315598746
         },
         "103289": {
-            "vis_similarity": 0.7012359647219542,
+            "vis_similarity": 0.3295764246191326,
             "object_match": 0,
             "user_connection": 3,
             "search_res": 0,
             "salt_metadata": 0.1388888888888889,
-            "overall": 0.023646831549173325
+            "overall": 0.16841481972099556
         }
     },
     "87145": {
         "80225": {
-            "vis_similarity": 0.7981599429506081,
+            "vis_similarity": 0.44125514000787314,
             "object_match": 1,
-            "user_connection": 9,
+            "user_connection": 2,
             "search_res": 0.0,
             "salt_metadata": 0.047619047619047616,
-            "overall": 0.32746990032381174
+            "overall": 0.6114374689859458
         },
         "97235": {
-            "vis_similarity": 0.10456476834346595,
-            "object_match": 1,
-            "user_connection": 8,
+            "vis_similarity": 0.4834130092650575,
+            "object_match": 0,
+            "user_connection": 6,
             "search_res": 0.0,
             "salt_metadata": 0.058823529411764705,
-            "overall": 0.3427115321746895
+            "overall": 0.1499465176340229
         },
         "10944": {
-            "vis_similarity": 0.8735717701174633,
+            "vis_similarity": 0.258496427133742,
             "object_match": 0,
-            "user_connection": 3,
+            "user_connection": 8,
             "search_res": 0.0,
             "salt_metadata": 0.029411764705882353,
-            "overall": -0.007880443055924637
+            "overall": 0.07881235685488955
         },
         "10951": {
-            "vis_similarity": 0.8992090448977937,
+            "vis_similarity": 0.7366070241887454,
+            "object_match": 1,
+            "user_connection": 10,
+            "search_res": 0.0,
+            "salt_metadata": 0.038461538461538464,
+            "overall": 0.6728355931701729
+        },
+        "31745": {
+            "vis_similarity": 0.5775676345403085,
+            "object_match": 1,
+            "user_connection": 5,
+            "search_res": 0.0,
+            "salt_metadata": 0.0,
+            "overall": 0.610701226784591
+        },
+        "10974": {
+            "vis_similarity": 0.7341457322160698,
+            "object_match": 0,
+            "user_connection": 0,
+            "search_res": 0.0,
+            "salt_metadata": 0.03333333333333333,
+            "overall": 0.1901993517657375
+        },
+        "92578": {
+            "vis_similarity": 0.8212123703521452,
             "object_match": 1,
             "user_connection": 9,
             "search_res": 0.0,
-            "salt_metadata": 0.038461538461538464,
-            "overall": 0.3232928274933729
-        },
-        "31745": {
-            "vis_similarity": 0.48573964371708866,
-            "object_match": 0,
-            "user_connection": 0,
-            "search_res": 0.0,
-            "salt_metadata": 0.0,
-            "overall": -0.008633890756025997
-        },
-        "10974": {
-            "vis_similarity": 0.9668638783522897,
-            "object_match": 0,
-            "user_connection": 4,
-            "search_res": 0.0,
-            "salt_metadata": 0.03333333333333333,
-            "overall": -0.008519077197598444
-        },
-        "92578": {
-            "vis_similarity": 0.5922129212093507,
-            "object_match": 0,
-            "user_connection": 8,
-            "search_res": 0.0,
             "salt_metadata": 0.03125,
-            "overall": -0.002401424458380442
+            "overall": 0.6873492893036832
         },
         "92043": {
-            "vis_similarity": 0.3572807593000723,
-            "object_match": 0,
-            "user_connection": 0,
+            "vis_similarity": 0.7634730493839019,
+            "object_match": 1,
+            "user_connection": 1,
             "search_res": 0.0,
             "salt_metadata": 0.05555555555555555,
-            "overall": 0.008093875605917664
+            "overall": 0.6904316329073275
         },
         "103289": {
-            "vis_similarity": 0.3879395458258328,
+            "vis_similarity": 0.5672280998999389,
             "object_match": 1,
-            "user_connection": 0,
+            "user_connection": 5,
             "search_res": 0.0,
             "salt_metadata": 0.03571428571428571,
-            "overall": 0.33166621880724934
+            "overall": 0.6322656129617089
         }
     },
     "10944": {
         "80225": {
-            "vis_similarity": 0.7167118903566411,
+            "vis_similarity": 0.0919367671894884,
             "object_match": 0,
-            "user_connection": 10,
+            "user_connection": 3,
             "search_res": 0.0,
             "salt_metadata": 0.034482758620689655,
-            "overall": -0.0037738427118886395
+            "overall": 0.04412524051465988
         },
         "97235": {
-            "vis_similarity": 0.6365577721140891,
+            "vis_similarity": 0.5653236087353236,
+            "object_match": 0,
+            "user_connection": 6,
+            "search_res": 0.0,
+            "salt_metadata": 0.047619047619047616,
+            "overall": 0.161168774702029
+        },
+        "87145": {
+            "vis_similarity": 0.5730061257018739,
+            "object_match": 1,
+            "user_connection": 1,
+            "search_res": 0.0,
+            "salt_metadata": 0.029411764705882353,
+            "overall": 0.629364097793666
+        },
+        "10951": {
+            "vis_similarity": 0.13802073522577651,
             "object_match": 1,
             "user_connection": 9,
             "search_res": 0.0,
-            "salt_metadata": 0.047619047619047616,
-            "overall": 0.3303423351908983
-        },
-        "87145": {
-            "vis_similarity": 0.22528160621576154,
-            "object_match": 1,
-            "user_connection": 7,
-            "search_res": 0.0,
-            "salt_metadata": 0.029411764705882353,
-            "overall": 0.33291876421647526
-        },
-        "10951": {
-            "vis_similarity": 0.5921207653443511,
-            "object_match": 1,
-            "user_connection": 5,
-            "search_res": 0.0,
             "salt_metadata": 0.1,
-            "overall": 0.34475123858337786
+            "overall": 0.5771966748075412
         },
         "31745": {
-            "vis_similarity": 0.8477591959333277,
-            "object_match": 0,
-            "user_connection": 7,
+            "vis_similarity": 0.25925085787124147,
+            "object_match": 1,
+            "user_connection": 3,
             "search_res": 0.0,
             "salt_metadata": 0.0,
-            "overall": -0.015068690356613951
+            "overall": 0.5379165362867288
         },
         "10974": {
-            "vis_similarity": 0.6049154659265358,
+            "vis_similarity": 0.10834421362002755,
             "object_match": 0,
-            "user_connection": 7,
+            "user_connection": 3,
             "search_res": 0.0,
             "salt_metadata": 0.07894736842105263,
-            "overall": 0.009774107035266672
+            "overall": 0.07766817209137684
         },
         "92578": {
-            "vis_similarity": 0.8412575506491176,
+            "vis_similarity": 0.14321252930660056,
             "object_match": 1,
-            "user_connection": 7,
+            "user_connection": 9,
             "search_res": 0.0,
             "salt_metadata": 0.05,
-            "overall": 0.32732289962556016
+            "overall": 0.5448838039600026
         },
         "92043": {
-            "vis_similarity": 0.38633957939918306,
+            "vis_similarity": 0.6915184474270278,
+            "object_match": 1,
+            "user_connection": 4,
+            "search_res": 0.0,
+            "salt_metadata": 0.038461538461538464,
+            "overall": 0.6625258691935365
+        },
+        "103289": {
+            "vis_similarity": 0.07345007295253159,
             "object_match": 0,
             "user_connection": 7,
             "search_res": 0.0,
-            "salt_metadata": 0.038461538461538464,
-            "overall": 0.003132918495727408
-        },
-        "103289": {
-            "vis_similarity": 0.9858548564582953,
-            "object_match": 1,
-            "user_connection": 6,
-            "search_res": 0.0,
             "salt_metadata": 0.027777777777777776,
-            "overall": 0.3189749438560942
+            "overall": 0.03540583014174938
         }
     },
     "10951": {
         "80225": {
-            "vis_similarity": 0.16155004007057494,
+            "vis_similarity": 0.5574200790835789,
             "object_match": 1,
-            "user_connection": 0,
+            "user_connection": 4,
             "search_res": 0.0,
             "salt_metadata": 0.02127659574468085,
-            "overall": 0.33193643163298137
+            "overall": 0.6203497086704974
         },
         "97235": {
-            "vis_similarity": 0.5445144834124213,
+            "vis_similarity": 0.6590153024017174,
             "object_match": 1,
-            "user_connection": 1,
+            "user_connection": 0,
             "search_res": 0.0,
             "salt_metadata": 0.05,
-            "overall": 0.33259742736540826
+            "overall": 0.6628246350733361
         },
         "87145": {
-            "vis_similarity": 0.8577947642261565,
+            "vis_similarity": 0.46613325388572846,
             "object_match": 0,
-            "user_connection": 0,
+            "user_connection": 7,
             "search_res": 0.0,
             "salt_metadata": 0.038461538461538464,
-            "overall": -0.005247069868016128
+            "overall": 0.13235288297209982
         },
         "10944": {
-            "vis_similarity": 0.3424605546840134,
+            "vis_similarity": 0.6283886639632817,
             "object_match": 1,
-            "user_connection": 0,
+            "user_connection": 3,
             "search_res": 0.0,
             "salt_metadata": 0.1,
-            "overall": 0.34918888128528436
+            "overall": 0.6893217041469244
         },
         "31745": {
-            "vis_similarity": 0.7695772973754222,
+            "vis_similarity": 0.5665522591401427,
             "object_match": 1,
-            "user_connection": 6,
+            "user_connection": 8,
             "search_res": 0.15492957746478872,
             "salt_metadata": 0.0,
-            "overall": 0.3819841199623588
+            "overall": 0.6429606494794746
         },
         "10974": {
-            "vis_similarity": 0.896411351833682,
+            "vis_similarity": 0.24469394310399306,
             "object_match": 1,
-            "user_connection": 0,
+            "user_connection": 2,
             "search_res": 0.17543859649122806,
             "salt_metadata": 0.017857142857142856,
-            "overall": 0.39316062418334874
+            "overall": 0.5859342594827989
         },
         "92578": {
-            "vis_similarity": 0.8046108202976443,
+            "vis_similarity": 0.6676818580850149,
             "object_match": 0,
             "user_connection": 2,
             "search_res": 0.0,
             "salt_metadata": 0.06896551724137931,
-            "overall": 0.0036292948297924933
+            "overall": 0.19887562454113356
         },
         "92043": {
-            "vis_similarity": 0.4154923766116986,
-            "object_match": 1,
+            "vis_similarity": 0.9356597953373672,
+            "object_match": 0,
             "user_connection": 1,
             "search_res": 0.0,
             "salt_metadata": 0.022727272727272728,
-            "overall": 0.3277998513174957
+            "overall": 0.2291704689595098
         },
         "103289": {
-            "vis_similarity": 0.13837144421708814,
-            "object_match": 1,
-            "user_connection": 10,
+            "vis_similarity": 0.6085220600880776,
+            "object_match": 0,
+            "user_connection": 7,
             "search_res": 0.0,
             "salt_metadata": 0.018518518518518517,
-            "overall": 0.3316313248247833
+            "overall": 0.1515489577463604
         }
     },
     "31745": {
         "80225": {
-            "vis_similarity": 0.6505087760515185,
-            "object_match": 1,
-            "user_connection": 0,
-            "search_res": 0.0,
-            "salt_metadata": 0.0,
-            "overall": 0.3177134074892352
-        },
-        "97235": {
-            "vis_similarity": 0.6002502432825775,
-            "object_match": 1,
-            "user_connection": 4,
-            "search_res": 0.0,
-            "salt_metadata": 0.0,
-            "overall": 0.3186067393123588
-        },
-        "87145": {
-            "vis_similarity": 0.3978940372296178,
-            "object_match": 1,
-            "user_connection": 1,
-            "search_res": 0.0,
-            "salt_metadata": 0.0,
-            "overall": 0.32220356612990125
-        },
-        "10944": {
-            "vis_similarity": 0.6876887979984733,
-            "object_match": 0,
-            "user_connection": 1,
-            "search_res": 0.0,
-            "salt_metadata": 0.0,
-            "overall": -0.012223482338451686
-        },
-        "10951": {
-            "vis_similarity": 0.307734430222109,
-            "object_match": 1,
-            "user_connection": 9,
-            "search_res": 0.15492957746478872,
-            "salt_metadata": 0.0,
-            "overall": 0.39019325197995053
-        },
-        "10974": {
-            "vis_similarity": 0.4350889310048792,
+            "vis_similarity": 0.8493970809056449,
             "object_match": 1,
             "user_connection": 6,
-            "search_res": 0.08695652173913043,
-            "salt_metadata": 0.0,
-            "overall": 0.3588031938657472
-        },
-        "92578": {
-            "vis_similarity": 0.4496208634880099,
-            "object_match": 0,
-            "user_connection": 7,
             "search_res": 0.0,
             "salt_metadata": 0.0,
-            "overall": -0.007991889208957693
+            "overall": 0.6728563614555965
         },
-        "92043": {
-            "vis_similarity": 0.8302624822190312,
-            "object_match": 0,
-            "user_connection": 9,
+        "97235": {
+            "vis_similarity": 0.8384006294214802,
+            "object_match": 1,
+            "user_connection": 10,
             "search_res": 0.0,
             "salt_metadata": 0.0,
-            "overall": -0.014757691003868752
+            "overall": 0.6703419689494114
         },
-        "103289": {
-            "vis_similarity": 0.24986813431229504,
+        "87145": {
+            "vis_similarity": 0.00909755340155971,
+            "object_match": 0,
+            "user_connection": 6,
+            "search_res": 0.0,
+            "salt_metadata": 0.0,
+            "overall": 0.0020802001564268918
+        },
+        "10944": {
+            "vis_similarity": 0.19093688775216022,
             "object_match": 0,
             "user_connection": 10,
             "search_res": 0.0,
             "salt_metadata": 0.0,
-            "overall": -0.0044413384885687674
+            "overall": 0.04365865483148609
+        },
+        "10951": {
+            "vis_similarity": 0.7676101475118009,
+            "object_match": 1,
+            "user_connection": 6,
+            "search_res": 0.15492957746478872,
+            "salt_metadata": 0.0,
+            "overall": 0.6889335206878898
+        },
+        "10974": {
+            "vis_similarity": 0.37161396414579206,
+            "object_match": 1,
+            "user_connection": 0,
+            "search_res": 0.08695652173913043,
+            "salt_metadata": 0.0,
+            "overall": 0.5831286588535296
+        },
+        "92578": {
+            "vis_similarity": 0.9404522794654988,
+            "object_match": 1,
+            "user_connection": 4,
+            "search_res": 0.0,
+            "salt_metadata": 0.0,
+            "overall": 0.693676578708206
+        },
+        "92043": {
+            "vis_similarity": 0.7722469418283798,
+            "object_match": 1,
+            "user_connection": 2,
+            "search_res": 0.0,
+            "salt_metadata": 0.0,
+            "overall": 0.6552156041780004
+        },
+        "103289": {
+            "vis_similarity": 0.6851172095042941,
+            "object_match": 1,
+            "user_connection": 9,
+            "search_res": 0.0,
+            "salt_metadata": 0.0,
+            "overall": 0.6352929640120276
         }
     },
     "10974": {
         "80225": {
-            "vis_similarity": 0.7679098684978326,
-            "object_match": 1,
+            "vis_similarity": 0.3000259760556214,
+            "object_match": 0,
             "user_connection": 5,
             "search_res": 0.0,
             "salt_metadata": 0.08,
-            "overall": 0.336426634832462
+            "overall": 0.12220240932644977
         },
         "97235": {
-            "vis_similarity": 0.19203105409043109,
+            "vis_similarity": 0.20953941009591703,
             "object_match": 1,
-            "user_connection": 1,
+            "user_connection": 2,
             "search_res": 0.0,
             "salt_metadata": 0.02631578947368421,
-            "overall": 0.3327048302245927
+            "overall": 0.5441813491516131
         },
         "87145": {
-            "vis_similarity": 0.7804682672534989,
+            "vis_similarity": 0.4700378232150709,
             "object_match": 0,
-            "user_connection": 1,
+            "user_connection": 5,
             "search_res": 0.0,
             "salt_metadata": 0.03333333333333333,
-            "overall": -0.0052059456374184635
+            "overall": 0.1298097844428057
         },
         "10944": {
-            "vis_similarity": 0.24956018877522568,
-            "object_match": 0,
-            "user_connection": 7,
+            "vis_similarity": 0.3300607404936817,
+            "object_match": 1,
+            "user_connection": 2,
             "search_res": 0.0,
             "salt_metadata": 0.07894736842105263,
-            "overall": 0.016090450949515347
+            "overall": 0.6070022997055525
         },
         "10951": {
-            "vis_similarity": 0.5871674984458596,
-            "object_match": 1,
-            "user_connection": 0,
+            "vis_similarity": 0.020964404188768104,
+            "object_match": 0,
+            "user_connection": 7,
             "search_res": 0.17543859649122806,
             "salt_metadata": 0.017857142857142856,
-            "overall": 0.39865735001509506
+            "overall": 0.05613984680307488
         },
         "31745": {
-            "vis_similarity": 0.4218716959394583,
-            "object_match": 1,
-            "user_connection": 3,
+            "vis_similarity": 0.4407367805718203,
+            "object_match": 0,
+            "user_connection": 10,
             "search_res": 0.08695652173913043,
             "salt_metadata": 0.0,
-            "overall": 0.3590381266432704
+            "overall": 0.12029637197857615
         },
         "92578": {
-            "vis_similarity": 0.3602246653868654,
+            "vis_similarity": 0.13557380360417515,
             "object_match": 1,
             "user_connection": 8,
             "search_res": 0.0,
             "salt_metadata": 0.05555555555555555,
-            "overall": 0.337317573467853
+            "overall": 0.5468593941263621
         },
         "92043": {
-            "vis_similarity": 0.2643059570712578,
+            "vis_similarity": 0.6204988947018705,
             "object_match": 0,
-            "user_connection": 7,
+            "user_connection": 1,
             "search_res": 0.0,
             "salt_metadata": 0.045454545454545456,
-            "overall": 0.007120214936052584
+            "overall": 0.172334657705412
         },
         "103289": {
-            "vis_similarity": 0.7468336806233271,
-            "object_match": 1,
-            "user_connection": 6,
+            "vis_similarity": 0.310727574980292,
+            "object_match": 0,
+            "user_connection": 10,
             "search_res": 0.0,
             "salt_metadata": 0.03125,
-            "overall": 0.324126258370021
+            "overall": 0.091986882350351
         }
     },
     "92578": {
         "80225": {
-            "vis_similarity": 0.4418025305725727,
-            "object_match": 1,
-            "user_connection": 7,
+            "vis_similarity": 0.48331140704219633,
+            "object_match": 0,
+            "user_connection": 0,
             "search_res": 0,
             "salt_metadata": 0.07407407407407407,
-            "overall": 0.34068236379890665
+            "overall": 0.1601411507117386
         },
         "97235": {
-            "vis_similarity": 0.4862916386207644,
-            "object_match": 0,
-            "user_connection": 4,
+            "vis_similarity": 0.4422364486683734,
+            "object_match": 1,
+            "user_connection": 1,
             "search_res": 0,
             "salt_metadata": 0.025,
-            "overall": -0.002143702316103221
+            "overall": 0.5965070881140807
         },
         "87145": {
-            "vis_similarity": 0.15893189492269366,
-            "object_match": 1,
-            "user_connection": 7,
+            "vis_similarity": 0.9518855350939633,
+            "object_match": 0,
+            "user_connection": 4,
             "search_res": 0.0,
             "salt_metadata": 0.03125,
-            "overall": 0.3345760535610601
+            "overall": 0.2385907911214879
         },
         "10944": {
-            "vis_similarity": 0.1370341110493024,
+            "vis_similarity": 0.08239212402521379,
+            "object_match": 0,
+            "user_connection": 7,
+            "search_res": 0.0,
+            "salt_metadata": 0.05,
+            "overall": 0.05233936281772302
+        },
+        "10951": {
+            "vis_similarity": 0.2792197278555334,
+            "object_match": 0,
+            "user_connection": 0,
+            "search_res": 0.0,
+            "salt_metadata": 0.06896551724137931,
+            "overall": 0.11005185529227685
+        },
+        "31745": {
+            "vis_similarity": 0.8220935392970862,
             "object_match": 1,
             "user_connection": 3,
             "search_res": 0.0,
-            "salt_metadata": 0.05,
-            "overall": 0.3398402807452264
-        },
-        "10951": {
-            "vis_similarity": 0.9079253965048472,
-            "object_match": 1,
-            "user_connection": 8,
-            "search_res": 0.0,
-            "salt_metadata": 0.06896551724137931,
-            "overall": 0.3310689311844207
-        },
-        "31745": {
-            "vis_similarity": 0.28262102985119786,
-            "object_match": 1,
-            "user_connection": 1,
-            "search_res": 0.0,
             "salt_metadata": 0.0,
-            "overall": 0.32425251265032057
+            "overall": 0.666613272900008
         },
         "10974": {
-            "vis_similarity": 0.5595798210855335,
+            "vis_similarity": 0.3651367009795701,
             "object_match": 1,
-            "user_connection": 8,
+            "user_connection": 5,
             "search_res": 0.0,
             "salt_metadata": 0.05555555555555555,
-            "overall": 0.3337740895084599
+            "overall": 0.5993500752965586
         },
         "92043": {
-            "vis_similarity": 0.6315305929034064,
-            "object_match": 1,
-            "user_connection": 4,
+            "vis_similarity": 0.9597292384877264,
+            "object_match": 0,
+            "user_connection": 6,
             "search_res": 0,
             "salt_metadata": 0.041666666666666664,
-            "overall": 0.328884072893706
+            "overall": 0.247363458997378
         },
         "103289": {
-            "vis_similarity": 0.08579910538426327,
+            "vis_similarity": 0.23317120398854607,
             "object_match": 0,
-            "user_connection": 4,
+            "user_connection": 6,
             "search_res": 0,
             "salt_metadata": 0.029411764705882353,
-            "overall": 0.006122002937244893
+            "overall": 0.07302162050821961
         }
     },
     "92043": {
         "80225": {
-            "vis_similarity": 0.5514489179395579,
+            "vis_similarity": 0.4350477805142642,
             "object_match": 0,
             "user_connection": 5,
             "search_res": 0,
             "salt_metadata": 0.07692307692307693,
-            "overall": 0.010198144671527073
+            "overall": 0.15101426795953637
         },
         "97235": {
-            "vis_similarity": 0.7659363855613391,
+            "vis_similarity": 0.6727539140435876,
             "object_match": 1,
-            "user_connection": 7,
+            "user_connection": 2,
             "search_res": 0,
             "salt_metadata": 0.038461538461538464,
-            "overall": 0.325661712957756
+            "overall": 0.6582352667033309
         },
         "87145": {
-            "vis_similarity": 0.9750742340789743,
-            "object_match": 1,
-            "user_connection": 1,
+            "vis_similarity": 0.06645634206954076,
+            "object_match": 0,
+            "user_connection": 0,
             "search_res": 0.0,
             "salt_metadata": 0.05555555555555555,
-            "overall": 0.3263887887245405
+            "overall": 0.05241779042245032
         },
         "10944": {
-            "vis_similarity": 0.11963874596841906,
-            "object_match": 1,
-            "user_connection": 9,
+            "vis_similarity": 0.07845762419013846,
+            "object_match": 0,
+            "user_connection": 2,
             "search_res": 0.0,
             "salt_metadata": 0.038461538461538464,
-            "overall": 0.3371494786534313
+            "overall": 0.04370895092357772
         },
         "10951": {
-            "vis_similarity": 0.04563428508552392,
+            "vis_similarity": 0.19771081564321658,
             "object_match": 1,
-            "user_connection": 9,
+            "user_connection": 6,
             "search_res": 0.0,
             "salt_metadata": 0.022727272727272728,
-            "overall": 0.3343739788336948
+            "overall": 0.5390723768587028
         },
         "31745": {
-            "vis_similarity": 0.6483993377380305,
-            "object_match": 0,
-            "user_connection": 8,
-            "search_res": 0.0,
-            "salt_metadata": 0.0,
-            "overall": -0.011525122811615409
-        },
-        "10974": {
-            "vis_similarity": 0.12339135223493014,
-            "object_match": 0,
+            "vis_similarity": 0.6074233041656476,
+            "object_match": 1,
             "user_connection": 4,
             "search_res": 0.0,
+            "salt_metadata": 0.0,
+            "overall": 0.6175278719147215
+        },
+        "10974": {
+            "vis_similarity": 0.7308388285554362,
+            "object_match": 1,
+            "user_connection": 6,
+            "search_res": 0.0,
             "salt_metadata": 0.045454545454545456,
-            "overall": 0.009624933914259021
+            "overall": 0.6762019816641169
         },
         "92578": {
-            "vis_similarity": 0.1745562009228443,
+            "vis_similarity": 0.47387939335817697,
             "object_match": 1,
-            "user_connection": 7,
+            "user_connection": 3,
             "search_res": 0,
             "salt_metadata": 0.041666666666666664,
-            "overall": 0.33700666908220966
+            "overall": 0.6149090691106696
         },
         "103289": {
-            "vis_similarity": 0.3327275398265457,
-            "object_match": 0,
-            "user_connection": 7,
+            "vis_similarity": 0.14968824972263906,
+            "object_match": 1,
+            "user_connection": 4,
             "search_res": 0,
             "salt_metadata": 0.05,
-            "overall": 0.0070858579950355835
+            "overall": 0.5463645091592829
         }
     },
     "103289": {
         "80225": {
-            "vis_similarity": 0.977930552428448,
+            "vis_similarity": 0.4035392670872613,
             "object_match": 1,
-            "user_connection": 0,
+            "user_connection": 5,
             "search_res": 0,
             "salt_metadata": 0.043478260869565216,
-            "overall": 0.3231979218202639
+            "overall": 0.6000392227411213
         },
         "97235": {
-            "vis_similarity": 0.2246392513545611,
+            "vis_similarity": 0.3997649856425235,
             "object_match": 0,
-            "user_connection": 9,
+            "user_connection": 5,
             "search_res": 0,
             "salt_metadata": 0.1388888888888889,
-            "overall": 0.03211820919174383
+            "overall": 0.18446377807008363
         },
         "87145": {
-            "vis_similarity": 0.8031716037788045,
+            "vis_similarity": 0.318795769462935,
+            "object_match": 1,
+            "user_connection": 6,
+            "search_res": 0.0,
+            "salt_metadata": 0.03571428571428571,
+            "overall": 0.5754603434759642
+        },
+        "10944": {
+            "vis_similarity": 0.8214424326506786,
+            "object_match": 1,
+            "user_connection": 3,
+            "search_res": 0.0,
+            "salt_metadata": 0.027777777777777776,
+            "overall": 0.6850755052864859
+        },
+        "10951": {
+            "vis_similarity": 0.1334638730887442,
+            "object_match": 0,
+            "user_connection": 10,
+            "search_res": 0.0,
+            "salt_metadata": 0.018518518518518517,
+            "overall": 0.04292457586161473
+        },
+        "31745": {
+            "vis_similarity": 0.5244477449193828,
             "object_match": 1,
             "user_connection": 0,
             "search_res": 0.0,
-            "salt_metadata": 0.03571428571428571,
-            "overall": 0.3242855813131973
-        },
-        "10944": {
-            "vis_similarity": 0.9614385276234013,
-            "object_match": 0,
-            "user_connection": 8,
-            "search_res": 0.0,
-            "salt_metadata": 0.027777777777777776,
-            "overall": -0.009867087500600584
-        },
-        "10951": {
-            "vis_similarity": 0.367383816723058,
-            "object_match": 0,
-            "user_connection": 7,
-            "search_res": 0.0,
-            "salt_metadata": 0.018518518518518517,
-            "overall": -0.0017153331361443053
-        },
-        "31745": {
-            "vis_similarity": 0.623982139622958,
-            "object_match": 0,
-            "user_connection": 2,
-            "search_res": 0.0,
             "salt_metadata": 0.0,
-            "overall": -0.011091113720900618
+            "overall": 0.598555103775312
         },
         "10974": {
-            "vis_similarity": 0.16414710139243838,
-            "object_match": 1,
-            "user_connection": 8,
+            "vis_similarity": 0.642256765578842,
+            "object_match": 0,
+            "user_connection": 9,
             "search_res": 0.0,
             "salt_metadata": 0.03125,
-            "overall": 0.33448335467697204
+            "overall": 0.16779265602406745
         },
         "92578": {
-            "vis_similarity": 0.05794122200853169,
-            "object_match": 0,
+            "vis_similarity": 0.890116552927676,
+            "object_match": 1,
             "user_connection": 7,
             "search_res": 0,
             "salt_metadata": 0.029411764705882353,
-            "overall": 0.0066171692776316945
+            "overall": 0.701872950581122
         },
         "92043": {
-            "vis_similarity": 0.12698437825626308,
-            "object_match": 1,
-            "user_connection": 3,
+            "vis_similarity": 0.679674242910532,
+            "object_match": 0,
+            "user_connection": 0,
             "search_res": 0,
             "salt_metadata": 0.05,
-            "overall": 0.34001891202678775
+            "overall": 0.18891084553341803
         }
     }
 }

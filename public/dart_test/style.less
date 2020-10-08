@@ -1,7 +1,17 @@
 @bg-radius: 300px;
 @bg-gray: rgba(100,100,100,0.1);
 
+@salt: #E91750;
+@object: #FCCD05;
+@knowledge: #A64AC9;
+@visual: #17E9E0;
+@white: #fcfcfc;
+
 // general
+body {
+  font-family: 'Roboto', sans-serif;
+}
+
 .square-img-container {
   position: relative;
   height: 0;
@@ -19,6 +29,38 @@
     height: 100%;
     object-fit: cover;
   }
+}
+
+.salt_metadata-border{
+  border-color: @salt;
+}
+
+.search_res-border{
+  border-color: @knowledge;
+}
+
+.vis_similarity-border {
+  border-color: @visual;
+}
+
+.object_match-border {
+  border-color: @object;
+}
+
+.salt_metadata-bg {
+  background-color: @salt;
+}
+
+.search_res-bg {
+  background-color: @knowledge;
+}
+
+.vis_similarity-bg {
+  background-color: @visual;
+}
+
+.object_match-bg {
+  background-color: @object;
 }
 
 // svg related
@@ -93,7 +135,11 @@
 .modal-content.transparent {
   background: transparent;
   border: none;
-  color: white;
+  color: @white;
+}
+
+.modal-dialog {
+  max-width: 75%;
 }
 
 // this modifies default bootstrap behavior
@@ -106,69 +152,126 @@
 }
 
 #connectionInfoModal {
+  .node-history {
+    .square-img-container {
+      margin-bottom: 1rem;
+    }
+
+    max-height: 100%;
+  }
   .top-container {
     margin-bottom: 40px;
   }
 
+  .bottom-container {
+    background-color: rgba(100, 100, 100, 0.5);
+    padding: 20px 0;
+  }
+
   .info-card {
     border: none;
+    background-color: transparent;
+
     .card-header {
       font-weight: 600;
-      color: white;
+      color: @white;
+      border-bottom-style: solid;
+      border-bottom-width: 3px;
+      background-color: transparent;
+    }
+  }
 
-      &.red {
-        background-color: #ff4a4a;
-      }
+  @scale-bar-width: 40px;
+  .scale-container {
+    height: 20vh;
+    width: @scale-bar-width;
+    background-color: #eeeeee;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
 
-      &.green {
-        background-color: #70b846;
-      }
+    .scale-indicator {
+      width: 100%;
+      height: 32%; // this is variable
+      background-color: @visual;
+      position: relative;
 
-      &.brown {
-        background-color: #e69c53;
-      }
-
-      &.pink {
-        background-color: #f59393;
+      .scale-text {
+        position: absolute;
+        right: -@scale-bar-width;
+        top: -10px;
       }
     }
+
   }
 
   .connection {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     font-size: 36px;
     font-weight: 600;
-    color: white;
+    color: @white;
     text-align: center;
+
+    .overall-score {
+      margin-bottom: 1.25rem;
+    }
+
+    .connection-line {
+      width: 100%;
+      height: 5px;
+      margin-bottom: 1.25rem;
+    }
   }
 }
 
-// from prev script
-body {
-  font-family: 'Roboto', sans-serif;
+#scoreAdjustmentModal {
+  .score-weight-row {
+    align-items: center;
+  }
+
+  .modal-header {
+    border-bottom: none;
+  }
+
+  .score-weight-col {
+    display: flex;
+
+    .percent {
+      margin-right: 10px;
+    }
+
+    .lock-icon {
+      width: 20px;
+      height: 20px;
+      background-size: cover;
+      background-image: url('./icons/lock-open.svg');
+      cursor: pointer;
+
+      &.locked {
+        background-image: url('./icons/lock.svg');
+      }
+    }
+  }
 }
 
+
+// from prev script
 .link-toggles {
   position: fixed;
   bottom: 30px;
   right: 30px;
 
-  background-color: rgba(50, 50, 50, 0.4);
+  background-color: rgba(0, 0, 0, 0.4);
   border-radius: 10px;
+  padding: 15px;
 
-  color: white;
+  color: @white;
 
-  font-weight: 300;
-
-}
-
-.edit-button {
-  margin-left: 5px;
-  background-color: transparent;
-  color: white;
-  border: none;
+  //font-weight: 300;
 }
 
 .link-toggle {
@@ -184,7 +287,6 @@ body {
 }
 
 .color-code {
-  width: 60px;
   //border-right: 1px solid white;
 }
 
@@ -197,40 +299,36 @@ body {
   justify-content: center;
 }
 
-.toggle {
-  display: inline-block;
-  height: 20px;
-  width: 20px;
+.toggle-container {
+  border: 3px solid @white;
   border-radius: 50%;
-  border: 1px solid white;
+  filter: drop-shadow(0, 8px, 6px);
+  //font-weight: 600;
+
+  &.edit-container {
+    background-color: @white;
+    cursor: pointer;
+  }
+
+  .toggle {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+
+    &.disabled {
+      opacity: 0.1;
+    }
+
+    &.edit-button {
+      background-color: @white;
+      background-image: url("./plus.svg");
+      background-size: cover;
+    }
+  }
 }
 
-#vis_similarity_toggle {
-  background-color: #1b570a;
-}
 
-#search_res_toggle {
-  background-color: #a1cfca;
-}
-
-#object_match_toggle {
-  background-color: #d66711;
-}
-
-#salt_metadata_toggle {
-  background-color: #ebaed2;
-}
-
-#user_connection_toggle {
-  background-color: #bae874;
-}
-#overall_toggle {
-  background-color: #9c1a27;
-}
-
-.toggle.disabled {
-  opacity: 0.4;
-}
+// customize range input color
 
 
 
