@@ -1,7 +1,6 @@
 <html lang="tr">
 <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=12.0, minimum-scale=0.01, user-scalable=yes"/>
 
     <title>Salt Grafik Deneme</title>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
@@ -104,86 +103,83 @@
             <div class="modal-content transparent">
                 <div class="modal-body">
                     <div class="container-fluid">
-                        <div class="row">
-                            <div class="node-history col-lg-2">
-                                <!-- ko foreach: visitedNodes -->
-                                <div class="square-img-container">
-                                    <img class="square-img" data-bind="attr: {src: $data}" />
-                                </div>
-                                <!-- /ko -->
+                        <div class="node-history">
+                            <!-- ko foreach: visitedNodes -->
+                            <div class="square-img-container">
+                                <img class="square-img" data-bind="attr: {src: $data}" />
                             </div>
-                            <div class="info col-lg-10">
-                                <div class="top-container row">
-                                    <div class="col">
-                                        <div class="square-img-container">
-                                            <img class="root-img square-img" src="" />
+                            <!-- /ko -->
+                        </div>
+                        <div class="info">
+                            <div class="top-container row">
+                                <div class="col">
+                                    <div class="square-img-container">
+                                        <img class="root-img square-img" src="" />
+                                    </div>
+                                </div>
+                                <div class="connection col">
+                                    <div class="overall-score">Overall Score</div>
+                                    <div class="connection-line search_res-bg"></div>
+                                    <div class="connection-line object_match-bg"></div>
+                                    <div class="connection-line vis_similarity-bg"></div>
+                                    <div class="connection-line salt_metadata-bg"></div>
+                                </div>
+                                <div class="col">
+                                    <div class="square-img-container">
+                                        <img class="connected-img square-img" src="" data-bind="click: () => {centerConnectedImage()}"/>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bottom-container row">
+                                <div class="col-3">
+                                    <div class="card info-card">
+                                        <div class="card-header search_res-border">
+                                            Knowledge API
                                         </div>
-                                    </div>
-                                    <div class="connection col">
-                                        <div class="overall-score">Overall Score</div>
-                                        <div class="connection-line search_res-bg"></div>
-                                        <div class="connection-line object_match-bg"></div>
-                                        <div class="connection-line vis_similarity-bg"></div>
-                                        <div class="connection-line salt_metadata-bg"></div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="square-img-container">
-                                            <img class="connected-img square-img" src="" data-bind="click: () => {centerConnectedImage()}"/>
+                                        <div class="card-body">
+                                            Keywords
                                         </div>
                                     </div>
                                 </div>
-                                <div class="bottom-container row">
-                                    <div class="col-3">
-                                        <div class="card info-card">
-                                            <div class="card-header search_res-border">
-                                                Knowledge API
-                                            </div>
-                                            <div class="card-body">
-                                                Keywords
-                                            </div>
+                                <div class="col-3">
+                                    <div class="card info-card">
+                                        <div class="card-header object_match-border">
+                                            Object Recognition
+                                        </div>
+                                        <div class="card-body">
+                                            Keywords
                                         </div>
                                     </div>
-                                    <div class="col-3">
-                                        <div class="card info-card">
-                                            <div class="card-header object_match-border">
-                                                Object Recognition
-                                            </div>
-                                            <div class="card-body">
-                                                Keywords
-                                            </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="card info-card">
+                                        <div class="card-header vis_similarity-border">
+                                            Visual Similarity
                                         </div>
-                                    </div>
-                                    <div class="col-3">
-                                        <div class="card info-card">
-                                            <div class="card-header vis_similarity-border">
-                                                Visual Similarity
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="scale-container">
-                                                    <div class="scale-indicator">
-                                                        <div class="scale-text">
-                                                            32%
-                                                        </div>
+                                        <div class="card-body">
+                                            <div class="scale-container">
+                                                <div class="scale-indicator">
+                                                    <div class="scale-text">
+                                                        32%
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-3">
-                                        <div class="card info-card">
-                                            <div class="card-header salt_metadata-border">
-                                                Metadata Tags
-                                            </div>
-                                            <div class="card-body">
-                                                Keywords
-                                            </div>
+                                </div>
+                                <div class="col-3">
+                                    <div class="card info-card">
+                                        <div class="card-header salt_metadata-border">
+                                            Metadata Tags
+                                        </div>
+                                        <div class="card-body">
+                                            Keywords
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>

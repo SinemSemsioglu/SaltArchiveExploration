@@ -14,6 +14,8 @@ let visitedNodes = ko.observableArray([]);
 radiusOffset = 150;
 baseRadius = radiusOffset * 3 / 2; // 1 for radius of the root elm's circle 1/2 for half of the extra radius of each circle
 
+const scoreComponents = ['vis_similarity', 'object_match', 'search_res', 'salt_metadata'];
+
 const thresholds = {
     vis_similarity: 0.5,
     object_match: 1,
@@ -161,20 +163,32 @@ const initClick = () => {
 
         let scoresObj = findByProp(scores[rootId].children, id, 'name');
         $('.connection').find('.overall-score').text(Math.round(scoresObj.overall * 100) + '%', 'name')
+
+        // todo can also use the scoreInfo comp?
+        scoreComponents.forEach((scoreType) => {
+            let scoreLine = $('.connection-line.' + scoreType + '-bg');
+            if (scoresObj[scoreType]>= thresholds[scoreType]) scoreLine.show();
+            else scoreLine.hide();
+        })
+
         let percentVal = Math.round(scoresObj.vis_similarity * 100) + '%';
         $('.scale-indicator').height(percentVal);
         $('.scale-text').text(percentVal);
+
+        // todo process other score info here
     })
 }
 
 // todo assuming we already have the data
 const centerConnectedImage = () => {
     if (connectedId != null) {
+        $('#connectionInfoModal').modal('hide');
         koVals.visitedNodes.push(findByProp(nodes, rootId, 'id','url'));
         rootId = connectedId;
         initializeGraph();
         initClick();
         connectedId = null;
+
     }
 }
 
