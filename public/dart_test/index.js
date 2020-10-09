@@ -1,15 +1,5 @@
 let height = 600
 let width = 1200 // todo this might need to be changed
-const scoreTypes = ["vis_similarity", "object_match", "search_res", "salt_metadata", "overall"];
-const currScoreTypes = ["vis_similarity", "object_match", "search_res", "salt_metadata", "overall"]
-
-const colorScoreMap = {
-    "search_res": "#a1cfca",
-    "vis_similarity": "#1b570a",
-    "object_match": "#d66711",
-    "salt_metadata": "#ebaed2",
-    "overall": "#9c1a27"
-}
 
 let nodes;
 let scores;
@@ -188,6 +178,26 @@ const centerConnectedImage = () => {
     }
 }
 
+let zoomLevel = ko.observable(100);
+
+const zoom = (deltaLevel) => {
+    zoomLevel(zoomLevel() + deltaLevel)
+
+    // Set page zoom via CSS
+    $('.main-content').css({
+        transform: 'scale(' + (zoomLevel() / 100) + ')', // set zoom
+        transformOrigin: '50% 50%' // set transform scale base
+    });
+
+    /* Adjust page to zoom width
+    if (zoomLevel() > 100) $('body').css({
+        width: (zoomLevel() * 1.2) + '%'
+    });
+    else $('body').css({
+        width: '100%'
+    });*/
+}
+
 const initKO = () => {
     let scoreInfo = [
         {
@@ -224,7 +234,7 @@ const initKO = () => {
             scoreName: "Metadata Tagging",
             scoreScale: "discrete",
             disabled: ko.observable(true),
-            scoreLocked: ko.observable(false)
+            scoreLocked: ko.observable(false),
         }
     ]
 
@@ -243,6 +253,9 @@ const initKO = () => {
             getNewScores,
             centerConnectedImage,
             visitedNodes,
+            zoomLevel,
+            zoom,
+            infoActive: ko.observable(false)
         };
 
     ko.applyBindings(koVals);

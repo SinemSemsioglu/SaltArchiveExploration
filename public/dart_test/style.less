@@ -1,5 +1,6 @@
 @bg-radius: 300px;
 @bg-gray: rgba(100,100,100,0.1);
+@dark-overlay: rgba(0, 0, 0, 0.5);
 
 @salt: #E91750;
 @object: #FCCD05;
@@ -7,9 +8,23 @@
 @visual: #17E9E0;
 @white: #fcfcfc;
 
+@icon-size: 20px;
+@border-r: 10px;
+
+@page-padding: 20px;
+@fixed-z-index: 5;
+
+@mid-spacing: 15px;
+@small-spacing: 10px;
+
 // general
 body {
   font-family: 'Roboto', sans-serif;
+  background-color: @bg-gray;
+}
+
+.blur {
+  backdrop-filter: blur(10px);
 }
 
 .square-img-container {
@@ -29,6 +44,21 @@ body {
     height: 100%;
     object-fit: cover;
   }
+}
+
+.fixed-elm {
+  position: fixed;
+  z-index: @fixed-z-index;
+  background-color: @dark-overlay;
+  color: @white;
+  border-radius: @border-r;
+}
+
+.icon {
+  width: @icon-size;
+  height: @icon-size;
+  background-size: cover;
+  cursor: pointer;
 }
 
 .salt_metadata-border{
@@ -63,9 +93,129 @@ body {
   background-color: @object;
 }
 
+// fixed elements
+.fixed-elements {
+}
+
+.project-header {
+  .fixed-elm();
+  left: @page-padding;
+  top: @page-padding;
+
+  background-color: transparent;
+  color: black;
+  font-size: 1.8em;
+
+  .project-name {
+    display: flex;
+  }
+
+  .info-icon {
+    .icon();
+    background-image: url("icons/info-24px.svg");
+
+    margin-top: @mid-spacing;
+  }
+
+  .page-info {
+    background-color: @dark-overlay;
+    border-radius: @border-r;
+    padding: @small-spacing;
+    color: @white;
+    font-size: small;
+    max-width: 300px;
+    margin-top: @small-spacing;
+  }
+}
+
+.zoom-buttons {
+  .fixed-elm();
+  left: @page-padding;
+  top: 50%;
+  transform: translate(0, -50%);
+  text-align: center;
+  font-size: 2em;
+  width: 1.5em;
+  cursor: pointer;
+
+  .top {
+    border-bottom: 1px solid @white;
+  }
+
+  .disabled {
+    cursor: inherit;
+    opacity: 0.2;
+  }
+}
+
+.info-trigger {
+  .fixed-elm();
+  top: @page-padding;
+  right: @page-padding;
+  cursor: pointer;
+  padding: @mid-spacing;
+}
+
+// from prev script
+.toggles {
+  .fixed-elm();
+  bottom: @page-padding;
+  right: @page-padding;
+  padding: @mid-spacing;
+
+  .toggle-row {
+    height: 50px;
+    display: flex;
+  }
+
+  .score-component {
+    display: inline-flex;
+    height: 25px;
+    align-items: center;
+    padding: @mid-spacing;
+
+    &.color-code, &.score-name {
+      justify-content: center;
+    }
+  }
+
+  .toggle-container {
+    border: 3px solid @white;
+    border-radius: 50%;
+    filter: drop-shadow(0, 8px, 6px);
+    //font-weight: 600;
+
+    &.edit-container {
+      background-color: @white;
+    }
+
+    .toggle {
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      cursor: pointer;
+
+      &.disabled {
+        opacity: 0.1;
+      }
+
+      &.edit-button {
+        background-color: @white;
+        background-image: url("./plus.svg");
+        background-size: cover;
+      }
+    }
+  }
+}
+
 // svg related
+.main-content {
+  position: relative;
+}
+
 #demo7 {
-  position: fixed;
+  position: absolute;
+  overflow: visible;
   top: 0;
   left: 0;
   bottom: 0;
@@ -96,8 +246,7 @@ body {
 .bg-base {
   width: 100vw;
   height: 100vh;
-  background-color: @bg-gray;
-  overflow: hidden;
+  overflow: visible;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -147,10 +296,6 @@ body {
   background-color: #666;
 }
 
-.blur {
-  backdrop-filter: blur(10px);
-}
-
 #connectionInfoModal {
   .node-history {
     .square-img-container {
@@ -164,8 +309,9 @@ body {
   }
 
   .bottom-container {
-    background-color: rgba(100, 100, 100, 0.5);
-    padding: 20px 0;
+    background-color: @dark-overlay;
+    padding: @mid-spacing 0;
+    margin: 0;
   }
 
   .info-card {
@@ -245,11 +391,9 @@ body {
     }
 
     .lock-icon {
-      width: 20px;
-      height: 20px;
-      background-size: cover;
+      .icon();
+
       background-image: url('./icons/lock-open.svg');
-      cursor: pointer;
 
       &.locked {
         background-image: url('./icons/lock.svg');
@@ -259,73 +403,7 @@ body {
 }
 
 
-// from prev script
-.link-toggles {
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
 
-  background-color: rgba(0, 0, 0, 0.4);
-  border-radius: 10px;
-  padding: 15px;
-
-  color: @white;
-
-  //font-weight: 300;
-}
-
-.link-toggle {
-  height: 50px;
-  display: flex;
-}
-
-.score-component {
-  display: inline-flex;
-  height: 25px;
-  align-items: center;
-  padding: 14px;
-}
-
-.color-code {
-  //border-right: 1px solid white;
-}
-
-.color-code {
-  //justify-content: flex-start;
-  justify-content: center;
-}
-
-.score-name {
-  justify-content: center;
-}
-
-.toggle-container {
-  border: 3px solid @white;
-  border-radius: 50%;
-  filter: drop-shadow(0, 8px, 6px);
-  //font-weight: 600;
-
-  &.edit-container {
-    background-color: @white;
-    cursor: pointer;
-  }
-
-  .toggle {
-    height: 20px;
-    width: 20px;
-    border-radius: 50%;
-
-    &.disabled {
-      opacity: 0.1;
-    }
-
-    &.edit-button {
-      background-color: @white;
-      background-image: url("./plus.svg");
-      background-size: cover;
-    }
-  }
-}
 
 
 // customize range input color
