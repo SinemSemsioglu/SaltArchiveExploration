@@ -136,7 +136,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="bottom-container row">
+                                <div class="bottom-container dark row">
                                     <div class="col-sm-3">
                                         <div class="card info-card">
                                             <div class="card-header search_res-border">
@@ -152,7 +152,7 @@
                                             <div class="card-header object_match-border">
                                                 Object Recognition
                                             </div>
-                                            <div class="card-body">
+                                            <div class="card-body object-recognition">
                                                 Keywords
                                             </div>
                                         </div>
@@ -201,24 +201,19 @@
                                 <div class="top-container row">
                                     <div class="col">
                                         <div class="square-img-container">
-                                            <img class="node-info-img square-img" src="" />
+                                            <img class=" node-info-img square-img"  data-bind="attr: {src: rootInfo.thumb_url + '.jpg'}" />
                                         </div>
                                     </div>
                                 </div>
-                                <div class="bottom-container row">
-                                    <div class="col-sm-6">
+                                <div class="bottom-container dark row" data-bind="foreach: Object.keys(rootInfo)">
                                         <div class="info-row">
-                                            <div class="info-label">
-                                                Label
+                                            <div class="info-label" data-bind="text: $data">
+                                                Title
                                             </div>
-                                            <div class="info-text">
+                                            <div class="info-text" data-bind="text: rootInfo[$data]">
                                                 Info Text
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="col-sm-6">
-
-
                                     </div>
                                 </div>
                             </div>
@@ -242,7 +237,7 @@
                                     <!-- ko foreach: starterNodes -->
                                     <div class="col-sm starter-im">
                                         <div class="square-img-container">
-                                            <img class="square-img" data-bind="attr: {src: url}, click: startJourney(id)" />
+                                            <img class="square-img" data-bind="attr: {src: thumb_url + '.jpg'}, click: () => {startJourney(id)}" />
                                         </div>
                                     </div>
                                     <!-- /ko -->

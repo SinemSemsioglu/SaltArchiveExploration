@@ -12,6 +12,16 @@ let squareSize = 60;
 let lastChangeRequest = moment();
 let visitedNodes = ko.observableArray([]);
 let starterNodes = ko.observableArray([]);
+let rootInfo = {
+    "spatial": ko.observable(""),
+    "date_issued":ko.observable(""),
+    "format":ko.observable(""),
+    "subject":ko.observable(""),
+    "title": ko.observable(""),
+    "type": ko.observable("")
+};
+
+let infoActive = ko.observable(false);
 
 radiusOffset = 150;
 baseRadius = radiusOffset * 3 / 2; // 1 for radius of the root elm's circle 1/2 for half of the extra radius of each circle
@@ -20,35 +30,22 @@ const scoreComponents = ['vis_similarity', 'object_match', 'search_res', 'salt_m
 
 const thresholds = {
     vis_similarity: 0.5,
-    object_match: 1,
-    search_res: 5,
+    object_match: 0.5,
+    search_res: 0.5,
     salt_metadata: 0.05,
     overall: {
-        zero: 0.66,
-        one: 0.33,
+        zero: 0.2,
+        one: 0.1,
         two: 0
     }
 }
 
-const main = async() => {
-    await getData();
-
-    for (let i =0; i < 5; i++) {
-        starterNodes.push(nodes[i]);
-    }
-
-    initializePhotoDefs();
-    initKO();
-
-    $("#startModal").modal('show');
+const main = () => {
+    getRandomElms();
 }
 
 const startJourney = (id) => {
-    rootId = id;
-    initializeGraph();
-    initClick();
-    $("#startModal").modal('hide');
-
+   getDataById(id, () => { $("#startModal").modal('hide')});
 }
 
 // graph related functions
@@ -62,7 +59,7 @@ const initializePhotoDefs = () => {
         .attr("width", 1)
         .attr("height", 1)
         .append("svg:image")
-        .attr('xlink:href', d => d.url)
+        .attr('xlink:href', d => d.thumb_url + '.jpg')
         .attr("width", 80)
         .attr("height", 80)
         .attr("preserveAspectRatio", "xMidYMid slice");
@@ -172,8 +169,8 @@ const initClick = () => {
     $(".data-point").not(".root-node").click((event)=> {
         let id = event.target.classList[0];
         connectedId = id;
-        $($('.root-img')[0]).attr('src', findByProp(nodes, rootId, 'id','url'));
-        $($('.connected-img')[0]).attr('src', findByProp(nodes, id, 'id','url'));
+        $($('.root-img')[0]).attr('src', findByProp(nodes, rootId, 'id','thumb_url') + '.jpg');
+        $($('.connected-img')[0]).attr('src', findByProp(nodes, id, 'id','thumb_url') + '.jpg');
 
         let scoresObj = findByProp(scores[rootId].children, id, 'name');
         $('.connection').find('.overall-score').text(Math.round(scoresObj.overall * 100) + '%', 'name')
@@ -197,12 +194,14 @@ const initClick = () => {
         $('.scale-text').text(percentVal);
 
         // todo process other score info here
+        $('.object-recognition').text(scoresObj.matched_objects.join(', '));
 
         $('#connectionInfoModal').modal('show')
     })
 
     $(".root-node").click(() => {
-        $($('.node-info-img')[0]).attr('src', findByProp(nodes, rootId, 'id','url'));
+        // todo embed this into rootInfo
+        $($('.node-info-img')[0]).attr('src', findByProp(nodes, rootId, 'id','thumb_url') + '.jpg');
         // todo get details from data object
         $('#nodeInfoModal').modal('show');
     });
@@ -211,13 +210,12 @@ const initClick = () => {
 // todo assuming we already have the data
 const centerConnectedImage = () => {
     if (connectedId != null) {
-        $('#connectionInfoModal').modal('hide');
-        visitedNodes.push(findByProp(nodes, rootId, 'id','url'));
-        rootId = connectedId;
-        initializeGraph();
-        initClick();
-        connectedId = null;
-
+        getDataById(connectedId, () => {
+            $('#connectionInfoModal').modal('hide');
+            visitedNodes.push(findByProp(nodes, rootId, 'id','thumb_url') + '.jpg');
+            rootId = connectedId;
+            connectedId = null;
+        });
     }
 }
 
@@ -296,9 +294,10 @@ const initKO = () => {
             visitedNodes,
             zoomLevel,
             zoom,
-            infoActive: ko.observable(false),
+            infoActive,
             starterNodes,
-            startJourney
+            startJourney,
+            rootInfo
         };
 
     ko.applyBindings(koVals);
@@ -314,6 +313,48 @@ const getData = async () => {
     } catch(err) {
         alert(err)
     }
+}
+
+const getDataById = (id, extracallback) => {
+    $.ajax({
+        type: "POST",
+        url: "/getById",
+        data: {id},
+        success: async (resp) => {
+            if (resp.success) {
+                rootId = id;
+                nodes = resp.data.nodes;
+                setRootInfo(findByProp(nodes, rootId, 'id'));
+                parseScoresFile(resp.data.scores);
+                initializePhotoDefs();
+                initializeGraph();
+                initClick();
+                extracallback();
+            }
+        },
+        dataType: "json"
+    });
+
+}
+
+const getRandomElms = async () => {
+    $.ajax({
+        type: "POST",
+        url: "/getRandomElements",
+        data: {numElements: 5},
+        success: async (resp) => {
+            if (resp.success) {
+
+                for (let i =0; i < 5; i++) {
+                    starterNodes(resp.data.nodes);
+                }
+
+                initKO();
+                $("#startModal").modal('show');
+            }
+        },
+        dataType: "json"
+    });
 }
 
 // todo i'm sure there is a better way
@@ -335,7 +376,7 @@ const calculateNewWeights = (changedScore) => {
 
     koVals.scoreInfo.forEach((scoreObj) => {
         if (scoreObj.scoreCode != changedScore && !scoreObj.scoreLocked()) {
-            scoreObj.scoreWeight(parseFloat(scoreObj.scoreWeight()) + overdrive/numChangeableScores);
+            scoreObj.scoreWeight(parseFloat(scoreObj.scoreWeight()) + overdrive/(numChangeableScores-1));
         }
     });
 
@@ -346,9 +387,7 @@ const calculateNewWeights = (changedScore) => {
 }
 
 const getNewScores = () => {
-    let scoreData = {
-        a_U: 0 // for now we don't consider user score
-    };
+    let scoreData = {};
 
     koVals.scoreInfo.forEach((scoreObj) => {
         scoreData[scoreObj.scoreCode] = scoreObj.scoreWeight()/100;
@@ -357,13 +396,14 @@ const getNewScores = () => {
     $.ajax({
         type: "POST",
         url: "/changeWeights",
-        data: scoreData,
+        contentType: "application/json",
+        data: JSON.stringify({id: rootId, weights: scoreData}),
         success: async (resp) => {
             if (resp.success) {
-                // todo get json for new scores
-                // todo init graph again
-
-                parseScoresFile(resp.scores);
+                nodes = resp.data.nodes;
+                setRootInfo(findByProp(nodes, rootId, 'id'));
+                parseScoresFile(resp.data.scores);
+                initializePhotoDefs();
                 initializeGraph();
                 initClick();
             }
@@ -397,6 +437,12 @@ const parseScoresFile = (file) => {
 }
 
 // util functions
+const setRootInfo = (newInfo) => {
+    Object.keys(rootInfo).forEach((key) => {
+        rootInfo[key](newInfo[key] || "-");
+    })
+}
+
 const findByProp = (arr, val, searchProp, returnProp) => {
     let elm = arr.find((elm) => elm[searchProp] == val);
     if (returnProp ) return elm[returnProp];

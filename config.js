@@ -1,5 +1,6 @@
 config = {
     port: 8080,
+    numNodes: 60,
     csv: {
         fields: ["id", "language", "type", "location", "temporal", "issue_date", "url", "relation", "collection"],
         years: [1800, 1850, 1900, 1920, 1930, 1940, 1950, 1960, 1970, 1980, 1990, 2000]

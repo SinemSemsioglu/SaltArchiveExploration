@@ -295,6 +295,14 @@ a:hover {
 #startModal img {
   cursor: pointer;
 }
+.top-container {
+  margin-bottom: 40px;
+}
+.bottom-container.dark {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 15px 0;
+  margin: 0;
+}
 #connectionInfoModal .node-history {
   position: absolute;
   opacity: 0.4;
@@ -316,14 +324,6 @@ a:hover {
 }
 #connectionInfoModal .node-history .square-img-container {
   margin-bottom: 1rem;
-}
-#connectionInfoModal .top-container {
-  margin-bottom: 40px;
-}
-#connectionInfoModal .bottom-container {
-  background-color: rgba(0, 0, 0, 0.5);
-  padding: 15px 0;
-  margin: 0;
 }
 #connectionInfoModal .im-interaction {
   display: flex;
@@ -404,6 +404,20 @@ a:hover {
 }
 #scoreAdjustmentModal .score-weight-col .lock-icon.locked {
   background-image: url('/icons/lock.svg');
+}
+#nodeInfoModal .square-img-container {
+  width: 30%;
+  padding-bottom: 30%;
+  margin: 0 auto;
+}
+#nodeInfoModal .bottom-container {
+  padding: 15px;
+}
+#nodeInfoModal .bottom-container .info-row {
+  flex-basis: 50%;
+}
+#nodeInfoModal .bottom-container .info-row .info-text {
+  font-weight: 300;
 }
 @media all and (max-width: 576px) {
   .zoom-buttons {

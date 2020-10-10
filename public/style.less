@@ -376,6 +376,16 @@ a {
   }
 }
 
+.top-container {
+  margin-bottom: 40px;
+}
+
+.bottom-container.dark {
+  background-color: @dark-overlay;
+  padding: @mid-spacing 0;
+  margin: 0;
+}
+
 #connectionInfoModal {
   .node-history {
     position: absolute;
@@ -399,16 +409,6 @@ a {
     .square-img-container {
       margin-bottom: 1rem;
     }
-  }
-
-  .top-container {
-    margin-bottom: 40px;
-  }
-
-  .bottom-container {
-    background-color: @dark-overlay;
-    padding: @mid-spacing 0;
-    margin: 0;
   }
 
   .im-interaction {
@@ -503,6 +503,24 @@ a {
 
       &.locked {
         background-image: url('/icons/lock.svg');
+      }
+    }
+  }
+}
+
+#nodeInfoModal {
+  .square-img-container {
+    width: 30%;
+    padding-bottom: 30%;
+    margin: 0 auto;
+  }
+
+  .bottom-container {
+    padding: @mid-spacing;
+    .info-row {
+      flex-basis: 50%;
+      .info-text {
+        font-weight: 300;
       }
     }
   }

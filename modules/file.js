@@ -5,7 +5,7 @@ const moment = require('moment');
 const config = require('../config.js').config;
 
 //joining path of directory
-const directoryPath = path.join(__dirname, '../data');
+const directoryPath = path.join(__dirname, '../data/test_data');
 
 const getFilesCategorical = async() => {
     let categories = fs.readdirSync(directoryPath);

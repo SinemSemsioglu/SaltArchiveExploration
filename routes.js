@@ -7,6 +7,8 @@ router.post('/matchLanguageType', analysis.matchLanguageType);
 router.post('/matchTypeLanguage', analysis.matchTypeLanguage);
 router.post('/findMatch', analysis.findCloseItem);
 router.post('/getRandomItem', analysis.getRandomItem);
-router.post("/changeWeights", score.run)
+router.post("/changeWeights", score.changeWeights)
+router.post("/getRandomElements", score.getRandomElements)
+router.post("/getById", score.getById)
 
 module.exports = router;
