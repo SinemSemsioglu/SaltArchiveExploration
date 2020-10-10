@@ -303,18 +303,6 @@ const initKO = () => {
     ko.applyBindings(koVals);
 }
 
-
-// data related functions
-const getData = async () => {
-    try {
-        let nodeData = await $.getJSON("./data/sample_data.json");
-        nodes = nodeData.nodes;
-        parseScoresFile(await $.getJSON("./data/similarity_scores.json"));
-    } catch(err) {
-        alert(err)
-    }
-}
-
 const getDataById = (id, extracallback) => {
     $.ajax({
         type: "POST",
