@@ -212,7 +212,7 @@ const initClick = () => {
 const centerConnectedImage = () => {
     if (connectedId != null) {
         $('#connectionInfoModal').modal('hide');
-        koVals.visitedNodes.push(findByProp(nodes, rootId, 'id','url'));
+        visitedNodes.push(findByProp(nodes, rootId, 'id','url'));
         rootId = connectedId;
         initializeGraph();
         initClick();

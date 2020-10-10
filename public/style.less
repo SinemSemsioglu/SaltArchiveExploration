@@ -27,11 +27,23 @@ body {
   background-color: @bg-gray;
 }
 
+a {
+  font-weight: 300;
+  font-style: oblique;
+  text-decoration: underline;
+  color: inherit;
+
+  &:hover {
+    color: @salt;
+  }
+}
+
 .viewport {
   height: 100vh;
   width: 100vw;
   overflow: hidden;
 }
+
 .blur {
   backdrop-filter: blur(10px);
 }
@@ -358,6 +370,12 @@ body {
   }
 }
 
+#startModal {
+  img {
+    cursor: pointer;
+  }
+}
+
 #connectionInfoModal {
   .node-history {
     position: absolute;
@@ -391,6 +409,19 @@ body {
     background-color: @dark-overlay;
     padding: @mid-spacing 0;
     margin: 0;
+  }
+
+  .im-interaction {
+    display: flex;
+    justify-content: space-between;
+
+    .center-button {
+      cursor: pointer;
+      font-weight: 600;
+      &:hover {
+        color: @salt;
+      }
+    }
   }
 
   .info-card {
@@ -508,6 +539,11 @@ body {
       display: none;
     }
 
+    .im-interaction {
+      flex-direction: column-reverse;
+      font-size: 12px;
+    }
+
     .scale-container {
       height: @scale-bar-width;
       width: 100%;
@@ -526,6 +562,8 @@ body {
     }
 
     .connection {
+      justify-content: flex-start;
+
       .overall-score {
         font-size: 1em;
         margin-bottom: 0;
@@ -533,6 +571,13 @@ body {
       .connection-line {
         margin-bottom: 0.6rem;
       }
+    }
+  }
+
+  #startModal {
+    .starter-im {
+      flex-basis: 50%;
+      margin-bottom: @small-spacing;
     }
   }
 }

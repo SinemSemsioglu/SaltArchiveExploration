@@ -115,6 +115,9 @@
                                         <div class="square-img-container">
                                             <img class="root-img square-img" src="" />
                                         </div>
+                                        <div class="im-interaction">
+                                            <a href="">visit archive</a>
+                                        </div>
                                     </div>
                                     <div class="connection col">
                                         <div class="overall-score">Overall Score</div>
@@ -125,7 +128,11 @@
                                     </div>
                                     <div class="col">
                                         <div class="square-img-container">
-                                            <img class="connected-img square-img" src="" data-bind="click: () => {centerConnectedImage()}"/>
+                                            <img class="connected-img square-img" src=""/>
+                                        </div>
+                                        <div class="im-interaction">
+                                            <span class="center-button" data-bind="click: () => {centerConnectedImage()}">move to center</span>
+                                            <a href="">visit archive</a>
                                         </div>
                                     </div>
                                 </div>
@@ -233,7 +240,7 @@
                             <div class="info">
                                 <div class="top-container row">
                                     <!-- ko foreach: starterNodes -->
-                                    <div class="col">
+                                    <div class="col-sm starter-im">
                                         <div class="square-img-container">
                                             <img class="square-img" data-bind="attr: {src: url}, click: startJourney(id)" />
                                         </div>
@@ -306,10 +313,10 @@
                         <div class="container-fluid">
                             <div class="info">
                                 <div class="top-container row">
-                                    <!-- ko foreach: nodeHistory -->
+                                    <!-- ko foreach: visitedNodes -->
                                     <div class="col">
                                         <div class="square-img-container">
-                                            <img class="square-img" data-bind="attr: {src: url}, click: startJourney(id)" />
+                                            <img class="square-img" data-bind="attr: {src: $data}" />
                                         </div>
                                     </div>
                                     <!-- /ko -->

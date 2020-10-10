@@ -2,6 +2,15 @@ body {
   font-family: 'Roboto', sans-serif;
   background-color: rgba(100, 100, 100, 0.1);
 }
+a {
+  font-weight: 300;
+  font-style: oblique;
+  text-decoration: underline;
+  color: inherit;
+}
+a:hover {
+  color: #E91750;
+}
 .viewport {
   height: 100vh;
   width: 100vw;
@@ -283,6 +292,9 @@ body {
 .modal-header .modal-title {
   margin-left: 1rem;
 }
+#startModal img {
+  cursor: pointer;
+}
 #connectionInfoModal .node-history {
   position: absolute;
   opacity: 0.4;
@@ -312,6 +324,17 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
   padding: 15px 0;
   margin: 0;
+}
+#connectionInfoModal .im-interaction {
+  display: flex;
+  justify-content: space-between;
+}
+#connectionInfoModal .im-interaction .center-button {
+  cursor: pointer;
+  font-weight: 600;
+}
+#connectionInfoModal .im-interaction .center-button:hover {
+  color: #E91750;
 }
 #connectionInfoModal .info-card {
   border: none;
@@ -404,6 +427,10 @@ body {
   #connectionInfoModal .node-history {
     display: none;
   }
+  #connectionInfoModal .im-interaction {
+    flex-direction: column-reverse;
+    font-size: 12px;
+  }
   #connectionInfoModal .scale-container {
     height: 40px;
     width: 100%;
@@ -418,12 +445,19 @@ body {
     top: 45px;
     right: -18px;
   }
+  #connectionInfoModal .connection {
+    justify-content: flex-start;
+  }
   #connectionInfoModal .connection .overall-score {
     font-size: 1em;
     margin-bottom: 0;
   }
   #connectionInfoModal .connection .connection-line {
     margin-bottom: 0.6rem;
+  }
+  #startModal .starter-im {
+    flex-basis: 50%;
+    margin-bottom: 10px;
   }
 }
 /*# sourceMappingURL=style.css.map */
