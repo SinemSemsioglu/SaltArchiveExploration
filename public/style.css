@@ -2,6 +2,11 @@ body {
   font-family: 'Roboto', sans-serif;
   background-color: rgba(100, 100, 100, 0.1);
 }
+.viewport {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
 .blur {
   backdrop-filter: blur(10px);
 }
@@ -174,9 +179,36 @@ body {
 }
 .main-content {
   position: relative;
+  width: 100%;
+  height: 100%;
+  transition: scale 1s ease-in-out;
+  transform-origin: center;
+}
+.main-content.zoom-40 {
+  transform: scale(0.4);
+}
+.main-content.zoom-60 {
+  transform: scale(0.6);
+}
+.main-content.zoom-80 {
+  transform: scale(0.8);
+}
+.main-content.zoom-100 {
+  transform: scale(1);
+}
+.main-content.zoom-120 {
+  transform: scale(1.2);
+}
+.main-content.zoom-140 {
+  transform: scale(1.4);
+}
+.main-content.zoom-160 {
+  transform: scale(1.6);
 }
 #demo7 {
   position: absolute;
+  width: 100%;
+  height: 100%;
   overflow: visible;
   top: 0;
   left: 0;
@@ -380,7 +412,7 @@ body {
     width: 32%;
   }
   #connectionInfoModal .scale-container .scale-indicator .scale-text {
-    bottom: -25px;
+    top: 45px;
     right: -18px;
   }
   #connectionInfoModal .connection .overall-score {

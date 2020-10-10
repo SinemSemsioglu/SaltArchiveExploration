@@ -27,6 +27,11 @@ body {
   background-color: @bg-gray;
 }
 
+.viewport {
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
 .blur {
   backdrop-filter: blur(10px);
 }
@@ -221,10 +226,45 @@ body {
 // svg related
 .main-content {
   position: relative;
+  width: 100%;
+  height: 100%;
+  //overflow: scroll;
+  transition: scale 1s ease-in-out;
+  transform-origin: center;
+
+  &.zoom-40 {
+    transform: scale(0.4);
+  }
+
+  &.zoom-60 {
+    transform: scale(0.6);
+  }
+
+  &.zoom-80 {
+    transform: scale(0.8);
+  }
+
+  &.zoom-100 {
+    transform: scale(1);
+  }
+
+  &.zoom-120 {
+    transform: scale(1.2);
+  }
+
+  &.zoom-140 {
+    transform: scale(1.4);
+  }
+
+  &.zoom-160 {
+    transform: scale(1.6);
+  }
 }
 
 #demo7 {
   position: absolute;
+  width: 100%;
+  height: 100%;
   overflow: visible;
   top: 0;
   left: 0;
@@ -475,7 +515,7 @@ body {
         width: 32%; // this is variable
 
         .scale-text {
-          bottom: -25px;
+          top: 45px;
           right: -18px;
         }
       }

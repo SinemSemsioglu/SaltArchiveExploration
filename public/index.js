@@ -6,10 +6,12 @@ let scores;
 
 let koVals;
 
+let smallBreakpoint = 576;
 let rootId = '80225';
 let squareSize = 60;
 let lastChangeRequest = moment();
 let visitedNodes = ko.observableArray([]);
+let starterNodes = ko.observableArray([]);
 
 radiusOffset = 150;
 baseRadius = radiusOffset * 3 / 2; // 1 for radius of the root elm's circle 1/2 for half of the extra radius of each circle
@@ -30,10 +32,23 @@ const thresholds = {
 
 const main = async() => {
     await getData();
+
+    for (let i =0; i < 5; i++) {
+        starterNodes.push(nodes[i]);
+    }
+
     initializePhotoDefs();
+    initKO();
+
+    $("#startModal").modal('show');
+}
+
+const startJourney = (id) => {
+    rootId = id;
     initializeGraph();
     initClick();
-    initKO();
+    $("#startModal").modal('hide');
+
 }
 
 // graph related functions
@@ -159,7 +174,6 @@ const initClick = () => {
         connectedId = id;
         $($('.root-img')[0]).attr('src', findByProp(nodes, rootId, 'id','url'));
         $($('.connected-img')[0]).attr('src', findByProp(nodes, id, 'id','url'));
-        $('#connectionInfoModal').modal('show')
 
         let scoresObj = findByProp(scores[rootId].children, id, 'name');
         $('.connection').find('.overall-score').text(Math.round(scoresObj.overall * 100) + '%', 'name')
@@ -172,11 +186,26 @@ const initClick = () => {
         })
 
         let percentVal = Math.round(scoresObj.vis_similarity * 100) + '%';
-        $('.scale-indicator').height(percentVal);
+
+        // if screnn size is small, adjusts the width as the scale indicator is horizontal
+        if (window.innerWidth <= smallBreakpoint) {
+            $('.scale-indicator').width(percentVal);
+        } else {
+            $('.scale-indicator').height(percentVal);
+        }
+
         $('.scale-text').text(percentVal);
 
         // todo process other score info here
+
+        $('#connectionInfoModal').modal('show')
     })
+
+    $(".root-node").click(() => {
+        $($('.node-info-img')[0]).attr('src', findByProp(nodes, rootId, 'id','url'));
+        // todo get details from data object
+        $('#nodeInfoModal').modal('show');
+    });
 }
 
 // todo assuming we already have the data
@@ -195,13 +224,11 @@ const centerConnectedImage = () => {
 let zoomLevel = ko.observable(100);
 
 const zoom = (deltaLevel) => {
-    zoomLevel(zoomLevel() + deltaLevel)
-
     // Set page zoom via CSS
-    $('.main-content').css({
-        transform: 'scale(' + (zoomLevel() / 100) + ')', // set zoom
-        transformOrigin: '50% 50%' // set transform scale base
-    });
+    $('.main-content').removeClass('zoom-' + zoomLevel())
+    zoomLevel(zoomLevel() + deltaLevel)
+    $('.main-content').addClass('zoom-' + zoomLevel());
+
 
     /* Adjust page to zoom width
     if (zoomLevel() > 100) $('body').css({
@@ -269,7 +296,9 @@ const initKO = () => {
             visitedNodes,
             zoomLevel,
             zoom,
-            infoActive: ko.observable(false)
+            infoActive: ko.observable(false),
+            starterNodes,
+            startJourney
         };
 
     ko.applyBindings(koVals);
@@ -287,7 +316,7 @@ const getData = async () => {
     }
 }
 
-// todo i'm sure there is a better wayS
+// todo i'm sure there is a better way
 const calculateNewWeights = (changedScore) => {
     let totalWeight = 0;
     let possibleScore = 100;
