@@ -345,9 +345,17 @@ body {
   max-width: 60%;
 }
 
-// this modifies default bootstrap behavior
+// these modify the default bootstrap behavior
 .modal-backdrop {
   background-color: #666;
+}
+
+.modal-header {
+  border-bottom: none;
+
+  .modal-title {
+    margin-left: 1rem;
+  }
 }
 
 #connectionInfoModal {
@@ -448,10 +456,6 @@ body {
 #scoreAdjustmentModal {
   .score-weight-row {
     align-items: center;
-  }
-
-  .modal-header {
-    border-bottom: none;
   }
 
   .score-weight-col {

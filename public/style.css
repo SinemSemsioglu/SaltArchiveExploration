@@ -277,6 +277,12 @@ body {
 .modal-backdrop {
   background-color: #666;
 }
+.modal-header {
+  border-bottom: none;
+}
+.modal-header .modal-title {
+  margin-left: 1rem;
+}
 #connectionInfoModal .node-history {
   position: absolute;
   opacity: 0.4;
@@ -359,9 +365,6 @@ body {
 }
 #scoreAdjustmentModal .score-weight-row {
   align-items: center;
-}
-#scoreAdjustmentModal .modal-header {
-  border-bottom: none;
 }
 #scoreAdjustmentModal .score-weight-col {
   display: flex;

@@ -30,7 +30,7 @@
 
                 </div>
                 <div class="page-info" data-bind="visible: infoActive">
-                    Here you can explore items bla bla bla. must be dynamic?
+                    Here, you can explore the items that are connected to the main item. Click on one to see the connection details.
                 </div>
             </div>
 
@@ -221,12 +221,12 @@
             </div>
         </div>
 
-        <!-- Node Info Modal -->
+        <!-- Start Modal -->
         <div class="modal fade blur" id="startModal" tabindex="-1" role="dialog" aria-labelledby="startModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content transparent">
                     <div class="modal-header">
-                        <h5 class="modal-title">Here are a few random images for you to start with</h5>
+                        <h3 class="modal-title">Here are a few random images for you to start with</h3>
                     </div>
                     <div class="modal-body">
                         <div class="container-fluid">
@@ -235,7 +235,7 @@
                                     <!-- ko foreach: starterNodes -->
                                     <div class="col">
                                         <div class="square-img-container">
-                                            <img class="node-info-img square-img" data-bind="attr: {src: url}, click: startJourney(id)" />
+                                            <img class="square-img" data-bind="attr: {src: url}, click: startJourney(id)" />
                                         </div>
                                     </div>
                                     <!-- /ko -->
@@ -250,13 +250,12 @@
             </div>
         </div>
 
-
         <!-- Score Adjustment Modal -->
         <div class="modal fade blur" id="scoreAdjustmentModal" tabindex="-1" role="dialog" aria-labelledby="scoreAdjustmentModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content transparent">
                     <div class="modal-header">
-                        <h5 class="modal-title">Adjust Similarity Score</h5>
+                        <h3 class="modal-title">Adjust Similarity Score</h5>
                     </div>
                     <div class="modal-body">
                         <div class="container-fluid">
@@ -285,12 +284,40 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content transparent">
                     <div class="modal-header">
-                        <h5 class="modal-title">Welcome on board!</h5>
-                        <h5 class="modal-title">Here is a little info on the project</h5>
+                        <h3 class="modal-title">Welcome on board!</h3>
                     </div>
                     <div class="modal-body">
                         <div class="container-fluid">
 
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Journey Modal -->
+        <div class="modal fade blur" id="journeyModal" tabindex="-1" role="dialog" aria-labelledby="journeyModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content transparent">
+                    <div class="modal-header">
+                        <h3 class="modal-title">Your Journey</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="info">
+                                <div class="top-container row">
+                                    <!-- ko foreach: nodeHistory -->
+                                    <div class="col">
+                                        <div class="square-img-container">
+                                            <img class="square-img" data-bind="attr: {src: url}, click: startJourney(id)" />
+                                        </div>
+                                    </div>
+                                    <!-- /ko -->
+                                </div>
+                                <div class="bottom-container row">
+
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
