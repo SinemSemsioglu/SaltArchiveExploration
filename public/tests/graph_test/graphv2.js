@@ -165,8 +165,6 @@ const initializeGraph = () => {
 
     });
 
-
-
     nodeGraph = svg.append("g")
         .attr("stroke", "#fff")
         .attr("stroke-width", 1.5);

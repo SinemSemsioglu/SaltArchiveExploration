@@ -279,15 +279,15 @@ const initKO = () => {
 // data related functions
 const getData = async () => {
     try {
-        let nodeData = await $.getJSON("./sample_data.json");
+        let nodeData = await $.getJSON("./data/sample_data.json");
         nodes = nodeData.nodes;
-        parseScoresFile(await $.getJSON("./similarity_scores.json"));
+        parseScoresFile(await $.getJSON("./data/similarity_scores.json"));
     } catch(err) {
         alert(err)
     }
 }
 
-// todo i'm sure there is a better way
+// todo i'm sure there is a better wayS
 const calculateNewWeights = (changedScore) => {
     let totalWeight = 0;
     let possibleScore = 100;

@@ -71,14 +71,17 @@ body {
   font-size: 1.8em;
 }
 .project-header .project-name {
-  display: flex;
+  width: 300px;
+}
+.project-header .project-name .logo {
+  max-width: 100%;
 }
 .project-header .info-icon {
   width: 20px;
   height: 20px;
   background-size: cover;
   cursor: pointer;
-  background-image: url("icons/info-24px.svg");
+  background-image: url("/icons/info-24px.svg");
   margin-top: 15px;
 }
 .project-header .page-info {
@@ -101,7 +104,7 @@ body {
   transform: translate(0, -50%);
   text-align: center;
   font-size: 2em;
-  width: 1.5em;
+  width: 50px;
   cursor: pointer;
 }
 .zoom-buttons .top {
@@ -133,14 +136,15 @@ body {
   padding: 15px;
 }
 .toggles .toggle-row {
-  height: 50px;
+  height: 40px;
   display: flex;
 }
 .toggles .score-component {
   display: inline-flex;
-  height: 25px;
   align-items: center;
-  padding: 15px;
+}
+.toggles .score-component.color-code {
+  margin-right: 15px;
 }
 .toggles .score-component.color-code,
 .toggles .score-component.score-name {
@@ -165,7 +169,7 @@ body {
 }
 .toggles .toggle-container .toggle.edit-button {
   background-color: #fcfcfc;
-  background-image: url("./plus.svg");
+  background-image: url("/icons/plus.svg");
   background-size: cover;
 }
 .main-content {
@@ -276,6 +280,7 @@ body {
   background-color: transparent;
 }
 #connectionInfoModal .info-card .card-header {
+  font-size: 0.9em;
   font-weight: 600;
   color: #fcfcfc;
   border-bottom-style: solid;
@@ -337,9 +342,53 @@ body {
   height: 20px;
   background-size: cover;
   cursor: pointer;
-  background-image: url('./icons/lock-open.svg');
+  background-image: url('/icons/lock-open.svg');
 }
 #scoreAdjustmentModal .score-weight-col .lock-icon.locked {
-  background-image: url('./icons/lock.svg');
+  background-image: url('/icons/lock.svg');
+}
+@media all and (max-width: 576px) {
+  .zoom-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 110px;
+    top: auto;
+    bottom: 20px;
+    transform: none;
+  }
+  .toggles {
+    width: calc(100vw - (2 * 20px) - 50px - 3*15px);
+  }
+  .toggles .toggle-row {
+    display: inline-flex;
+  }
+  .modal-dialog {
+    max-width: none;
+  }
+  #connectionInfoModal .node-history {
+    display: none;
+  }
+  #connectionInfoModal .scale-container {
+    height: 40px;
+    width: 100%;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  #connectionInfoModal .scale-container .scale-indicator {
+    height: 100%;
+    width: 32%;
+  }
+  #connectionInfoModal .scale-container .scale-indicator .scale-text {
+    bottom: -25px;
+    right: -18px;
+  }
+  #connectionInfoModal .connection .overall-score {
+    font-size: 1em;
+    margin-bottom: 0;
+  }
+  #connectionInfoModal .connection .connection-line {
+    margin-bottom: 0.6rem;
+  }
 }
 /*# sourceMappingURL=style.css.map */

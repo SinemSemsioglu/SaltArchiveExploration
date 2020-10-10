@@ -17,6 +17,10 @@
 @mid-spacing: 15px;
 @small-spacing: 10px;
 
+@toggle-row-height: 40px;
+@zoom-button-width: 50px;
+@scale-bar-width: 40px;
+
 // general
 body {
   font-family: 'Roboto', sans-serif;
@@ -107,12 +111,16 @@ body {
   font-size: 1.8em;
 
   .project-name {
-    display: flex;
+    width: 300px;
+
+    .logo {
+      max-width: 100%;
+    }
   }
 
   .info-icon {
     .icon();
-    background-image: url("icons/info-24px.svg");
+    background-image: url("/icons/info-24px.svg");
 
     margin-top: @mid-spacing;
   }
@@ -135,7 +143,7 @@ body {
   transform: translate(0, -50%);
   text-align: center;
   font-size: 2em;
-  width: 1.5em;
+  width: @zoom-button-width;
   cursor: pointer;
 
   .top {
@@ -164,15 +172,17 @@ body {
   padding: @mid-spacing;
 
   .toggle-row {
-    height: 50px;
+    height: @toggle-row-height;
     display: flex;
   }
 
   .score-component {
     display: inline-flex;
-    height: 25px;
     align-items: center;
-    padding: @mid-spacing;
+
+    &.color-code {
+      margin-right: @mid-spacing;
+    }
 
     &.color-code, &.score-name {
       justify-content: center;
@@ -201,7 +211,7 @@ body {
 
       &.edit-button {
         background-color: @white;
-        background-image: url("./plus.svg");
+        background-image: url("/icons/plus.svg");
         background-size: cover;
       }
     }
@@ -340,6 +350,7 @@ body {
     background-color: transparent;
 
     .card-header {
+      font-size: 0.9em;
       font-weight: 600;
       color: @white;
       border-bottom-style: solid;
@@ -348,7 +359,6 @@ body {
     }
   }
 
-  @scale-bar-width: 40px;
   .scale-container {
     height: 20vh;
     width: @scale-bar-width;
@@ -414,20 +424,73 @@ body {
     .lock-icon {
       .icon();
 
-      background-image: url('./icons/lock-open.svg');
+      background-image: url('/icons/lock-open.svg');
 
       &.locked {
-        background-image: url('./icons/lock.svg');
+        background-image: url('/icons/lock.svg');
       }
     }
   }
 }
 
-
-
-
-
 // customize range input color
 
+// mobile versions
+@media all and (max-width: 576px) {
+  .zoom-buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: (2 * @toggle-row-height) + (2 * @mid-spacing);
+    top: auto;
+    bottom: @page-padding;
+    transform: none;
+  }
+
+  .toggles {
+    width: calc(100vw - (2 * @page-padding) - @zoom-button-width - 3*@mid-spacing);
+
+    .toggle-row {
+      display: inline-flex;
+    }
+  }
+
+  .modal-dialog {
+    max-width: none;
+  }
+
+  #connectionInfoModal {
+    .node-history {
+      display: none;
+    }
+
+    .scale-container {
+      height: @scale-bar-width;
+      width: 100%;
+      flex-direction: row;
+      justify-content: flex-start;
+
+      .scale-indicator {
+        height: 100%;
+        width: 32%; // this is variable
+
+        .scale-text {
+          bottom: -25px;
+          right: -18px;
+        }
+      }
+    }
+
+    .connection {
+      .overall-score {
+        font-size: 1em;
+        margin-bottom: 0;
+      }
+      .connection-line {
+        margin-bottom: 0.6rem;
+      }
+    }
+  }
+}
 
 
