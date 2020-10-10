@@ -4,7 +4,7 @@ const {spawn} = require("child_process");
 const run = async (req, res) => {
     console.log(req.body);
     let scores = req.body;
-    const python = spawn('C:/Python38/python', ['score_similarity.py', scores.a_G, scores.a_V, scores.a_C, scores.a_T, scores.a_U]);
+    const python = spawn('python', ['score_similarity.py', scores.a_G, scores.a_V, scores.a_C, scores.a_T, scores.a_U]);
     python.stdout.on('data', (data) => {
        console.log("from python: " + data.toString());
     });
