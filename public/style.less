@@ -518,6 +518,35 @@ a {
   }
 }
 
+#projectInfoModal {
+  .modal-header {
+    flex-direction: column;
+  }
+
+  .description-text {
+    margin-bottom: @mid-spacing;
+    font-weight: 300;
+
+    &.instruction {
+      font-size: large;
+    }
+  }
+
+  .start-button {
+    cursor: pointer;
+    padding: @mid-spacing;
+    border-radius: @border-r;
+    background-color: fade(@salt, 60%);
+    text-align: center;
+
+    max-width: 300px;
+
+    &:hover {
+      background-color: @salt;
+    }
+  }
+}
+
 // customize range input color
 
 // mobile versions

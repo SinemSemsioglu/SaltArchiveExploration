@@ -40,7 +40,12 @@ const thresholds = {
     }
 }
 
-const main = () => {
+const initPage = () => {
+    initKO();
+    $("#projectInfoModal").modal("show");
+}
+
+const initJourney = () => {
     getRandomElms();
 }
 
@@ -297,6 +302,7 @@ const initKO = () => {
             infoActive,
             starterNodes,
             startJourney,
+            initJourney,
             rootInfo
         };
 
@@ -337,7 +343,7 @@ const getRandomElms = async () => {
                     starterNodes(resp.data.nodes);
                 }
 
-                initKO();
+                $("#projectInfoModal").modal('hide');
                 $("#startModal").modal('show');
             }
         },
@@ -447,4 +453,4 @@ const filterByProp = (arr, filterVal, filterProp, returnProp) => {
     return {valid, invalid};
 }
 
-main();
+initPage();

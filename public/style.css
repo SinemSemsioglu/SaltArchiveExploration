@@ -413,6 +413,27 @@ a:hover {
 #nodeInfoModal .bottom-container .info-row .info-text {
   font-weight: 300;
 }
+#projectInfoModal .modal-header {
+  flex-direction: column;
+}
+#projectInfoModal .description-text {
+  margin-bottom: 15px;
+  font-weight: 300;
+}
+#projectInfoModal .description-text.instruction {
+  font-size: large;
+}
+#projectInfoModal .start-button {
+  cursor: pointer;
+  padding: 15px;
+  border-radius: 10px;
+  background-color: rgba(233, 23, 80, 0.6);
+  text-align: center;
+  max-width: 300px;
+}
+#projectInfoModal .start-button:hover {
+  background-color: #E91750;
+}
 @media all and (max-width: 576px) {
   .zoom-buttons {
     display: flex;

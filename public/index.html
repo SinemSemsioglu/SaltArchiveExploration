@@ -36,7 +36,7 @@
 
             <div class="zoom-buttons">
                 <div class="top" data-bind="css: {disabled: zoomLevel() >= 180}, click: () => { if (zoomLevel() <= 140) zoom(40)}"> + </div>
-                <div class="bottom" data-bind="css: {disabled: zoomLevel() <= 20}, click: () => { if (zoomLevel() >= 60) zoom(-40)}"> - </div>
+                <div class="bottom" data-bind="css: {disabled: zoomLevel() <= 60}, click: () => { if (zoomLevel() >= 100) zoom(-40)}"> - </div>
             </div>
 
             <div class="info-trigger" data-bind="click: () => {$('#projectInfoModal').modal('show')}">
@@ -287,10 +287,33 @@
                 <div class="modal-content transparent">
                     <div class="modal-header">
                         <h3 class="modal-title">Welcome on board!</h3>
+                        <h5 class="modal-title">Here is a little info on the project </h5>
                     </div>
                     <div class="modal-body">
                         <div class="container-fluid">
+                            <div class="bottom-container dark row">
+                                <div class="col">
+                                <div class="col">
+                                    <div class="description-text">
+                                        This is a project developed by a Koc University design team in response to a call jointly made by Digilogue and SALT for university teams to design
+                                        new ways to explore and interact with SALT digital archives. On this page we display SALT archive items as organized by their similarity level to each other.
+                                        We developed our own similarity metric; it combines four sub-metrics that we found interesting and relevant to the archive: visual similarity of archive items' images,
+                                        similarity of objects contained in those images, their external contextual similarity as measured by comparison of text found in knowledge bases such as Wikipedia,
+                                        and similarity of these items' metadata tags in salt archives. To get more information on how we calculate the scores you can refer to
+                                        <a href="https://www.notion.so/Similarity-Scoring-62a412f4b5aa4aa4b9d4368a6e90456d"> our Similarity Scoring document</a>.
+                                    </div>
 
+                                    <div class="description-text instruction">
+                                        As part of this experience, you will be asked to <b> select an initial archive item </b>, and we will display this item along with other archive items
+                                        that we found most relevant to it. To get more detail about how they are connected you can <b> click on any outer item </b> and you can <b> click on the centered item </b> to get detailed
+                                        information about it. As you go on you will be able to center more items and explore more.
+                                    </div>
+
+                                    <div class="start-button" data-bind="click: () => {initJourney()}">
+                                        Start
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
