@@ -47,6 +47,7 @@
             </div>
 
             <div class="toggles">
+                <div class="explanation">By clicking on the toggles, you can highlight items that are above a certain threshold for relevant score type.</div>
                 <!-- ko foreach:scoreInfo -->
                 <div class="toggle-row">
                     <div class="color-code score-component">
@@ -293,6 +294,11 @@
                                     <div class="col-lg-2 score-weight-col">
                                         <div class="percent" data-bind="text: parseInt(Math.round(scoreWeight())) + '%'"></div>
                                         <div class="lock-icon" data-bind="css: {locked: scoreLocked}, click: () => {scoreLocked(!scoreLocked())}"></div>
+                                    </div>
+                                </div>
+                                <div class="row score-weight-info-row">
+                                    <div class="col">
+                                        Explanation here about how this score was calculated
                                     </div>
                                 </div>
                                 <!-- /ko -->

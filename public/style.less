@@ -198,6 +198,13 @@ a {
   bottom: @page-padding;
   right: @page-padding;
   padding: @mid-spacing;
+  max-width: 250px;
+
+  .explanation {
+    font-weight: 300;
+    font-size: 0.8rem;
+  }
+
 
   .toggle-row {
     height: @toggle-row-height;
@@ -563,10 +570,17 @@ a {
 #scoreAdjustmentModal {
   .score-weight-row {
     align-items: center;
+    margin-bottom: 0;
+  }
+
+  .score-weight-info-row {
+    margin-bottom: 1.2rem;
+    font-weight: 300;
   }
 
   .score-weight-col {
     display: flex;
+    align-items: center;
 
     .percent {
       margin-right: 10px;

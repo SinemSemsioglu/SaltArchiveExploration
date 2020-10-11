@@ -152,6 +152,11 @@ a:hover {
   bottom: 20px;
   right: 20px;
   padding: 15px;
+  max-width: 250px;
+}
+.toggles .explanation {
+  font-weight: 300;
+  font-size: 0.8rem;
 }
 .toggles .toggle-row {
   height: 40px;
@@ -447,9 +452,15 @@ a:hover {
 }
 #scoreAdjustmentModal .score-weight-row {
   align-items: center;
+  margin-bottom: 0;
+}
+#scoreAdjustmentModal .score-weight-info-row {
+  margin-bottom: 1.2rem;
+  font-weight: 300;
 }
 #scoreAdjustmentModal .score-weight-col {
   display: flex;
+  align-items: center;
 }
 #scoreAdjustmentModal .score-weight-col .percent {
   margin-right: 10px;
