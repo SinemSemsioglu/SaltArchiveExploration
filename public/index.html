@@ -26,7 +26,7 @@
                 <div class="project-name">
                     <img class="logo" src="logo/salt_relatioscape_logo_small.png">
                 </div>
-                <div class="info-icon" data-bind="event: {mouseover: () => {infoActive(true)}, mouseout: () => {infoActive(false)}}">
+                <div class="info-icon" data-bind="click: () => {$('#projectInfoModal').modal('show')}">
 
                 </div>
                 <div class="page-info" data-bind="visible: infoActive">
@@ -40,12 +40,9 @@
             </div>
 
             <div class="info-triggers">
-                <div class="info-trigger" data-bind="click: () => {$('#projectInfoModal').modal('show')}">
-                    About this project
-                </div>
 
                 <div class="info-trigger" data-bind="click: () => {$('#journeyModal').modal('show')}">
-                    My Journey
+                    Your Journey
                 </div>
             </div>
 
@@ -82,16 +79,19 @@
             <!-- the svg container -->
             <svg id="demo7">
                 <g class="main-svg">
-                    <g id="nodes"></g>
                     <g id="links"></g>
+                    <g id="nodes"></g>
                 </g>
             </svg>
 
             <!-- dart bg -->
             <div class="bg-base">
                 <div class="bg bg-3">
+                    <!--div class="scale-line">0-10%</div-->
                     <div class="bg bg-2">
+                        <!--div class="scale-line">10-20%</div-->
                         <div class="bg bg-1">
+                            <!--div class="scale-line">20+%</div-->
                             <div class="bg bg-0">
                             </div>
                         </div>
@@ -99,8 +99,6 @@
                 </div>
             </div>
         </div>
-
-
 
         <!-- Connection Info Modal -->
         <div class="modal fade blur" id="connectionInfoModal" tabindex="-1" role="dialog" aria-labelledby="connectionInfoModalLabel" aria-hidden="true">
@@ -110,45 +108,54 @@
                 <div class="modal-content transparent">
                     <div class="modal-body">
                         <div class="container-fluid">
+                            <!-- ko if: visitedNodes().length > 0 -->
                             <div class="node-history">
-                                <!-- ko foreach: visitedNodes -->
-                                <div class="square-img-container">
-                                    <img class="square-img" data-bind="attr: {src: $data}" />
+                                <div class="">Your Journey</div>
+                                <div class="nodes">
+                                    <!-- ko foreach: visitedNodes -->
+                                    <div class="node">
+                                        <div class="square-img-container">
+                                            <img class="square-img" data-bind="attr: {src: $data}" />
+                                        </div>
+                                    </div>
+                                    <!-- /ko -->
                                 </div>
-                                <!-- /ko -->
                             </div>
+                            <!-- /ko -->
                             <div class="info">
                                 <div class="top-container row">
                                     <div class="col">
+                                        <div class="im-interaction">
+                                            <a target="_blank" class="root-url" href="">VISIT ARCHIVE</a>
+                                        </div>
                                         <div class="square-img-container">
                                             <img class="root-img square-img" src="" />
                                         </div>
-                                        <div class="im-interaction">
-                                            <a target="_blank" class="root-url" href="">visit archive</a>
-                                        </div>
                                     </div>
                                     <div class="connection col">
-                                        <div class="overall-score">Overall Score</div>
+                                        <div class="overall-score"><span class="overall-score-label"><span>OVERALL</span> <span>SCORE</span></span> <span class="overall-score-value"></span></div>
                                         <div class="connection-line search_res-bg"></div>
                                         <div class="connection-line object_match-bg"></div>
                                         <div class="connection-line vis_similarity-bg"></div>
                                         <div class="connection-line salt_metadata-bg"></div>
                                     </div>
                                     <div class="col">
+                                        <div class="im-interaction">
+                                            <a target="_blank" class="connected-url" href="">VISIT ARCHIVE</a>
+                                            <span class="center-button" data-bind="click: () => {centerConnectedImage()}">MOVE TO CENTER</span>
+                                        </div>
                                         <div class="square-img-container">
                                             <img class="connected-img square-img" src=""/>
                                         </div>
-                                        <div class="im-interaction">
-                                            <span class="center-button" data-bind="click: () => {centerConnectedImage()}">move to center</span>
-                                            <a target="_blank" class="connected-url" href="">visit archive</a>
-                                        </div>
                                     </div>
                                 </div>
+
+                                <div class="container-label">OVERLAPS CAUSING SIMILARITY BETWEEN ITEMS</div>
                                 <div class="bottom-container dark row">
                                     <div class="col-sm-3">
                                         <div class="card info-card">
                                             <div class="card-header search_res-border">
-                                                Knowledge API
+                                                KNOWLEDGE API
                                             </div>
                                             <div class="card-body">
                                                 Keywords
@@ -158,7 +165,7 @@
                                     <div class="col-sm-3">
                                         <div class="card info-card">
                                             <div class="card-header object_match-border">
-                                                Object Recognition
+                                                OBJECT RECOGNITION
                                             </div>
                                             <div class="card-body object-recognition">
                                                 Keywords
@@ -168,7 +175,7 @@
                                     <div class="col-sm-3">
                                         <div class="card info-card">
                                             <div class="card-header vis_similarity-border">
-                                                Visual Similarity
+                                                VISUAL SIMILARITY
                                             </div>
                                             <div class="card-body">
                                                 <div class="scale-container">
@@ -184,7 +191,7 @@
                                     <div class="col-sm-3">
                                         <div class="card info-card">
                                             <div class="card-header salt_metadata-border">
-                                                Metadata Tags
+                                                SALT DATA TAGS
                                             </div>
                                             <div class="card-body">
                                                 Keywords
@@ -201,7 +208,7 @@
 
         <!-- Node Info Modal -->
         <div class="modal fade blur" id="nodeInfoModal" tabindex="-1" role="dialog" aria-labelledby="nodeInfoModalLabel" aria-hidden="true">
-            <div class="close-button" data-bind="click: () => {$('#nodeInfoModal').modal('hide')}">
+            <div class="close-button" data-bind="click: () => {$('#nodeInfoModal').modal('hide')}"> </div>
 
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content transparent">
@@ -234,7 +241,6 @@
                     </div>
                 </div>
             </div>
-        </div>
 
         <!-- Start Modal -->
         <div class="modal fade blur" id="startModal" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static" aria-labelledby="startModalLabel" aria-hidden="true">
@@ -305,7 +311,7 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content transparent">
                     <div class="modal-header">
-                        <h3 class="modal-title">Welcome on board!</h3>
+                        <h3 class="modal-title">Welcome to Relationscape/SALT Archive!</h3>
                         <h5 class="modal-title">Here is a little info on the project </h5>
                     </div>
                     <div class="modal-body">
@@ -328,7 +334,7 @@
                                     </div>
                                     <!-- ko if: !pageInit() -->
                                         <div class="start-button" data-bind="click: () => {initJourney()}">
-                                            Start
+                                            Start Browsing
                                         </div>
                                     <!-- /ko -->
                                 </div>

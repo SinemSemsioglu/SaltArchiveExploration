@@ -125,6 +125,22 @@ const initializeGraph = () => {
         return deg * (Math.PI / 180)
     }
 
+    var lineGen = d3.lineRadial()
+        .angle(d => deg2rad(d.x) + Math.PI/2) // lines have 90 deg offset i.c to nodes, why?
+        .radius(d => d.y + (d.data.depth * radiusOffset));
+
+    // draw links
+    svg7.select('g#links')
+        .selectAll('path.link')
+        .data(root.links())
+        .enter()
+        .append("path")
+        .classed('link', true)
+        .attr('stroke', "darkgray")
+        .attr('stroke-width', 0.60)
+        //.attr("d", linkGen);
+        .attr("d", (d) => lineGen([d.target, d.source]));
+
     // draw nodes
     svg7.select('g#nodes')
         .selectAll('circle.node')
@@ -143,22 +159,6 @@ const initializeGraph = () => {
         .attr('stroke-width', 1)
         //.attr("transform", d => `rotate(${d.x + index * 30} , 0, 0)`);
 
-    /*
-    var lineGen = d3.lineRadial()
-        .angle(d => deg2rad(d.x) + Math.PI/2) // lines have 90 deg offset i.c to nodes, why?
-        .radius(d => d.y + (d.data.depth * radiusOffset));
-
-    // draw links
-    svg7.select('g#links')
-        .selectAll('path.link')
-        .data(root.links())
-        .enter()
-        .append("path")
-        .classed('link', true)
-        .attr('stroke', "darkgray")
-        .attr('stroke-width', 2)
-        //.attr("d", linkGen);
-        .attr("d", (d) => lineGen([d.target, d.source]));*/
 
     $("." + rootId).addClass("root-node");
 };
@@ -219,7 +219,7 @@ const initClick = () => {
 
 
         let scoresObj = findByProp(scores[rootId].children, id, 'name');
-        $('.connection').find('.overall-score').text(Math.round(scoresObj.overall * 100) + '%', 'name')
+        $('.connection').find('.overall-score-value').text(Math.round(scoresObj.overall * 100) + '%', 'name')
 
         // todo can also use the scoreInfo comp?
         scoreComponents.forEach((scoreType) => {
@@ -313,7 +313,7 @@ const initKO = () => {
             scoreType: "salt_metadata",
             scoreCode: "a_T",
             scoreWeight: ko.observable(25), // todo later on get/update this via backend
-            scoreName: "Metadata Tagging",
+            scoreName: "Salt Data Tags",
             scoreScale: "discrete",
             disabled: ko.observable(true),
             scoreLocked: ko.observable(false),
