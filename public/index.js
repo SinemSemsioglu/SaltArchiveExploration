@@ -5,7 +5,6 @@ let nodes;
 let scores;
 
 let koVals;
-
 let smallBreakpoint = 576;
 let rootId = '80225';
 let squareSize = 60;
@@ -13,12 +12,38 @@ let lastChangeRequest = moment();
 let visitedNodes = ko.observableArray([]);
 let starterNodes = ko.observableArray([]);
 let rootInfo = {
-    "spatial": ko.observable(""),
-    "date_issued":ko.observable(""),
-    "format":ko.observable(""),
-    "subject":ko.observable(""),
-    "title": ko.observable(""),
-    "type": ko.observable("")
+    "title": {
+        "label": "Title",
+        "value": ko.observable("")
+    },
+    "description": {
+        "label": "Description",
+        "value": ko.observable("")
+    },
+    "creator": {
+        "label": "Created by",
+        "value": ko.observable("")
+    },
+    "date_issued": {
+        "label": "Date Issued",
+        "value": ko.observable("")
+    },
+    "subject": {
+        "label": "Topics",
+        "value": ko.observable("")
+    },
+    "type": {
+        "label": "Medium",
+        "value": ko.observable("")
+    },
+    "spatial": {
+        "label": "Location",
+        "value": ko.observable("")
+    },
+    "format": {
+        "label": "Format",
+        "value": ko.observable("")
+    }
 };
 
 let infoActive = ko.observable(false);
@@ -433,7 +458,7 @@ const parseScoresFile = (file) => {
 // util functions
 const setRootInfo = (newInfo) => {
     Object.keys(rootInfo).forEach((key) => {
-        rootInfo[key](newInfo[key] || "-");
+        rootInfo[key].value(newInfo[key] || "-");
     })
 }
 

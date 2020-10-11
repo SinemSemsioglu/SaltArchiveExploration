@@ -363,6 +363,10 @@ a {
 }
 
 #startModal {
+  .modal-header {
+    flex-direction: column;
+  }
+
   img {
     cursor: pointer;
   }
@@ -511,6 +515,8 @@ a {
     padding: @mid-spacing;
     .info-row {
       flex-basis: 50%;
+      margin-bottom: @mid-spacing;
+
       .info-text {
         font-weight: 300;
       }

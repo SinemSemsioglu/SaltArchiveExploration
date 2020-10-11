@@ -286,6 +286,9 @@ a:hover {
 .modal-header .modal-title {
   margin-left: 1rem;
 }
+#startModal .modal-header {
+  flex-direction: column;
+}
 #startModal img {
   cursor: pointer;
 }
@@ -409,6 +412,7 @@ a:hover {
 }
 #nodeInfoModal .bottom-container .info-row {
   flex-basis: 50%;
+  margin-bottom: 15px;
 }
 #nodeInfoModal .bottom-container .info-row .info-text {
   font-weight: 300;

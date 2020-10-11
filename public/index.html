@@ -207,10 +207,10 @@
                                 </div>
                                 <div class="bottom-container dark row" data-bind="foreach: Object.keys(rootInfo)">
                                         <div class="info-row">
-                                            <div class="info-label" data-bind="text: $data">
+                                            <div class="info-label" data-bind="text: rootInfo[$data].label">
                                                 Title
                                             </div>
-                                            <div class="info-text" data-bind="text: rootInfo[$data]">
+                                            <div class="info-text" data-bind="text: rootInfo[$data].value">
                                                 Info Text
                                             </div>
                                         </div>
@@ -229,6 +229,7 @@
                 <div class="modal-content transparent">
                     <div class="modal-header">
                         <h3 class="modal-title">Here are a few random images for you to start with</h3>
+                        <h5 class="modal-title">Click on one to get started </h5>
                     </div>
                     <div class="modal-body">
                         <div class="container-fluid">
