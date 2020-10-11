@@ -8,7 +8,7 @@
 @visual: #17E9E0;
 @white: #fcfcfc;
 
-@icon-size: 20px;
+@icon-size: 25px;
 @border-r: 10px;
 
 @page-padding: 20px;
@@ -173,12 +173,23 @@ a {
   }
 }
 
-.info-trigger {
-  .fixed-elm();
+.info-triggers {
+  position: fixed;
   top: @page-padding;
   right: @page-padding;
-  cursor: pointer;
-  padding: @mid-spacing;
+  display: flex;
+  z-index: @fixed-z-index;
+
+  .info-trigger {
+    color: @white;
+    background-color: @dark-overlay;
+    border-radius: @border-r;
+    cursor: pointer;
+    padding: @mid-spacing;
+    margin-left: @mid-spacing;
+  }
+
+
 }
 
 // from prev script
@@ -362,6 +373,15 @@ a {
   }
 }
 
+.close-button {
+  .icon();
+  background-image: url("/icons/highlight_off-white-18dp.svg");
+  position: absolute;
+  top: @page-padding;
+  right: @page-padding;
+  z-index: 10;
+}
+
 #startModal {
   .modal-header {
     flex-direction: column;
@@ -505,11 +525,18 @@ a {
 }
 
 #nodeInfoModal {
-  .square-img-container {
-    width: 30%;
-    padding-bottom: 30%;
-    margin: 0 auto;
+  .im-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .square-img-container {
+      width: 30%;
+      padding-bottom: 30%;
+      margin-bottom: @mid-spacing;
+    }
   }
+
 
   .bottom-container {
     padding: @mid-spacing;
@@ -553,6 +580,29 @@ a {
   }
 }
 
+#journeyModal {
+  .node-history-horizontal {
+    flex-wrap: nowrap;
+    overflow-x: scroll;
+
+    /* Hide scrollbar for Chrome, Safari and Opera */
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    /* Hide scrollbar for IE, Edge and Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+
+    .history-im {
+      flex-basis: 20%;
+      flex-shrink: 0;
+      flex-grow: 0;
+    }
+  }
+
+}
+
 // customize range input color
 
 // mobile versions
@@ -567,11 +617,38 @@ a {
     transform: none;
   }
 
+  .project-header {
+    display: flex;
+    align-items: center;
+
+    .info-icon {
+      margin-top: 0;
+      margin-left: @small-spacing;
+    }
+
+  }
+
+  .info-triggers {
+      top: 60px;
+      left: @page-padding;
+      flex-direction: column;
+      width: 40%;
+
+      .info-trigger {
+        margin-left: 0;
+        margin-bottom: @small-spacing;
+        padding: @small-spacing;
+        text-align: center;
+      }
+  }
+
   .toggles {
     width: calc(100vw - (2 * @page-padding) - @zoom-button-width - 3*@mid-spacing);
+    display: flex;
+    flex-wrap: wrap;
 
     .toggle-row {
-      display: inline-flex;
+      flex-basis: 50%;
     }
   }
 
@@ -623,6 +700,18 @@ a {
     .starter-im {
       flex-basis: 50%;
       margin-bottom: @small-spacing;
+    }
+  }
+
+  #journeyModal {
+    .node-history-horizontal {
+      flex-wrap: wrap;
+      overflow: hidden;
+
+      .history-im {
+        flex-basis: 50%;
+        margin-bottom: @small-spacing;
+      }
     }
   }
 }

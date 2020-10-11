@@ -12,42 +12,46 @@ let lastChangeRequest = moment();
 let visitedNodes = ko.observableArray([]);
 let starterNodes = ko.observableArray([]);
 let rootInfo = {
-    "title": {
-        "label": "Title",
-        "value": ko.observable("")
-    },
-    "description": {
-        "label": "Description",
-        "value": ko.observable("")
-    },
-    "creator": {
-        "label": "Created by",
-        "value": ko.observable("")
-    },
-    "date_issued": {
-        "label": "Date Issued",
-        "value": ko.observable("")
-    },
-    "subject": {
-        "label": "Topics",
-        "value": ko.observable("")
-    },
-    "type": {
-        "label": "Medium",
-        "value": ko.observable("")
-    },
-    "spatial": {
-        "label": "Location",
-        "value": ko.observable("")
-    },
-    "format": {
-        "label": "Format",
-        "value": ko.observable("")
+    "thumb_url": ko.observable(""),
+    "salt_url": ko.observable(""),
+    metadata: {
+        "title": {
+            "label": "Title",
+            "value": ko.observable("")
+        },
+        "description": {
+            "label": "Description",
+            "value": ko.observable("")
+        },
+        "creator": {
+            "label": "Created by",
+            "value": ko.observable("")
+        },
+        "date_issued": {
+            "label": "Date Issued",
+            "value": ko.observable("")
+        },
+        "subject": {
+            "label": "Topics",
+            "value": ko.observable("")
+        },
+        "type": {
+            "label": "Medium",
+            "value": ko.observable("")
+        },
+        "spatial": {
+            "label": "Location",
+            "value": ko.observable("")
+        },
+        "format": {
+            "label": "Format",
+            "value": ko.observable("")
+        }
     }
 };
 
 let infoActive = ko.observable(false);
-
+let pageInit = ko.observable(false);
 radiusOffset = 150;
 baseRadius = radiusOffset * 3 / 2; // 1 for radius of the root elm's circle 1/2 for half of the extra radius of each circle
 
@@ -75,7 +79,13 @@ const initJourney = () => {
 }
 
 const startJourney = (id) => {
-   getDataById(id, () => { $("#startModal").modal('hide')});
+   getDataById(id, () => {
+       $("#startModal").modal('hide')
+       let projectInfoModal = $("#projectInfoModal");
+       projectInfoModal.attr("data-keyboard", "true");
+       projectInfoModal.attr("data-backdrop", "true");
+       pageInit(true);
+   });
 }
 
 // graph related functions
@@ -89,7 +99,7 @@ const initializePhotoDefs = () => {
         .attr("width", 1)
         .attr("height", 1)
         .append("svg:image")
-        .attr('xlink:href', d => d.thumb_url + '.jpg')
+        .attr('xlink:href', d => d.thumb_url)
         .attr("width", 80)
         .attr("height", 80)
         .attr("preserveAspectRatio", "xMidYMid slice");
@@ -199,8 +209,14 @@ const initClick = () => {
     $(".data-point").not(".root-node").click((event)=> {
         let id = event.target.classList[0];
         connectedId = id;
-        $($('.root-img')[0]).attr('src', findByProp(nodes, rootId, 'id','thumb_url') + '.jpg');
-        $($('.connected-img')[0]).attr('src', findByProp(nodes, id, 'id','thumb_url') + '.jpg');
+
+        let rootNodeInfo = findByProp(nodes, rootId, 'id');
+        let connectedNodeInfo = findByProp(nodes, id, 'id');
+        $($('.root-img')[0]).attr('src', rootNodeInfo.thumb_url);
+        $($('.root-url')[0]).attr('href', rootNodeInfo.salt_url);
+        $($('.connected-img')[0]).attr('src', connectedNodeInfo.thumb_url);
+        $($('.connected-url')[0]).attr('href', connectedNodeInfo.salt_url);
+
 
         let scoresObj = findByProp(scores[rootId].children, id, 'name');
         $('.connection').find('.overall-score').text(Math.round(scoresObj.overall * 100) + '%', 'name')
@@ -230,9 +246,6 @@ const initClick = () => {
     })
 
     $(".root-node").click(() => {
-        // todo embed this into rootInfo
-        $($('.node-info-img')[0]).attr('src', findByProp(nodes, rootId, 'id','thumb_url') + '.jpg');
-        // todo get details from data object
         $('#nodeInfoModal').modal('show');
     });
 }
@@ -242,7 +255,7 @@ const centerConnectedImage = () => {
     if (connectedId != null) {
         getDataById(connectedId, () => {
             $('#connectionInfoModal').modal('hide');
-            visitedNodes.push(findByProp(nodes, rootId, 'id','thumb_url') + '.jpg');
+            visitedNodes.push(findByProp(nodes, rootId, 'id','thumb_url'));
             rootId = connectedId;
             connectedId = null;
         });
@@ -328,7 +341,8 @@ const initKO = () => {
             starterNodes,
             startJourney,
             initJourney,
-            rootInfo
+            rootInfo,
+            pageInit
         };
 
     ko.applyBindings(koVals);
@@ -457,8 +471,10 @@ const parseScoresFile = (file) => {
 
 // util functions
 const setRootInfo = (newInfo) => {
-    Object.keys(rootInfo).forEach((key) => {
-        rootInfo[key].value(newInfo[key] || "-");
+    rootInfo.thumb_url(newInfo.thumb_url);
+    rootInfo.salt_url(newInfo.salt_url);
+    Object.keys(rootInfo.metadata).forEach((key) => {
+        rootInfo.metadata[key].value(newInfo[key] || "-");
     })
 }
 

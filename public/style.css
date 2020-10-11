@@ -43,8 +43,8 @@ a:hover {
   border-radius: 10px;
 }
 .icon {
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   background-size: cover;
   cursor: pointer;
 }
@@ -91,8 +91,8 @@ a:hover {
   max-width: 100%;
 }
 .project-header .info-icon {
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   background-size: cover;
   cursor: pointer;
   background-image: url("/icons/info-24px.svg");
@@ -128,16 +128,20 @@ a:hover {
   cursor: inherit;
   opacity: 0.2;
 }
-.info-trigger {
+.info-triggers {
   position: fixed;
-  z-index: 5;
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #fcfcfc;
-  border-radius: 10px;
   top: 20px;
   right: 20px;
+  display: flex;
+  z-index: 5;
+}
+.info-triggers .info-trigger {
+  color: #fcfcfc;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
   cursor: pointer;
   padding: 15px;
+  margin-left: 15px;
 }
 .toggles {
   position: fixed;
@@ -286,6 +290,17 @@ a:hover {
 .modal-header .modal-title {
   margin-left: 1rem;
 }
+.close-button {
+  width: 25px;
+  height: 25px;
+  background-size: cover;
+  cursor: pointer;
+  background-image: url("/icons/highlight_off-white-18dp.svg");
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 10;
+}
 #startModal .modal-header {
   flex-direction: column;
 }
@@ -393,8 +408,8 @@ a:hover {
   margin-right: 10px;
 }
 #scoreAdjustmentModal .score-weight-col .lock-icon {
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   background-size: cover;
   cursor: pointer;
   background-image: url('/icons/lock-open.svg');
@@ -402,10 +417,15 @@ a:hover {
 #scoreAdjustmentModal .score-weight-col .lock-icon.locked {
   background-image: url('/icons/lock.svg');
 }
-#nodeInfoModal .square-img-container {
+#nodeInfoModal .im-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+#nodeInfoModal .im-container .square-img-container {
   width: 30%;
   padding-bottom: 30%;
-  margin: 0 auto;
+  margin-bottom: 15px;
 }
 #nodeInfoModal .bottom-container {
   padding: 15px;
@@ -438,6 +458,24 @@ a:hover {
 #projectInfoModal .start-button:hover {
   background-color: #E91750;
 }
+#journeyModal .node-history-horizontal {
+  flex-wrap: nowrap;
+  overflow-x: scroll;
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  /* Hide scrollbar for IE, Edge and Firefox */
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
+}
+#journeyModal .node-history-horizontal::-webkit-scrollbar {
+  display: none;
+}
+#journeyModal .node-history-horizontal .history-im {
+  flex-basis: 20%;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
 @media all and (max-width: 576px) {
   .zoom-buttons {
     display: flex;
@@ -448,11 +486,33 @@ a:hover {
     bottom: 20px;
     transform: none;
   }
+  .project-header {
+    display: flex;
+    align-items: center;
+  }
+  .project-header .info-icon {
+    margin-top: 0;
+    margin-left: 10px;
+  }
+  .info-triggers {
+    top: 60px;
+    left: 20px;
+    flex-direction: column;
+    width: 40%;
+  }
+  .info-triggers .info-trigger {
+    margin-left: 0;
+    margin-bottom: 10px;
+    padding: 10px;
+    text-align: center;
+  }
   .toggles {
     width: calc(100vw - (2 * 20px) - 50px - 3*15px);
+    display: flex;
+    flex-wrap: wrap;
   }
   .toggles .toggle-row {
-    display: inline-flex;
+    flex-basis: 50%;
   }
   .modal-dialog {
     max-width: none;
@@ -489,6 +549,14 @@ a:hover {
     margin-bottom: 0.6rem;
   }
   #startModal .starter-im {
+    flex-basis: 50%;
+    margin-bottom: 10px;
+  }
+  #journeyModal .node-history-horizontal {
+    flex-wrap: wrap;
+    overflow: hidden;
+  }
+  #journeyModal .node-history-horizontal .history-im {
     flex-basis: 50%;
     margin-bottom: 10px;
   }
