@@ -30,7 +30,7 @@ const scoreComponents = ['vis_similarity', 'object_match', 'search_res', 'salt_m
 
 const thresholds = {
     vis_similarity: 0.5,
-    object_match: 0.5,
+    object_match: 0.3,
     search_res: 0.5,
     salt_metadata: 0.05,
     overall: {

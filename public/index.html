@@ -35,8 +35,8 @@
             </div>
 
             <div class="zoom-buttons">
-                <div class="top" data-bind="css: {disabled: zoomLevel() > 160}, click: () => { if (zoomLevel() <= 140) zoom(20)}"> + </div>
-                <div class="bottom" data-bind="css: {disabled: zoomLevel() < 40}, click: () => { if (zoomLevel() >= 60) zoom(-20)}"> - </div>
+                <div class="top" data-bind="css: {disabled: zoomLevel() >= 180}, click: () => { if (zoomLevel() <= 140) zoom(40)}"> + </div>
+                <div class="bottom" data-bind="css: {disabled: zoomLevel() <= 20}, click: () => { if (zoomLevel() >= 60) zoom(-40)}"> - </div>
             </div>
 
             <div class="info-trigger" data-bind="click: () => {$('#projectInfoModal').modal('show')}">
