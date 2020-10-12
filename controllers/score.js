@@ -24,7 +24,7 @@ const changeWeights = async (req, res) => {
 
     ids.forEach((id) => {
         let scoreObj = currScores[id];
-        currScores.overall = weights.a_G * scoreObj.search_res + weights.a_V * scoreObj.vis_similarity + weights.a_C * scoreObj.object_match + weights.a_T * scoreObj.salt_metadata;
+        scoreObj.overall = weights.a_G * scoreObj.search_res + weights.a_V * scoreObj.vis_similarity + weights.a_C * scoreObj.object_match + weights.a_T * scoreObj.salt_metadata;
     });
 
     let data = getData(id, currScores);
@@ -32,7 +32,6 @@ const changeWeights = async (req, res) => {
 }
 
 const getData = (id, allScores) => {
-    console.log(process.memoryUsage());
     let nodes = readNodesFile();
 
     let sortedIds = Object.keys(allScores).sort(function(id1,id2){return allScores[id2].overall - allScores[id1].overall});
@@ -45,7 +44,6 @@ const getData = (id, allScores) => {
         relevantScores[id][childElmId] = allScores[childElmId];
         relevantNodes.push(Object.assign({id: childElmId}, nodes[childElmId]));
     }
-    console.log(process.memoryUsage());
     return {relevantNodes, relevantScores}
 }
 const getById = async(req, res) => {

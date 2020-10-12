@@ -60,11 +60,11 @@ const scoreComponents = ['vis_similarity', 'object_match', 'search_res', 'salt_m
 const thresholds = {
     vis_similarity: 0.5,
     object_match: 0.3,
-    search_res: 0.5,
-    salt_metadata: 0.05,
+    search_res: 0.1,
+    salt_metadata: 0.2,
     overall: {
-        zero: 0.2,
-        one: 0.1,
+        zero: 0.3,
+        one: 0.15,
         two: 0
     }
 }
@@ -240,8 +240,9 @@ const initClick = () => {
         $('.scale-text').text(percentVal);
 
         // todo process other score info here
-        $('.object-recognition').text(scoresObj.matched_objects.join(', '));
-
+        $('.object-keywords').text(scoresObj.matched_objects.join(', '));
+        $('.knowledge-keywords').text(scoresObj.search_keywords.join(', '));
+        $('.salt-keywords').text(scoresObj.metadata_keywords.join(', '));
         $('#connectionInfoModal').modal('show')
     })
 
