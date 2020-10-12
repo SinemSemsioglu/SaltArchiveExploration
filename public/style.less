@@ -14,12 +14,17 @@
 @page-padding: 20px;
 @fixed-z-index: 5;
 
+@large-spacing: 30px;
 @mid-spacing: 15px;
 @small-spacing: 10px;
 
 @toggle-row-height: 40px;
 @zoom-button-width: 50px;
 @scale-bar-width: 40px;
+
+@regular-font: 0.8rem;
+@large-font: 1rem;
+@larger-font: 1.8rem;
 
 // general
 body {
@@ -125,7 +130,6 @@ a {
 
   background-color: transparent;
   color: black;
-  font-size: 1.8em;
 
   .project-name {
     width: 300px;
@@ -147,7 +151,7 @@ a {
     border-radius: @border-r;
     padding: @small-spacing;
     color: @white;
-    font-size: small;
+    font-size: @regular-font;
     max-width: 300px;
     margin-top: @small-spacing;
   }
@@ -202,7 +206,7 @@ a {
 
   .explanation {
     font-weight: 300;
-    font-size: 0.8rem;
+    font-size: @regular-font;
   }
 
 
@@ -429,7 +433,7 @@ a {
 
 .container-label {
   margin-top: -@mid-spacing;
-  font-size: 0.8rem;
+  font-size: @regular-font;
 }
 
 #connectionInfoModal {
@@ -474,7 +478,7 @@ a {
   .im-interaction {
     display: flex;
     justify-content: space-between;
-    font-size: 0.8rem;
+    font-size: @regular-font;
 
     .center-button {
       cursor: pointer;
@@ -490,7 +494,7 @@ a {
     background-color: transparent;
 
     .card-header {
-      font-size: 0.9em;
+      font-size: @regular-font;
       font-weight: 600;
       color: @white;
       border-bottom-style: solid;
@@ -545,7 +549,7 @@ a {
       align-items: center;
 
       .overall-score-label {
-        font-size: 1rem;
+        font-size: @large-font;
         display: flex;
         flex-direction: column;
         align-items: flex-end;
@@ -625,32 +629,77 @@ a {
   }
 }
 
-#projectInfoModal {
-  .modal-header {
-    flex-direction: column;
-  }
-
+#projectInfoModal,#initModal {
   .description-text {
     margin-bottom: @mid-spacing;
     font-weight: 300;
+    font-size: @regular-font;
+    text-align: justify;
 
     &.instruction {
-      font-size: large;
+      font-size: @large-font;
     }
+  }
+
+  .about-header, .about-subheader {
+    font-weight: 800;
+  }
+
+  .about-header {
+    margin-bottom: @mid-spacing;
+  }
+
+  .row {
+    margin-bottom: @large-spacing;
+
+    &.header-row {
+      margin-bottom: 0;
+    }
+  }
+
+  .credits-person {
+    font-weight: 300;
+    font-size: @regular-font;
   }
 
   .start-button {
     cursor: pointer;
-    padding: @mid-spacing;
-    border-radius: @border-r;
-    background-color: fade(@salt, 60%);
+    padding: @small-spacing;
+    border: 2px solid @white;
     text-align: center;
 
-    max-width: 300px;
+    max-width: 600px;
+    margin: 0 auto;
 
     &:hover {
       background-color: @salt;
     }
+  }
+
+  .uni-lab {
+    background-color: #000;
+    padding: @mid-spacing;
+  }
+
+  .logos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo {
+      flex-basis: 50%;
+      display: flex;
+
+      img {
+        object-fit: cover;
+        max-width: 100%;
+      }
+    }
+  }
+
+  .call {
+    max-width: 100%;
+    object-fit: cover;
   }
 }
 
@@ -737,7 +786,6 @@ a {
 
     .im-interaction {
       flex-direction: column-reverse;
-      font-size: 12px;
     }
 
     .scale-container {
@@ -761,7 +809,7 @@ a {
       justify-content: flex-start;
 
       .overall-score {
-        font-size: 1em;
+        font-size: @large-font;
         margin-bottom: 0;
       }
       .connection-line {

@@ -71,7 +71,7 @@ const thresholds = {
 
 const initPage = () => {
     initKO();
-    $("#projectInfoModal").modal("show");
+    $("#initModal").modal("show");
 }
 
 const initJourney = () => {
@@ -81,9 +81,6 @@ const initJourney = () => {
 const startJourney = (id) => {
    getDataById(id, () => {
        $("#startModal").modal('hide')
-       let projectInfoModal = $("#projectInfoModal");
-       projectInfoModal.attr("data-keyboard", "true");
-       projectInfoModal.attr("data-backdrop", "true");
        pageInit(true);
    });
 }
@@ -383,7 +380,7 @@ const getRandomElms = async () => {
                     starterNodes(resp.data.nodes);
                 }
 
-                $("#projectInfoModal").modal('hide');
+                $("#initModal").modal('hide');
                 $("#startModal").modal('show');
             }
         },

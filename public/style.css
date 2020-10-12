@@ -82,7 +82,6 @@ a:hover {
   top: 20px;
   background-color: transparent;
   color: black;
-  font-size: 1.8em;
 }
 .project-header .project-name {
   width: 300px;
@@ -103,7 +102,7 @@ a:hover {
   border-radius: 10px;
   padding: 10px;
   color: #fcfcfc;
-  font-size: small;
+  font-size: 0.8rem;
   max-width: 300px;
   margin-top: 10px;
 }
@@ -386,7 +385,7 @@ a:hover {
   background-color: transparent;
 }
 #connectionInfoModal .info-card .card-header {
-  font-size: 0.9em;
+  font-size: 0.8rem;
   font-weight: 600;
   color: #fcfcfc;
   border-bottom-style: solid;
@@ -495,26 +494,78 @@ a:hover {
 #nodeInfoModal .bottom-container .info-row .info-text {
   font-weight: 300;
 }
-#projectInfoModal .modal-header {
-  flex-direction: column;
-}
-#projectInfoModal .description-text {
+#projectInfoModal .description-text,
+#initModal .description-text {
   margin-bottom: 15px;
   font-weight: 300;
+  font-size: 0.8rem;
+  text-align: justify;
 }
-#projectInfoModal .description-text.instruction {
-  font-size: large;
+#projectInfoModal .description-text.instruction,
+#initModal .description-text.instruction {
+  font-size: 1rem;
 }
-#projectInfoModal .start-button {
+#projectInfoModal .about-header,
+#initModal .about-header,
+#projectInfoModal .about-subheader,
+#initModal .about-subheader {
+  font-weight: 800;
+}
+#projectInfoModal .about-header,
+#initModal .about-header {
+  margin-bottom: 15px;
+}
+#projectInfoModal .row,
+#initModal .row {
+  margin-bottom: 30px;
+}
+#projectInfoModal .row.header-row,
+#initModal .row.header-row {
+  margin-bottom: 0;
+}
+#projectInfoModal .credits-person,
+#initModal .credits-person {
+  font-weight: 300;
+  font-size: 0.8rem;
+}
+#projectInfoModal .start-button,
+#initModal .start-button {
   cursor: pointer;
-  padding: 15px;
-  border-radius: 10px;
-  background-color: rgba(233, 23, 80, 0.6);
+  padding: 10px;
+  border: 2px solid #fcfcfc;
   text-align: center;
-  max-width: 300px;
+  max-width: 600px;
+  margin: 0 auto;
 }
-#projectInfoModal .start-button:hover {
+#projectInfoModal .start-button:hover,
+#initModal .start-button:hover {
   background-color: #E91750;
+}
+#projectInfoModal .uni-lab,
+#initModal .uni-lab {
+  background-color: #000;
+  padding: 15px;
+}
+#projectInfoModal .logos,
+#initModal .logos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#projectInfoModal .logos .logo,
+#initModal .logos .logo {
+  flex-basis: 50%;
+  display: flex;
+}
+#projectInfoModal .logos .logo img,
+#initModal .logos .logo img {
+  object-fit: cover;
+  max-width: 100%;
+}
+#projectInfoModal .call,
+#initModal .call {
+  max-width: 100%;
+  object-fit: cover;
 }
 #journeyModal .node-history-horizontal {
   flex-wrap: nowrap;
@@ -580,7 +631,6 @@ a:hover {
   }
   #connectionInfoModal .im-interaction {
     flex-direction: column-reverse;
-    font-size: 12px;
   }
   #connectionInfoModal .scale-container {
     height: 40px;
@@ -600,7 +650,7 @@ a:hover {
     justify-content: flex-start;
   }
   #connectionInfoModal .connection .overall-score {
-    font-size: 1em;
+    font-size: 1rem;
     margin-bottom: 0;
   }
   #connectionInfoModal .connection .connection-line {

@@ -309,40 +309,268 @@
             </div>
         </div>
 
-        <!-- Project Info Modal -->
-        <div class="modal fade blur" id="projectInfoModal" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static" aria-labelledby="scoreAdjustmentModalLabel" aria-hidden="true">
+        <!-- Init Modal -->
+        <div class="modal fade blur" id="initModal" tabindex="-1" role="dialog" data-keyboard="false" data-backdrop="static" aria-labelledby="initModalLabel" aria-hidden="true">
             <!-- ko if: pageInit -->
-                <div class="close-button" data-bind="click: () => {$('#projectInfoModal').modal('hide')}"></div>
+            <div class="close-button" data-bind="click: () => {$('#projectInfoModal').modal('hide')}"></div>
             <!-- /ko -->
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content transparent">
                     <div class="modal-header">
-                        <h3 class="modal-title">Welcome to Relationscape/SALT Archive!</h3>
-                        <h5 class="modal-title">Here is a little info on the project </h5>
+                        <h3 class="modal-title">Welcome to RELATIONSCAPE / SALT Archives</h3>
                     </div>
                     <div class="modal-body">
                         <div class="container-fluid">
-                            <div class="bottom-container dark row">
+                            <div class="row header-row">
                                 <div class="col">
-                                    <div class="description-text">
-                                        This is a project developed by a Koc University design team in response to a call jointly made by Digilogue and SALT for university teams to design
-                                        new ways to explore and interact with SALT digital archives. On this page we display SALT archive items as organized by their similarity level to each other.
-                                        We developed our own similarity metric; it combines four sub-metrics that we found interesting and relevant to the archive: visual similarity of archive items' images,
-                                        similarity of objects contained in those images, their external contextual similarity as measured by comparison of text found in knowledge bases such as Wikipedia,
-                                        and similarity of these items' metadata tags in salt archives. To get more information on how we calculate the scores you can refer to
-                                        <a href="https://www.notion.so/Similarity-Scoring-62a412f4b5aa4aa4b9d4368a6e90456d"> our Similarity Scoring document</a>.
+                                    <h5 class="modal-title about-header">ABOUT THE PROJECT </h5>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="description-text instruction">
+                                        This is a project developed by a Koc University design team in response to a call jointly made by Digilogue and SALT for university teams to design new ways to explore and interact with SALT digital archives. On this page we display SALT archive items as organized by their similarity level to each other.
                                     </div>
 
-                                    <div class="description-text instruction">
-                                        As part of this experience, you will be asked to <b> select an initial archive item </b>, and we will display this item along with other archive items
-                                        that we found most relevant to it. To get more detail about how they are connected you can <b> click on any outer item </b> and you can <b> click on the centered item </b> to get detailed
-                                        information about it. As you go on you will be able to center more items and explore more.
+                                    <div class="description-text">
+                                        We developed our own similarity metric (MDSSM); it combines four sub-metrics that we found interesting and relevant to the archive: visual similarity of archive items' images, similarity of objects contained in those images, their external contextual similarity as measured by comparison of text found in knowledge bases such as Wikipedia, and similarity of these items' metadata tags in salt archives. Here in this web interface you can browse the archive to see the relations in 2D representation while we are also working on building a 3D immersive version for Extended Reality.
                                     </div>
-                                    <!-- ko if: !pageInit() -->
-                                        <div class="start-button" data-bind="click: () => {initJourney()}">
-                                            Start Browsing
+                                    <div class="description-text">
+                                        As part of this experience, you will be asked to select an initial archive item , and we will display this item along with other archive items that we found most relevant to it. To get more detail about how they are connected you can click on any outer item and you can click on the centered item to get detailed information about it. As you go on you will be able to center more items and explore more.
+                                    </div>
+
+                                    <div class="start-button" data-bind="click: () => {initJourney()}">
+                                        Start Browsing RELATIONSCAPE
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row header-row">
+                                <div class="col">
+                                    <div class="about-header">CREDITS</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <div class="about-subheader">
+                                        The Design Team
+                                    </div>
+                                    <div class="credits-person">
+                                        Pelin Karaturhan
+                                    </div>
+                                    <div class="credits-person">
+                                        İris Eskinazi
+                                    </div>
+                                    <div class="credits-person">
+                                        Mert Yıldız
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="about-subheader">
+                                        Development Team
+                                    </div>
+                                    <div class="credits-person">
+                                        Sinem Şemsioğlu
+                                    </div>
+                                    <div class="credits-person">
+                                        Genco Levi
+                                    </div>
+                                    <div class="credits-person">
+                                        Ceren Kocaoğullar
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="about-subheader">
+                                        Advisors
+                                    </div>
+                                    <div class="credits-person">
+                                        Asım Evren Yantaç
+                                    </div>
+                                    <div class="credits-person">
+                                        Aykut Coşkun
+                                    </div>
+                                    <div class="credits-person">
+                                        Hüseyin Kuşcu
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="about-subheader">
+                                        Organized by
+                                    </div>
+                                    <div class="credits-person">
+                                        Digilogue
+                                    </div>
+                                    <div class="credits-person">
+                                        SALT Online
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <div class="uni-lab">
+                                        <div class="about-header">ABOUT THE UNI LAB</div>
+                                        <div class="description-text">
+                                            UNI LAB (University Research Lab) is a project initiated by Digilogue and SALT in 2020.  They have invited Koç University KARMA Lab and Prof. Selim Balcısoy's team from Sabancı University to explore the design space of  visual archive narratives through the use of novel technologies such as machine learning, augmented and virtual realities etc. The objective of this call is to develop new archive applications for the written and image documents focusing on art, design, economy, public issues.
                                         </div>
-                                    <!-- /ko -->
+                                        <div class="logos">
+                                            <div class="logo"> <img src="logo/digilogue_logo01.jpg"></div>
+                                            <div class="logo"> <img src="logo/logo_saltonline.png"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <img class="call" src="images/call.jpg">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="about-header">
+                                        MULTI-DIMENSIONAL SIMILARITY SCORING METRIC (MDSSM):
+                                    </div>
+                                    <div class="description-text">
+                                        In RELATIONSCAPE we deeply search for relations between visual items in an archive and visualize these links. Some times it is not easy for an archivist to map hidden relations between archive items. In this tool, we use the combinations of different user and machine generated visual and verbal links between archive items. Users can adjust the similarity scoring algorithm depending on what similarity criteria they value more. We believe that this may help in spotting hidden connections and creating new narratives.
+                                    </div>
+                                    <div class="description-text">
+                                        We developed our own similarity metric for visual archives. It combines four sub-metrics that we found interesting and relevant to the archive:
+                                        <ol>
+                                            <li>Visual Similarity: Visual similarity of archive items' images such as color or layout</li>
+                                            <li>Object Recognition: Similarity of objects contained in those images</li>
+                                            <li>Knowledge API: Their external contextual similarity as measured by comparison of text found in knowledge bases such as Wikipedia</li>
+                                            <li>Salt Data Tags: similarity of these items' metadata tags in salt archives.</li>
+                                        </ol>
+                                        To get more information on how we calculate the scores you can refer to <a href="https://www.notion.so/Similarity-Scoring-62a412f4b5aa4aa4b9d4368a6e90456d">our Similarity Scoring document</a>.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project Info Modal -->
+        <div class="modal fade blur" id="projectInfoModal" tabindex="-1" role="dialog" aria-labelledby="projectInfoModal" aria-hidden="true">
+            <div class="close-button" data-bind="click: () => {$('#projectInfoModal').modal('hide')}"></div>
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content transparent">
+                    <div class="modal-header">
+                        <h3 class="modal-title">Welcome to RELATIONSCAPE / SALT Archives</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="container-fluid">
+                            <div class="row header-row">
+                                <div class="col">
+                                    <h5 class="modal-title about-header">ABOUT THE PROJECT </h5>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="description-text instruction">
+                                        This is a project developed by a Koc University design team in response to a call jointly made by Digilogue and SALT for university teams to design new ways to explore and interact with SALT digital archives. On this page we display SALT archive items as organized by their similarity level to each other.
+                                    </div>
+
+                                    <div class="description-text">
+                                        We developed our own similarity metric (MDSSM); it combines four sub-metrics that we found interesting and relevant to the archive: visual similarity of archive items' images, similarity of objects contained in those images, their external contextual similarity as measured by comparison of text found in knowledge bases such as Wikipedia, and similarity of these items' metadata tags in salt archives. Here in this web interface you can browse the archive to see the relations in 2D representation while we are also working on building a 3D immersive version for Extended Reality.
+                                    </div>
+                                    <div class="description-text">
+                                        As part of this experience, you will be asked to select an initial archive item , and we will display this item along with other archive items that we found most relevant to it. To get more detail about how they are connected you can click on any outer item and you can click on the centered item to get detailed information about it. As you go on you will be able to center more items and explore more.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row header-row">
+                                <div class="col">
+                                    <div class="about-header">CREDITS</div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    <div class="about-subheader">
+                                        The Design Team
+                                    </div>
+                                    <div class="credits-person">
+                                        Pelin Karaturhan
+                                    </div>
+                                    <div class="credits-person">
+                                        İris Eskinazi
+                                    </div>
+                                    <div class="credits-person">
+                                        Mert Yıldız
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="about-subheader">
+                                        Development Team
+                                    </div>
+                                    <div class="credits-person">
+                                        Sinem Şemsioğlu
+                                    </div>
+                                    <div class="credits-person">
+                                        Genco Levi
+                                    </div>
+                                    <div class="credits-person">
+                                        Ceren Kocaoğullar
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="about-subheader">
+                                        Advisors
+                                    </div>
+                                    <div class="credits-person">
+                                        Asım Evren Yantaç
+                                    </div>
+                                    <div class="credits-person">
+                                        Aykut Coşkun
+                                    </div>
+                                    <div class="credits-person">
+                                        Hüseyin Kuşcu
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">
+                                    <div class="about-subheader">
+                                        Organized by
+                                    </div>
+                                    <div class="credits-person">
+                                        Digilogue
+                                    </div>
+                                    <div class="credits-person">
+                                        SALT Online
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-8">
+                                    <div class="uni-lab">
+                                        <div class="about-header">ABOUT THE UNI LAB</div>
+                                        <div class="description-text">
+                                            UNI LAB (University Research Lab) is a project initiated by Digilogue and SALT in 2020.  They have invited Koç University KARMA Lab and Prof. Selim Balcısoy's team from Sabancı University to explore the design space of  visual archive narratives through the use of novel technologies such as machine learning, augmented and virtual realities etc. The objective of this call is to develop new archive applications for the written and image documents focusing on art, design, economy, public issues.
+                                        </div>
+                                        <div class="logos">
+                                            <div class="logo"> <img src="logo/digilogue_logo01.jpg"></div>
+                                            <div class="logo"> <img src="logo/logo_saltonline.png"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-4">
+                                    <img class="call" src="images/call.jpg">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="about-header">
+                                        MULTI-DIMENSIONAL SIMILARITY SCORING METRIC (MDSSM):
+                                    </div>
+                                    <div class="description-text">
+                                        In RELATIONSCAPE we deeply search for relations between visual items in an archive and visualize these links. Some times it is not easy for an archivist to map hidden relations between archive items. In this tool, we use the combinations of different user and machine generated visual and verbal links between archive items. Users can adjust the similarity scoring algorithm depending on what similarity criteria they value more. We believe that this may help in spotting hidden connections and creating new narratives.
+                                    </div>
+                                    <div class="description-text">
+                                        We developed our own similarity metric for visual archives. It combines four sub-metrics that we found interesting and relevant to the archive:
+                                        <ol>
+                                            <li>Visual Similarity: Visual similarity of archive items' images such as color or layout</li>
+                                            <li>Object Recognition: Similarity of objects contained in those images</li>
+                                            <li>Knowledge API: Their external contextual similarity as measured by comparison of text found in knowledge bases such as Wikipedia</li>
+                                            <li>Salt Data Tags: similarity of these items' metadata tags in salt archives.</li>
+                                        </ol>
+                                        To get more information on how we calculate the scores you can refer to <a href="https://www.notion.so/Similarity-Scoring-62a412f4b5aa4aa4b9d4368a6e90456d">our Similarity Scoring document</a>.
+                                    </div>
                                 </div>
                             </div>
                         </div>
