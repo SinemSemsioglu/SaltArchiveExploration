@@ -85,14 +85,16 @@
                 </g>
             </svg>
 
+            <div class="scale-line">
+                <div class="num">0</div>
+                <div class="num">15</div>
+                <div class="num">30</div>
+            </div>
             <!-- dart bg -->
             <div class="bg-base">
                 <div class="bg bg-3">
-                    <!--div class="scale-line">0-10%</div-->
                     <div class="bg bg-2">
-                        <!--div class="scale-line">10-20%</div-->
                         <div class="bg bg-1">
-                            <!--div class="scale-line">20+%</div-->
                             <div class="bg bg-0">
                             </div>
                         </div>
@@ -297,8 +299,7 @@
                                     </div>
                                 </div>
                                 <div class="row score-weight-info-row">
-                                    <div class="col">
-                                        Explanation here about how this score was calculated
+                                    <div class="col" data-bind="text: scoreDetail">
                                     </div>
                                 </div>
                                 <!-- /ko -->
@@ -592,7 +593,7 @@
                             <div class="info">
                                 <div class="top-container row node-history-horizontal">
                                     <!-- ko if: visitedNodes().length == 0 -->
-                                     You haven't visited any other nodes yet. You can do that by clicking on an outer item, then selecting move to center
+                                    <div class="col">You haven't visited any other nodes yet. You can do that by clicking on an outer item, then selecting move to center. </div>
                                     <!-- /ko -->
                                     <!-- ko foreach: visitedNodes -->
                                     <div class="col-sm history-im">

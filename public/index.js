@@ -237,9 +237,12 @@ const initClick = () => {
         $('.scale-text').text(percentVal);
 
         // todo process other score info here
-        $('.object-keywords').text(scoresObj.matched_objects.join(', '));
-        $('.knowledge-keywords').text(scoresObj.search_keywords.join(', '));
-        $('.salt-keywords').text(scoresObj.metadata_keywords.join(', '));
+        let objKeywords = scoresObj.matched_objects.length > 0 ? scoresObj.matched_objects.join(', ') : "No common objects found";
+        let knowledgeKeywords = scoresObj.search_keywords.length > 0 ? scoresObj.search_keywords.join(', ') : "No common keywords found";
+        let saltKeywords = scoresObj.metadata_keywords.length > 0 ? scoresObj.metadata_keywords.join(', ') : "No common tags found";
+        $('.object-keywords').text(objKeywords);
+        $('.knowledge-keywords').text(knowledgeKeywords);
+        $('.salt-keywords').text(saltKeywords);
         $('#connectionInfoModal').modal('show')
     })
 
@@ -287,7 +290,8 @@ const initKO = () => {
             scoreName: "Knowledge API",
             scoreScale: "binary",
             disabled: ko.observable(true),
-            scoreLocked: ko.observable(false)
+            scoreLocked: ko.observable(false),
+            scoreDetail: "Their external contextual similarity as measured by comparison of text found in knowledge bases such as Wikipedia"
         },
         {
             scoreType: "object_match",
@@ -296,7 +300,8 @@ const initKO = () => {
             scoreName: "Object Recognition",
             scoreScale: "binary",
             disabled: ko.observable(true),
-            scoreLocked: ko.observable(false)
+            scoreLocked: ko.observable(false),
+            scoreDetail: "Similarity of objects contained in those images"
         },
         {
             scoreType: "vis_similarity",
@@ -305,7 +310,8 @@ const initKO = () => {
             scoreName: "Visual Similarity",
             scoreScale: "continuous",
             disabled: ko.observable(true),
-            scoreLocked: ko.observable(false)
+            scoreLocked: ko.observable(false),
+            scoreDetail: "Visual similarity of archive items' images such as color or layout"
         },
         {
             scoreType: "salt_metadata",
@@ -315,6 +321,7 @@ const initKO = () => {
             scoreScale: "discrete",
             disabled: ko.observable(true),
             scoreLocked: ko.observable(false),
+            scoreDetail: "Similarity of these items' metadata tags in salt archives."
         }
     ]
 
