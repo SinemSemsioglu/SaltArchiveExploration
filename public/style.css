@@ -60,6 +60,9 @@ a:hover {
 .object_match-border {
   border-color: #FCCD05;
 }
+.overall-border {
+  border-color: green;
+}
 .salt_metadata-bg {
   background-color: #E91750;
 }
@@ -71,6 +74,9 @@ a:hover {
 }
 .object_match-bg {
   background-color: #FCCD05;
+}
+.overall-bg {
+  background-color: green;
 }
 .project-header {
   position: fixed;

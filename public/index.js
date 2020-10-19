@@ -52,6 +52,7 @@ let rootInfo = {
 
 let infoActive = ko.observable(false);
 let pageInit = ko.observable(false);
+let currFilterToggle = null;
 radiusOffset = 150;
 baseRadius = radiusOffset * 3 / 2; // 1 for radius of the root elm's circle 1/2 for half of the extra radius of each circle
 
@@ -166,10 +167,11 @@ const toggleLinkVisibility = () => {
     $(".link").toggle();
 }
 
-let currFilterToggle = null;
-
 const toggleHighlightedNodes = (scoreType, disabled) => {
-    let threshold = thresholds[scoreType];
+    let threshold;
+    if (scoreType == 'overall') threshold = thresholds.overall.two; // the outermost
+    else threshold = thresholds[scoreType];
+
     let {valid, invalid} = filterByProp(scores[rootId].children, threshold, scoreType, 'name');
 
     if (disabled()) {
@@ -186,12 +188,14 @@ const toggleHighlightedNodes = (scoreType, disabled) => {
         if (currFilterToggle != null) currFilterToggle(true);
         currFilterToggle = disabled;
     } else {
+        // make everything faded as the default case
         invalid.forEach((elm) => {
-            $("." + elm).removeClass('fade');
+            //$("." + elm).removeClass('fade');
         });
 
         valid.forEach((elm) => {
             $("." + elm).removeClass('highlight'); // curr useless
+            $("." + elm).addClass('fade');
         });
 
         currFilterToggle = null;
@@ -270,19 +274,15 @@ const zoom = (deltaLevel) => {
     $('.main-content').removeClass('zoom-' + zoomLevel())
     zoomLevel(zoomLevel() + deltaLevel)
     $('.main-content').addClass('zoom-' + zoomLevel());
-
-
-    /* Adjust page to zoom width
-    if (zoomLevel() > 100) $('body').css({
-        width: (zoomLevel() * 1.2) + '%'
-    });
-    else $('body').css({
-        width: '100%'
-    });*/
 }
 
 const initKO = () => {
     let scoreInfo = [
+        {
+            scoreType: "overall",
+            scoreName: "Overall Score",
+            disabled: ko.observable(false)
+        },
         {
             scoreType: "search_res",
             scoreCode: "a_G",
@@ -326,12 +326,16 @@ const initKO = () => {
     ]
 
     scoreInfo.forEach((scoreObj) => {
-        scoreObj.scoreWeight.subscribe((newVal) => {
-            let code = scoreObj.scoreCode;
-            calculateNewWeights(code);
-        });
-        scoreObj.scoreWeight.extend({ rateLimit: 50 });
+        if (scoreObj.scoreWeight) {
+            scoreObj.scoreWeight.subscribe((newVal) => {
+                let code = scoreObj.scoreCode;
+                calculateNewWeights(code);
+            });
+            scoreObj.scoreWeight.extend({ rateLimit: 50 });
+        }
     });
+
+    currFilterToggle = scoreInfo[0].disabled;
 
     koVals =
         {

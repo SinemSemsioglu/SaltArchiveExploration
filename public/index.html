@@ -288,20 +288,22 @@
                         <div class="container-fluid">
                             <form>
                                 <!-- ko foreach: scoreInfo -->
-                                <div class="form-group row score-weight-row">
-                                    <label class="col-form-label col-lg-3" data-bind="text: scoreName"></label>
-                                    <div class="col-lg-7">
-                                        <input type="range" data-bind="value: scoreWeight, attr: {disabled: scoreLocked}" class="form-control-range">
-                                    </div>
-                                    <div class="col-lg-2 score-weight-col">
-                                        <div class="percent" data-bind="text: parseInt(Math.round(scoreWeight())) + '%'"></div>
-                                        <div class="lock-icon" data-bind="css: {locked: scoreLocked}, click: () => {scoreLocked(!scoreLocked())}"></div>
-                                    </div>
-                                </div>
-                                <div class="row score-weight-info-row">
-                                    <div class="col" data-bind="text: scoreDetail">
-                                    </div>
-                                </div>
+                                    <!-- ko if: scoreType !== 'overall' -->
+                                        <div class="form-group row score-weight-row">
+                                            <label class="col-form-label col-lg-3" data-bind="text: scoreName"></label>
+                                            <div class="col-lg-7">
+                                                <input type="range" data-bind="value: scoreWeight, attr: {disabled: scoreLocked}" class="form-control-range">
+                                            </div>
+                                            <div class="col-lg-2 score-weight-col">
+                                                <div class="percent" data-bind="text: parseInt(Math.round(scoreWeight())) + '%'"></div>
+                                                <div class="lock-icon" data-bind="css: {locked: scoreLocked}, click: () => {scoreLocked(!scoreLocked())}"></div>
+                                            </div>
+                                        </div>
+                                        <div class="row score-weight-info-row">
+                                            <div class="col" data-bind="text: scoreDetail">
+                                            </div>
+                                        </div>
+                                    <!-- /ko -->
                                 <!-- /ko -->
                             </form>
                         </div>
