@@ -70,6 +70,21 @@ const thresholds = {
     }
 }
 
+const colorScoreMap = {
+    "search_res": "#A64AC9",
+    "vis_similarity": "#17E9E0",
+    "object_match": "#FCCD05",
+    "salt_metadata": "#E91750",
+    "overall": "#9c1a27"
+}
+
+const scoreAngleOffsets = {
+    "search_res": -2,
+    "vis_similarity": -1,
+    "object_match": 1,
+    "salt_metadata": 2
+}
+
 const initPage = () => {
     initKO();
     $("#initModal").modal("show");
@@ -124,20 +139,36 @@ const initializeGraph = () => {
     }
 
     var lineGen = d3.lineRadial()
-        .angle(d => deg2rad(d.x) + Math.PI/2) // lines have 90 deg offset i.c to nodes, why?
+        .angle(d => deg2rad(d.x + (d.offset ? d.offset : 0)) + Math.PI/2) // lines have 90 deg offset i.c to nodes, why?
         .radius(d => d.y + (d.data.depth * radiusOffset));
 
     // draw links
+    let links = root.links();
+
     svg7.select('g#links')
         .selectAll('path.link')
-        .data(root.links())
+        .data(links)
         .enter()
         .append("path")
-        .classed('link', true)
+        .attr("class", (d) => "link " + d.target.data.name + "-link")
         .attr('stroke', "darkgray")
-        .attr('stroke-width', 0.60)
-        //.attr("d", linkGen);
+        .attr('stroke-width', (d) => d.target.data.overall)
         .attr("d", (d) => lineGen([d.target, d.source]));
+
+    links.forEach((link) => {
+        scoreComponents.forEach((scoreType) => {
+            let currScore = link.target.data[scoreType];
+            if (currScore >= thresholds[scoreType]) {
+                svg7.select('g#links')
+                    .append("path")
+                    .attr("class", "link " + scoreType + "-link " + link.target.data.name + "-link")
+                    .attr('stroke', colorScoreMap[scoreType])
+                    .attr('stroke-width', currScore)
+                    .attr("d", lineGen([Object.assign({offset: scoreAngleOffsets[scoreType]}, link.target), link.source]));
+            }
+        })
+    });
+
 
     // draw nodes
     svg7.select('g#nodes')
@@ -163,8 +194,11 @@ const initializeGraph = () => {
 
 
 // interaction related functions
-const toggleLinkVisibility = () => {
-    $(".link").toggle();
+const resetToggles = () => {
+    koVals.scoreInfo.forEach((score) => {
+        if(score.scoreType == "overall") score.disabled(false);
+        else score.disabled(true);
+    });
 }
 
 const toggleHighlightedNodes = (scoreType, disabled) => {
@@ -178,11 +212,13 @@ const toggleHighlightedNodes = (scoreType, disabled) => {
         invalid.forEach((elm) => {
             $("." + elm).removeClass('highlight');
             $("." + elm).addClass('fade');
+            $("." + elm + "-link").hide();
         });
 
         valid.forEach((elm) => {
             $("." + elm).removeClass('fade');
             $("." + elm).addClass('highlight'); // curr useless
+            $("." + elm + "-link").show();
         });
 
         if (currFilterToggle != null) currFilterToggle(true);
@@ -196,6 +232,7 @@ const toggleHighlightedNodes = (scoreType, disabled) => {
         valid.forEach((elm) => {
             $("." + elm).removeClass('highlight'); // curr useless
             $("." + elm).addClass('fade');
+            $("." + elm + "-link").hide();
         });
 
         currFilterToggle = null;
@@ -231,7 +268,7 @@ const initClick = () => {
 
         let percentVal = Math.round(scoresObj.vis_similarity * 100) + '%';
 
-        // if screnn size is small, adjusts the width as the scale indicator is horizontal
+        // if screen size is small, adjusts the width as the scale indicator is horizontal
         if (window.innerWidth <= smallBreakpoint) {
             $('.scale-indicator').width(percentVal);
         } else {
@@ -371,6 +408,7 @@ const getDataById = (id, extracallback) => {
                 initializePhotoDefs();
                 initializeGraph();
                 initClick();
+                resetToggles();
                 extracallback();
             }
         },
