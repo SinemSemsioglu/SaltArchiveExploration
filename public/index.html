@@ -43,26 +43,24 @@
                 <div class="explanation">By clicking on the toggles, you can highlight items that are above a certain threshold for relevant score type.</div>
                 <!-- ko foreach:scoreInfo -->
                 <div class="toggle-row">
+                    <div class="score-name score-component" data-bind="text: scoreName">
+
+                    </div>
                     <div class="color-code score-component">
                         <div class="toggle-container">
                             <div class="toggle" data-bind="class: scoreType + '-bg', css: {disabled: disabled()}, click: () => {$parent.toggleHighlightedNodes(scoreType, disabled)}"></div>
                         </div>
                     </div>
-
-                    <div class="score-name score-component" data-bind="text: scoreName">
-
-                    </div>
                 </div>
                 <!-- /ko -->
                 <div class="toggle-row">
+                    <div class="score-name score-component">
+                        Edit similarity score
+                    </div>
                     <div class="color-code score-component">
                         <div class="toggle-container edit-container" data-bind="click: () => {$('#scoreAdjustmentModal').modal('show')}">
                             <div class="toggle edit-button"></div>
                         </div>
-                    </div>
-
-                    <div class="score-name score-component">
-                        Edit similarity score
                     </div>
                 </div>
             </div>

@@ -20,7 +20,8 @@
 @mid-spacing: 15px;
 @small-spacing: 10px;
 
-@toggle-row-height: 40px;
+@toggle-button-height: 13px;
+@toggle-row-height: @toggle-button-height * 2.5;
 @zoom-button-width: 50px;
 @scale-bar-width: 40px;
 
@@ -187,26 +188,24 @@ a {
   bottom: @page-padding;
   left: @page-padding;
   padding: @mid-spacing;
-  max-width: 250px;
+  max-width: 200px;
 
   .explanation {
     font-weight: 300;
     font-size: @regular-font;
+    margin-bottom: @small-spacing;
   }
 
 
   .toggle-row {
     height: @toggle-row-height;
     display: flex;
+    justify-content: space-between;
   }
 
   .score-component {
     display: inline-flex;
     align-items: center;
-
-    &.color-code {
-      margin-right: @mid-spacing;
-    }
 
     &.color-code, &.score-name {
       justify-content: center;
@@ -214,7 +213,7 @@ a {
   }
 
   .toggle-container {
-    border: 3px solid @white;
+    border: 2px solid @white;
     border-radius: 50%;
     filter: drop-shadow(0, 8px, 6px);
     //font-weight: 600;
@@ -224,8 +223,8 @@ a {
     }
 
     .toggle {
-      height: 20px;
-      width: 20px;
+      height: @toggle-button-height;
+      width: @toggle-button-height;
       border-radius: 50%;
       cursor: pointer;
 

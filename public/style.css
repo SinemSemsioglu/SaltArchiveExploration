@@ -135,29 +135,28 @@ a:hover {
   bottom: 20px;
   left: 20px;
   padding: 15px;
-  max-width: 250px;
+  max-width: 200px;
 }
 .toggles .explanation {
   font-weight: 300;
   font-size: 0.8rem;
+  margin-bottom: 10px;
 }
 .toggles .toggle-row {
-  height: 40px;
+  height: 32.5px;
   display: flex;
+  justify-content: space-between;
 }
 .toggles .score-component {
   display: inline-flex;
   align-items: center;
-}
-.toggles .score-component.color-code {
-  margin-right: 15px;
 }
 .toggles .score-component.color-code,
 .toggles .score-component.score-name {
   justify-content: center;
 }
 .toggles .toggle-container {
-  border: 3px solid #fcfcfc;
+  border: 2px solid #fcfcfc;
   border-radius: 50%;
   filter: drop-shadow(0, 8px, 6px);
 }
@@ -165,8 +164,8 @@ a:hover {
   background-color: #fcfcfc;
 }
 .toggles .toggle-container .toggle {
-  height: 20px;
-  width: 20px;
+  height: 13px;
+  width: 13px;
   border-radius: 50%;
   cursor: pointer;
 }
@@ -614,7 +613,7 @@ a:hover {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    height: 110px;
+    height: 95px;
     top: auto;
     bottom: 20px;
     transform: none;
