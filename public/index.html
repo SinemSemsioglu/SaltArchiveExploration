@@ -26,24 +26,17 @@
                 <div class="project-name">
                     <img class="logo" src="logo/salt_relatioscape_logo_small.png">
                 </div>
-                <div class="info-icon" data-bind="click: () => {$('#projectInfoModal').modal('show')}">
-
+                <div class="info-trigger" data-bind="click: () => {$('#projectInfoModal').modal('show')}">
+                    INFO
                 </div>
-                <div class="page-info" data-bind="visible: infoActive">
-                    Here, you can explore the items that are connected to the main item. Click on one to see the connection details.
+                <div class="info-trigger" data-bind="click: () => {$('#journeyModal').modal('show')}">
+                    YOUR JOURNEY
                 </div>
             </div>
 
             <div class="zoom-buttons">
                 <div class="top" data-bind="css: {disabled: zoomLevel() >= 180}, click: () => { if (zoomLevel() <= 140) zoom(40)}"> + </div>
                 <div class="bottom" data-bind="css: {disabled: zoomLevel() <= 60}, click: () => { if (zoomLevel() >= 100) zoom(-40)}"> - </div>
-            </div>
-
-            <div class="info-triggers">
-
-                <div class="info-trigger" data-bind="click: () => {$('#journeyModal').modal('show')}">
-                    Your Journey
-                </div>
             </div>
 
             <div class="toggles">
@@ -85,17 +78,17 @@
                 </g>
             </svg>
 
-            <div class="scale-line">
-                <div class="num">0</div>
-                <div class="num">15</div>
-                <div class="num">30</div>
-            </div>
             <!-- dart bg -->
             <div class="bg-base">
+            <span class="scale-label">SIMILARITY: </span>
                 <div class="bg bg-3">
+                    <span class="num">25</span>
                     <div class="bg bg-2">
+                        <span class="num">50</span>
                         <div class="bg bg-1">
+                            <span class="num">75</span>
                             <div class="bg bg-0">
+                                <span class="num">100</span>
                             </div>
                         </div>
                     </div>

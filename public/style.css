@@ -95,22 +95,15 @@ a:hover {
 .project-header .project-name .logo {
   max-width: 100%;
 }
-.project-header .info-icon {
-  width: 25px;
-  height: 25px;
-  background-size: cover;
-  cursor: pointer;
-  background-image: url("/icons/info-24px.svg");
-  margin-top: 15px;
-}
-.project-header .page-info {
+.project-header .info-trigger {
+  font-size: 0.8rem;
+  color: #fcfcfc;
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 10px;
+  cursor: pointer;
   padding: 10px;
-  color: #fcfcfc;
-  font-size: 0.8rem;
-  max-width: 300px;
-  margin-top: 10px;
+  margin-top: 15px;
+  width: 50%;
 }
 .zoom-buttons {
   position: fixed;
@@ -118,7 +111,7 @@ a:hover {
   background-color: rgba(0, 0, 0, 0.5);
   color: #fcfcfc;
   border-radius: 10px;
-  left: 20px;
+  right: 20px;
   top: 50%;
   transform: translate(0, -50%);
   text-align: center;
@@ -133,21 +126,6 @@ a:hover {
   cursor: inherit;
   opacity: 0.2;
 }
-.info-triggers {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  display: flex;
-  z-index: 5;
-}
-.info-triggers .info-trigger {
-  color: #fcfcfc;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 10px;
-  cursor: pointer;
-  padding: 15px;
-  margin-left: 15px;
-}
 .toggles {
   position: fixed;
   z-index: 5;
@@ -155,7 +133,7 @@ a:hover {
   color: #fcfcfc;
   border-radius: 10px;
   bottom: 20px;
-  right: 20px;
+  left: 20px;
   padding: 15px;
   max-width: 250px;
 }
@@ -255,17 +233,16 @@ a:hover {
   position: absolute;
   top: 50%;
   bottom: 0;
-  right: calc(50% + 300px/2);
-  width: 450px;
+  right: 50%;
+  width: 600px;
   height: 25px;
-  border-bottom: 2px solid gray;
   color: gray;
   display: flex;
   transform: translate(0, -15.5px);
   opacity: 0.5;
 }
 .scale-line .num {
-  flex-basis: 33%;
+  flex-basis: 25%;
   flex-shrink: 0;
   flex-grow: 0;
   padding-left: 10px;
@@ -278,6 +255,13 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #b7b7b7;
+}
+.bg-base .scale-label {
+  position: absolute;
+  font-weight: 600;
+  right: calc(50% + (300px / 2) * (3 + 1) - 10px);
+  padding-right: 30px;
 }
 .bg {
   border-radius: 100%;
@@ -286,25 +270,46 @@ a:hover {
   align-items: center;
   justify-content: center;
 }
+.bg .num {
+  position: absolute;
+  text-align: left;
+  font-weight: 600;
+}
 .bg.bg-3 {
   min-width: 1200px;
   width: 1200px;
   height: 1200px;
+  background-color: #c9c9c9;
+}
+.bg.bg-3 .num {
+  right: calc(50% + (300px / 2) * (3 + 1) - 10px);
 }
 .bg.bg-2 {
   min-width: 900px;
   width: 900px;
   height: 900px;
+  background-color: #dbdbdb;
+}
+.bg.bg-2 .num {
+  right: calc(50% + (300px / 2) * (2 + 1) - 10px);
 }
 .bg.bg-1 {
   min-width: 600px;
   width: 600px;
   height: 600px;
+  background-color: #ededed;
+}
+.bg.bg-1 .num {
+  right: calc(50% + (300px / 2) * (1 + 1) - 10px);
 }
 .bg.bg-0 {
   min-width: 300px;
   width: 300px;
   height: 300px;
+  background-color: #ffffff;
+}
+.bg.bg-0 .num {
+  right: calc(50% + (300px / 2) * (0 + 1) - 10px);
 }
 .modal-content.transparent {
   background: transparent;
@@ -617,22 +622,6 @@ a:hover {
   .project-header {
     display: flex;
     align-items: center;
-  }
-  .project-header .info-icon {
-    margin-top: 0;
-    margin-left: 10px;
-  }
-  .info-triggers {
-    top: 60px;
-    left: 20px;
-    flex-direction: column;
-    width: 40%;
-  }
-  .info-triggers .info-trigger {
-    margin-left: 0;
-    margin-bottom: 10px;
-    padding: 10px;
-    text-align: center;
   }
   .toggles {
     width: calc(100vw - (2 * 20px) - 50px - 3*15px);
