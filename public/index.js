@@ -505,19 +505,23 @@ const calculateNewWeights = (changedScore) => {
     let numChangeableScores = 0;
 
     koVals.scoreInfo.forEach((scoreObj) => {
-        if (scoreObj.scoreLocked()) {
-            possibleScore -= 25;
-        } else {
-            totalWeight += parseFloat(scoreObj.scoreWeight());
-            numChangeableScores++;
+        if (scoreObj.scoreType !== 'overall') {
+            if (scoreObj.scoreLocked()) {
+                possibleScore -= 25;
+            } else {
+                totalWeight += parseFloat(scoreObj.scoreWeight());
+                numChangeableScores++;
+            }
         }
     });
 
     let overdrive = possibleScore - totalWeight;
 
     koVals.scoreInfo.forEach((scoreObj) => {
-        if (scoreObj.scoreCode != changedScore && !scoreObj.scoreLocked()) {
-            scoreObj.scoreWeight(parseFloat(scoreObj.scoreWeight()) + overdrive/(numChangeableScores-1));
+        if (scoreObj.scoreType !== 'overall') {
+            if (scoreObj.scoreCode != changedScore && !scoreObj.scoreLocked()) {
+                scoreObj.scoreWeight(parseFloat(scoreObj.scoreWeight()) + overdrive/(numChangeableScores-1));
+            }
         }
     });
 
@@ -531,7 +535,7 @@ const getNewScores = () => {
     let scoreData = {};
 
     koVals.scoreInfo.forEach((scoreObj) => {
-        scoreData[scoreObj.scoreCode] = scoreObj.scoreWeight()/100;
+        if (scoreObj.scoreType !== 'overall') scoreData[scoreObj.scoreCode] = scoreObj.scoreWeight()/100;
     })
 
     $.ajax({
