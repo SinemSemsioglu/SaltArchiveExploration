@@ -118,33 +118,82 @@
                             <!-- /ko -->
                             <div class="info">
                                 <div class="top-container row">
-                                    <div class="col">
+                                    <div class="root-node-col col">
                                         <div class="im-interaction">
-                                            <a target="_blank" class="root-url" href="">VISIT ARCHIVE</a>
+                                            Current Item
                                         </div>
                                         <div class="square-img-container">
-                                            <img class="root-img square-img" src="" />
+                                            <img class="root-img square-img"  data-bind="attr: {src: rootInfo.thumb_url}" />
+                                        </div>
+                                        <div class="im-interaction">
+                                            <a target="_blank" data-bind="attr: {href: rootInfo.salt_url}">VISIT ARCHIVE</a>
                                         </div>
                                     </div>
                                     <div class="connection col">
-                                        <div class="overall-score"><span class="overall-score-label"><span>OVERALL</span> <span>SCORE</span></span> <span class="overall-score-value"></span></div>
-                                        <div class="connection-line search_res-bg"></div>
-                                        <div class="connection-line object_match-bg"></div>
-                                        <div class="connection-line vis_similarity-bg"></div>
-                                        <div class="connection-line salt_metadata-bg"></div>
-                                    </div>
-                                    <div class="col">
                                         <div class="im-interaction">
-                                            <a target="_blank" class="connected-url" href="">VISIT ARCHIVE</a>
-                                            <span class="center-button" data-bind="click: () => {centerConnectedImage()}">MOVE TO CENTER</span>
+                                            Relations causing similarity
+                                        </div>
+
+                                        <div class="connection-info-container">
+                                            <!-- ko foreach: scoreInfo -->
+                                                <!-- ko if: scoreType !== 'overall' -->
+                                                <div class="connection-info">
+                                                    <!-- ko if: $parent.currentConnection[scoreType].aboveThreshold -->
+                                                    <div class="textual-info">
+                                                        <div class="label" data-bind="text: scoreName.toUpperCase()"></div>
+                                                        <div class="num" data-bind="text: $parent.currentConnection[scoreType].scoreText"></div>
+                                                    </div>
+                                                    <div class="connection-line" data-bind="class: scoreType + '-bg'"></div>
+                                                    <!-- /ko -->
+                                                </div>
+                                                <!-- /ko -->
+                                            <!-- /ko -->
+                                        </div>
+
+                                        <div class="overall-score"><span class="overall-score-label"><span>OVERALL</span> <span>SCORE</span></span> <span class="overall-score-value" data-bind="text: currentConnection.overallScore"></span></div>
+
+                                    </div>
+                                    <div class="connected-node-col col">
+                                        <div class="im-interaction right-align">
+                                            Item in relation
                                         </div>
                                         <div class="square-img-container">
-                                            <img class="connected-img square-img" src=""/>
+                                            <img class="connected-img square-img"  data-bind="attr: {src: connectedInfo.thumb_url}" />
+                                        </div>
+                                        <div class="im-interaction">
+                                            <a target="_blank" class="connected-url" data-bind="attr: {href: connectedInfo.salt_url}">VISIT ARCHIVE</a>
+                                            <span class="center-button" data-bind="click: () => {centerConnectedImage()}">MOVE TO CENTER</span>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="container-label">OVERLAPS CAUSING SIMILARITY BETWEEN ITEMS</div>
+                                <div class="row">
+                                    <div class="col root-node-col" data-bind="foreach: Object.keys(rootInfo.metadata)">
+                                        <div class="info-row">
+                                            <div class="info-label" data-bind="text: rootInfo.metadata[$data].label">
+                                                Title
+                                            </div>
+                                            <div class="info-text" data-bind="text: rootInfo.metadata[$data].value">
+                                                Info Text
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col connection">
+
+                                    </div>
+                                    <div class="col connected-node-col" data-bind="foreach: Object.keys(connectedInfo.metadata)">
+                                        <div class="info-row">
+                                            <div class="info-label" data-bind="text: connectedInfo.metadata[$data].label + ':'">
+                                                Title
+                                            </div>
+                                            <div class="info-text" data-bind="text: connectedInfo.metadata[$data].value">
+                                                Info Text
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!--div class="container-label">OVERLAPS CAUSING SIMILARITY BETWEEN ITEMS</div>
                                 <div class="bottom-container dark row">
                                     <div class="col-sm-3">
                                         <div class="card info-card">
@@ -192,7 +241,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div!-->
                             </div>
                         </div>
                     </div>

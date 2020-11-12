@@ -50,8 +50,49 @@ let rootInfo = {
     }
 };
 
+let connectedInfo = {
+    "thumb_url": ko.observable(""),
+    "salt_url": ko.observable(""),
+    metadata: {
+        "title": {
+            "label": "Title",
+            "value": ko.observable("")
+        },
+        "description": {
+            "label": "Description",
+            "value": ko.observable("")
+        },
+        "creator": {
+            "label": "Created by",
+            "value": ko.observable("")
+        },
+        "date_issued": {
+            "label": "Date Issued",
+            "value": ko.observable("")
+        },
+        "subject": {
+            "label": "Topics",
+            "value": ko.observable("")
+        },
+        "type": {
+            "label": "Medium",
+            "value": ko.observable("")
+        },
+        "spatial": {
+            "label": "Location",
+            "value": ko.observable("")
+        },
+        "format": {
+            "label": "Format",
+            "value": ko.observable("")
+        }
+    }
+};
+
 let infoActive = ko.observable(false);
 let pageInit = ko.observable(false);
+let currentConnection = {};
+
 let currFilterToggle = null;
 radiusOffset = 150;
 baseRadius = radiusOffset * 3 / 2; // 1 for radius of the root elm's circle 1/2 for half of the extra radius of each circle
@@ -145,7 +186,7 @@ const initializeGraph = () => {
     // draw links
     let links = root.links();
 
-    svg7.select('g#links')
+/*    svg7.select('g#links')
         .selectAll('path.link')
         .data(links)
         .enter()
@@ -153,7 +194,7 @@ const initializeGraph = () => {
         .attr("class", (d) => "link " + d.target.data.name + "-link")
         .attr('stroke', "darkgray")
         .attr('stroke-width', (d) => d.target.data.overall)
-        .attr("d", (d) => lineGen([d.target, d.source]));
+        .attr("d", (d) => lineGen([d.target, d.source]));*/
 
     links.forEach((link) => {
         scoreComponents.forEach((scoreType) => {
@@ -223,6 +264,17 @@ const toggleHighlightedNodes = (scoreType, disabled) => {
 
         if (currFilterToggle != null) currFilterToggle(true);
         currFilterToggle = disabled;
+
+        if(scoreType == 'overall') {
+            scoreComponents.forEach((type) => {
+                $("." + type+ "-link").show();
+            })
+        } else {
+            scoreComponents.forEach((type) => {
+                if (type == scoreType) $("." + type+ "-link").show();
+                else $("." + type+ "-link").hide();
+            })
+        }
     } else {
         // make everything faded as the default case
         invalid.forEach((elm) => {
@@ -236,6 +288,9 @@ const toggleHighlightedNodes = (scoreType, disabled) => {
         });
 
         currFilterToggle = null;
+        scoreComponents.forEach((type) => {
+            $("." + type+ "-link").hide();
+        })
     }
 
     disabled(!disabled());
@@ -248,24 +303,20 @@ const initClick = () => {
         let id = event.target.classList[0];
         connectedId = id;
 
-        let rootNodeInfo = findByProp(nodes, rootId, 'id');
-        let connectedNodeInfo = findByProp(nodes, id, 'id');
-        $($('.root-img')[0]).attr('src', rootNodeInfo.thumb_url);
-        $($('.root-url')[0]).attr('href', rootNodeInfo.salt_url);
-        $($('.connected-img')[0]).attr('src', connectedNodeInfo.thumb_url);
-        $($('.connected-url')[0]).attr('href', connectedNodeInfo.salt_url);
-
+        // set metadata info for the selected node
+        setInfo(findByProp(nodes, id, 'id'), false);
 
         let scoresObj = findByProp(scores[rootId].children, id, 'name');
-        $('.connection').find('.overall-score-value').text(Math.round(scoresObj.overall * 100) + '%', 'name')
 
         // todo can also use the scoreInfo comp?
         scoreComponents.forEach((scoreType) => {
-            let scoreLine = $('.connection-line.' + scoreType + '-bg');
-            if (scoresObj[scoreType]>= thresholds[scoreType]) scoreLine.show();
-            else scoreLine.hide();
+            let score = scoresObj[scoreType];
+            currentConnection[scoreType].aboveThreshold((score >= thresholds[scoreType]))
+            currentConnection[scoreType].scoreText(Math.round(score * 100) + '%');
         })
+        currentConnection.overallScore(Math.round(scoresObj.overall * 100) + '%');
 
+        // todo below is currently unnecessary
         let percentVal = Math.round(scoresObj.vis_similarity * 100) + '%';
 
         // if screen size is small, adjusts the width as the scale indicator is horizontal
@@ -372,6 +423,14 @@ const initKO = () => {
         }
     });
 
+    scoreComponents.forEach((scoreType) => {
+        currentConnection[scoreType] = {
+            aboveThreshold: ko.observable(false),
+            scoreText: ko.observable('0%')
+        }
+    })
+    currentConnection.overallScore = ko.observable('0%');
+
     currFilterToggle = scoreInfo[0].disabled;
 
     koVals =
@@ -380,6 +439,7 @@ const initKO = () => {
             toggleHighlightedNodes,
             getNewScores,
             centerConnectedImage,
+            currentConnection,
             visitedNodes,
             zoomLevel,
             zoom,
@@ -388,6 +448,7 @@ const initKO = () => {
             startJourney,
             initJourney,
             rootInfo,
+            connectedInfo,
             pageInit
         };
 
@@ -403,7 +464,7 @@ const getDataById = (id, extracallback) => {
             if (resp.success) {
                 rootId = id;
                 nodes = resp.data.nodes;
-                setRootInfo(findByProp(nodes, rootId, 'id'));
+                setInfo(findByProp(nodes, rootId, 'id'), true);
                 parseScoresFile(resp.data.scores);
                 initializePhotoDefs();
                 initializeGraph();
@@ -481,7 +542,7 @@ const getNewScores = () => {
         success: async (resp) => {
             if (resp.success) {
                 nodes = resp.data.nodes;
-                setRootInfo(findByProp(nodes, rootId, 'id'));
+                setInfo(findByProp(nodes, rootId, 'id'), true);
                 parseScoresFile(resp.data.scores);
                 initializePhotoDefs();
                 initializeGraph();
@@ -517,11 +578,12 @@ const parseScoresFile = (file) => {
 }
 
 // util functions
-const setRootInfo = (newInfo) => {
-    rootInfo.thumb_url(newInfo.thumb_url);
-    rootInfo.salt_url(newInfo.salt_url);
-    Object.keys(rootInfo.metadata).forEach((key) => {
-        rootInfo.metadata[key].value(newInfo[key] || "-");
+const setInfo = (newInfo, isRoot) => {
+    let infoObj = isRoot? rootInfo : connectedInfo;
+    infoObj.thumb_url(newInfo.thumb_url);
+    infoObj.salt_url(newInfo.salt_url);
+    Object.keys(infoObj.metadata).forEach((key) => {
+        infoObj.metadata[key].value(newInfo[key] || "-");
     })
 }
 
