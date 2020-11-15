@@ -1,6 +1,7 @@
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: rgba(100, 100, 100, 0.1);
+  background-color: #b7b7b7;
+  font-size: 0.8rem;
 }
 a {
   font-weight: 300;
@@ -101,8 +102,8 @@ a:hover {
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   cursor: pointer;
-  padding: 10px;
-  margin-top: 15px;
+  padding: 8px;
+  margin-top: 12px;
   width: 50%;
 }
 .zoom-buttons {
@@ -115,8 +116,8 @@ a:hover {
   top: 50%;
   transform: translate(0, -50%);
   text-align: center;
-  font-size: 2em;
-  width: 50px;
+  font-size: 1.2rem;
+  width: 30px;
   cursor: pointer;
 }
 .zoom-buttons .top {
@@ -134,16 +135,16 @@ a:hover {
   border-radius: 10px;
   bottom: 20px;
   left: 20px;
-  padding: 15px;
-  max-width: 200px;
+  padding: 12px;
+  max-width: 180px;
 }
 .toggles .explanation {
   font-weight: 300;
-  font-size: 0.8rem;
-  margin-bottom: 10px;
+  font-size: 0.6rem;
+  margin-bottom: 8px;
 }
 .toggles .toggle-row {
-  height: 32.5px;
+  height: 26px;
   display: flex;
   justify-content: space-between;
 }
@@ -244,7 +245,7 @@ a:hover {
   flex-basis: 25%;
   flex-shrink: 0;
   flex-grow: 0;
-  padding-left: 10px;
+  padding-left: 8px;
   text-align: left;
 }
 .bg-base {
@@ -254,13 +255,12 @@ a:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #b7b7b7;
 }
 .bg-base .scale-label {
   position: absolute;
   font-weight: 600;
-  right: calc(50% + (300px / 2) * (3 + 1) - 10px);
-  padding-right: 30px;
+  right: calc(50% + (300px / 2) * (3 + 1) - 8px);
+  padding-right: 20px;
 }
 .bg {
   border-radius: 100%;
@@ -281,7 +281,7 @@ a:hover {
   background-color: #c9c9c9;
 }
 .bg.bg-3 .num {
-  right: calc(50% + (300px / 2) * (3 + 1) - 10px);
+  right: calc(50% + (300px / 2) * (3 + 1) - 8px);
 }
 .bg.bg-2 {
   min-width: 900px;
@@ -290,7 +290,7 @@ a:hover {
   background-color: #dbdbdb;
 }
 .bg.bg-2 .num {
-  right: calc(50% + (300px / 2) * (2 + 1) - 10px);
+  right: calc(50% + (300px / 2) * (2 + 1) - 8px);
 }
 .bg.bg-1 {
   min-width: 600px;
@@ -299,7 +299,7 @@ a:hover {
   background-color: #ededed;
 }
 .bg.bg-1 .num {
-  right: calc(50% + (300px / 2) * (1 + 1) - 10px);
+  right: calc(50% + (300px / 2) * (1 + 1) - 8px);
 }
 .bg.bg-0 {
   min-width: 300px;
@@ -308,7 +308,7 @@ a:hover {
   background-color: #ffffff;
 }
 .bg.bg-0 .num {
-  right: calc(50% + (300px / 2) * (0 + 1) - 10px);
+  right: calc(50% + (300px / 2) * (0 + 1) - 8px);
 }
 .modal-content.transparent {
   background: transparent;
@@ -349,11 +349,11 @@ a:hover {
 }
 .bottom-container.dark {
   background-color: rgba(0, 0, 0, 0.5);
-  padding: 15px 0;
+  padding: 12px 0;
   margin: 0;
 }
 .container-label {
-  margin-top: -15px;
+  margin-top: -12px;
   font-size: 0.8rem;
 }
 #connectionInfoModal .node-history {
@@ -395,8 +395,8 @@ a:hover {
 #connectionInfoModal .im-interaction {
   display: flex;
   justify-content: space-between;
-  font-size: 0.8rem;
-  margin: 10px 0;
+  font-size: 0.6rem;
+  margin: 8px 0;
 }
 #connectionInfoModal .im-interaction .center-button {
   cursor: pointer;
@@ -408,6 +408,10 @@ a:hover {
 #connectionInfoModal .im-interaction.right-align {
   justify-content: flex-end;
 }
+#connectionInfoModal .im-interaction.label {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
 #connectionInfoModal .root-node-col {
   padding-right: 0;
 }
@@ -416,6 +420,7 @@ a:hover {
 }
 #connectionInfoModal .info-row {
   display: flex;
+  font-size: 0.6rem;
 }
 #connectionInfoModal .info-row .info-label {
   min-width: 81px;
@@ -425,7 +430,7 @@ a:hover {
 }
 #connectionInfoModal .info-row .info-text {
   font-weight: 300;
-  margin-left: 10px;
+  margin-left: 8px;
 }
 #connectionInfoModal .info-card {
   border: none;
@@ -438,13 +443,13 @@ a:hover {
   border-bottom-style: solid;
   border-bottom-width: 3px;
   background-color: transparent;
-  padding: 10px 0;
+  padding: 8px 0;
   text-align: center;
 }
 #connectionInfoModal .info-card .card-body {
   font-weight: 300;
   font-size: 0.8rem;
-  padding: 15px;
+  padding: 12px;
 }
 #connectionInfoModal .scale-container {
   height: 20vh;
@@ -476,6 +481,7 @@ a:hover {
   color: #fcfcfc;
   text-align: center;
   padding: 0;
+  font-size: 0.6rem;
 }
 #connectionInfoModal .connection .overall-score {
   display: flex;
@@ -483,16 +489,16 @@ a:hover {
   flex-basis: 40px;
 }
 #connectionInfoModal .connection .overall-score .overall-score-label {
-  font-size: 1rem;
+  font-size: 0.8rem;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  margin-right: 10px;
-  line-height: 1.2rem;
+  margin-right: 8px;
+  line-height: 1rem;
   font-weight: 300;
 }
 #connectionInfoModal .connection .overall-score .overall-score-value {
-  font-size: 2.4rem;
+  font-size: 2rem;
 }
 #connectionInfoModal .connection .connection-info-container {
   min-height: 160px;
@@ -505,7 +511,6 @@ a:hover {
 }
 #connectionInfoModal .connection .connection-info-container .connection-info {
   width: 100%;
-  font-size: 0.8rem;
   height: 40px;
   max-height: 40px;
   overflow: hidden;
@@ -514,7 +519,7 @@ a:hover {
 #connectionInfoModal .connection .connection-info-container .connection-info .textual-info {
   display: flex;
   justify-content: space-between;
-  padding: 0 10px;
+  padding: 0 8px;
 }
 #connectionInfoModal .connection .connection-info-container .connection-info .textual-info .keywords {
   font-weight: 300;
@@ -531,7 +536,7 @@ a:hover {
 #scoreAdjustmentModal .score-weight-info-row {
   margin-bottom: 1.2rem;
   font-weight: 300;
-  font-size: 0.8rem;
+  font-size: 0.6rem;
 }
 #scoreAdjustmentModal .score-weight-col {
   display: flex;
@@ -558,21 +563,21 @@ a:hover {
 #nodeInfoModal .im-container .square-img-container {
   width: 30%;
   padding-bottom: 30%;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 #nodeInfoModal .bottom-container {
-  padding: 15px;
+  padding: 12px;
 }
 #nodeInfoModal .bottom-container .info-row {
   flex-basis: 50%;
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 #nodeInfoModal .bottom-container .info-row .info-text {
   font-weight: 300;
 }
 #projectInfoModal .description-text,
 #initModal .description-text {
-  margin-bottom: 15px;
+  margin-bottom: 12px;
   font-weight: 300;
   font-size: 0.8rem;
   text-align: justify;
@@ -589,11 +594,11 @@ a:hover {
 }
 #projectInfoModal .about-header,
 #initModal .about-header {
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 #projectInfoModal .row,
 #initModal .row {
-  margin-bottom: 30px;
+  margin-bottom: 20px;
 }
 #projectInfoModal .row.header-row,
 #initModal .row.header-row {
@@ -607,7 +612,7 @@ a:hover {
 #projectInfoModal .start-button,
 #initModal .start-button {
   cursor: pointer;
-  padding: 10px;
+  padding: 8px;
   border: 2px solid #fcfcfc;
   text-align: center;
   max-width: 600px;
@@ -620,7 +625,7 @@ a:hover {
 #projectInfoModal .uni-lab,
 #initModal .uni-lab {
   background-color: #000;
-  padding: 15px;
+  padding: 12px;
 }
 #projectInfoModal .logos,
 #initModal .logos {
@@ -666,7 +671,7 @@ a:hover {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    height: 95px;
+    height: 76px;
     top: auto;
     bottom: 20px;
     transform: none;
@@ -676,7 +681,7 @@ a:hover {
     align-items: center;
   }
   .toggles {
-    width: calc(100vw - (2 * 20px) - 50px - 3*15px);
+    width: calc(100vw - (2 * 20px) - 30px - 3*12px);
     display: flex;
     flex-wrap: wrap;
   }
@@ -718,7 +723,7 @@ a:hover {
   }
   #startModal .starter-im {
     flex-basis: 50%;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
   #journeyModal .node-history-horizontal {
     flex-wrap: wrap;
@@ -726,7 +731,7 @@ a:hover {
   }
   #journeyModal .node-history-horizontal .history-im {
     flex-basis: 50%;
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
 }
 /*# sourceMappingURL=style.css.map */

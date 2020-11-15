@@ -119,7 +119,7 @@
                             <div class="info">
                                 <div class="top-container row">
                                     <div class="root-node-col col">
-                                        <div class="im-interaction">
+                                        <div class="im-interaction label">
                                             Current Item
                                         </div>
                                         <div class="square-img-container">
@@ -130,7 +130,7 @@
                                         </div>
                                     </div>
                                     <div class="connection col">
-                                        <div class="im-interaction">
+                                        <div class="im-interaction label">
                                             Relations causing similarity
                                         </div>
 
@@ -154,7 +154,7 @@
 
                                     </div>
                                     <div class="connected-node-col col">
-                                        <div class="im-interaction right-align">
+                                        <div class="im-interaction right-align label">
                                             Item in relation
                                         </div>
                                         <div class="square-img-container">
@@ -168,7 +168,7 @@
                                 </div>
 
                                 <div class="row">
-                                    <div class="col root-node-col" data-bind="foreach: Object.keys(rootInfo.metadata)">
+                                    <div class="col" data-bind="foreach: Object.keys(rootInfo.metadata)">
                                         <div class="info-row">
                                             <div class="info-label" data-bind="text: rootInfo.metadata[$data].label">
                                                 Title
@@ -178,10 +178,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col connection">
-
-                                    </div>
-                                    <div class="col connected-node-col" data-bind="foreach: Object.keys(connectedInfo.metadata)">
+                                    <div class="col" data-bind="foreach: Object.keys(connectedInfo.metadata)">
                                         <div class="info-row">
                                             <div class="info-label" data-bind="text: connectedInfo.metadata[$data].label + ':'">
                                                 Title
@@ -290,8 +287,8 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content transparent">
                     <div class="modal-header">
-                        <h3 class="modal-title">Here are a few random images for you to start with</h3>
-                        <h5 class="modal-title">Click on one to get started </h5>
+                        <h4 class="modal-title">Here are a few random images for you to start with</h4>
+                        <h6 class="modal-title">Click on one to get started </h6>
                     </div>
                     <div class="modal-body">
                         <div class="container-fluid">
@@ -322,7 +319,7 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content transparent">
                     <div class="modal-header">
-                        <h3 class="modal-title">Adjust Similarity Score</h3>
+                        <h4 class="modal-title">Adjust Similarity Score</h4>
                     </div>
                     <div class="modal-body">
                         <div class="container-fluid">
@@ -360,7 +357,7 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content transparent">
                     <div class="modal-header">
-                        <h3 class="modal-title">Welcome to RELATIONSCAPE / SALT Archives</h3>
+                        <h4 class="modal-title">Welcome to RELATIONSCAPE / SALT Archives</h4>
                     </div>
                     <div class="modal-body">
                         <div class="container-fluid">
@@ -496,7 +493,7 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content transparent">
                     <div class="modal-header">
-                        <h3 class="modal-title">Welcome to RELATIONSCAPE / SALT Archives</h3>
+                        <h4 class="modal-title">Welcome to RELATIONSCAPE / SALT Archives</h4>
                     </div>
                     <div class="modal-body">
                         <div class="container-fluid">
@@ -628,7 +625,7 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content transparent">
                     <div class="modal-header">
-                        <h3 class="modal-title">Your Journey</h3>
+                        <h4 class="modal-title">Your Journey</h4>
                     </div>
                     <div class="modal-body">
                         <div class="container-fluid">

@@ -16,23 +16,27 @@
 @page-padding: 20px;
 @fixed-z-index: 5;
 
-@large-spacing: 30px;
-@mid-spacing: 15px;
-@small-spacing: 10px;
+@large-spacing: 20px;
+@mid-spacing: 12px;
+@small-spacing: 8px;
 
 @toggle-button-height: 13px;
-@toggle-row-height: @toggle-button-height * 2.5;
-@zoom-button-width: 50px;
+@toggle-row-height: @toggle-button-height * 2;
+@zoom-button-width: 30px;
 @scale-bar-width: 40px;
 
+@small-font: 0.6rem;
 @regular-font: 0.8rem;
 @large-font: 1rem;
-@larger-font: 1.8rem;
+@larger-font: 1.2rem;
+@extra-large-font: 2rem;
 
 // general
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: @bg-gray;
+  @gray-level: 255 - (4 * @bg-gray-unit);
+  background-color: rgb(@gray-level, @gray-level, @gray-level);
+  font-size: @regular-font;
 }
 
 a {
@@ -168,7 +172,7 @@ a {
   top: 50%;
   transform: translate(0, -50%);
   text-align: center;
-  font-size: 2em;
+  font-size: @larger-font;
   width: @zoom-button-width;
   cursor: pointer;
 
@@ -188,11 +192,11 @@ a {
   bottom: @page-padding;
   left: @page-padding;
   padding: @mid-spacing;
-  max-width: 200px;
+  max-width: 180px;
 
   .explanation {
     font-weight: 300;
-    font-size: @regular-font;
+    font-size: @small-font;
     margin-bottom: @small-spacing;
   }
 
@@ -337,8 +341,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  @gray-level: 255 - (4 * @bg-gray-unit);
-  background-color: rgb(@gray-level, @gray-level, @gray-level);
+
 
   .scale-label {
     position: absolute;
@@ -510,7 +513,7 @@ a {
   .im-interaction {
     display: flex;
     justify-content: space-between;
-    font-size: @regular-font;
+    font-size: @small-font;
     margin: @small-spacing 0;
 
     .center-button {
@@ -523,6 +526,11 @@ a {
 
     &.right-align {
       justify-content: flex-end;
+    }
+
+    &.label {
+      font-size: @regular-font;
+      font-weight: 500;
     }
   }
 
@@ -538,6 +546,7 @@ a {
 
   .info-row {
     display: flex;
+    font-size: @small-font;
 
     .info-label {
       min-width: 81px;
@@ -608,6 +617,7 @@ a {
     color: @white;
     text-align: center;
     padding: 0;
+    font-size: @small-font;
 
     .overall-score {
       display: flex;
@@ -615,17 +625,17 @@ a {
       flex-basis: 40px;
 
       .overall-score-label {
-        font-size: @large-font;
+        font-size: @regular-font;
         display: flex;
         flex-direction: column;
         align-items: flex-end;
         margin-right: @small-spacing;
-        line-height: 1.2rem;
+        line-height: @extra-large-font/2;
         font-weight: 300;
       }
 
       .overall-score-value {
-        font-size: 2.4rem;
+        font-size: @extra-large-font;
       }
     }
 
@@ -640,7 +650,6 @@ a {
 
       .connection-info {
         width: 100%;
-        font-size: @regular-font;
         height: 40px;
         max-height: 40px;
         overflow: hidden;
@@ -677,7 +686,7 @@ a {
   .score-weight-info-row {
     margin-bottom: 1.2rem;
     font-weight: 300;
-    font-size: @regular-font;
+    font-size: @small-font;
   }
 
   .score-weight-col {
