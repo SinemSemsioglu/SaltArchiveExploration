@@ -28,9 +28,9 @@ const thresholds = {
     search_res: 0.1,
     salt_metadata: 0.2,
     overall: {
-        zero: 0.75,
-        one: 0.50,
-        two: 0.25,
+        zero: 0.4,
+        one: 0.3,
+        two: 0.2,
         three: 0,
     }
 }
