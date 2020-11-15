@@ -139,7 +139,7 @@
                                                 <!-- ko if: scoreType !== 'overall' -->
                                                 <div class="connection-info">
                                                     <!-- ko if: $parent.currentConnection[scoreType].aboveThreshold -->
-                                                    <div class="textual-info">
+                                                    <div class="textual-info" data-toggle="tooltip" data-placement="bottom" data-bind="attr: {title: ($parent.currentConnection[scoreType].keywords().length > 0 ? $parent.currentConnection[scoreType].keywords : 'no keywords')}">
                                                         <div class="label" data-bind="text: scoreName.toUpperCase()"></div>
                                                         <div class="num" data-bind="text: $parent.currentConnection[scoreType].scoreText"></div>
                                                     </div>
@@ -170,75 +170,21 @@
                                 <div class="row">
                                     <div class="col" data-bind="foreach: Object.keys(rootInfo.metadata)">
                                         <div class="info-row">
-                                            <div class="info-label" data-bind="text: rootInfo.metadata[$data].label">
-                                                Title
-                                            </div>
-                                            <div class="info-text" data-bind="text: rootInfo.metadata[$data].value">
-                                                Info Text
+                                            <div class="info-label" data-bind="text: rootInfo.metadata[$data].label"></div>
+                                            <div class="info-text" data-bind="foreach: rootInfo.metadata[$data].value.keywords">
+                                                <span data-bind="text: $data, css: {shared: currentConnection.salt_metadata.keywords().includes($data)}" ></span>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="col" data-bind="foreach: Object.keys(connectedInfo.metadata)">
                                         <div class="info-row">
-                                            <div class="info-label" data-bind="text: connectedInfo.metadata[$data].label + ':'">
-                                                Title
-                                            </div>
-                                            <div class="info-text" data-bind="text: connectedInfo.metadata[$data].value">
-                                                Info Text
+                                            <div class="info-label" data-bind="text: connectedInfo.metadata[$data].label + ':'"></div>
+                                            <div class="info-text" data-bind="foreach: connectedInfo.metadata[$data].value.keywords">
+                                                <span data-bind="text: $data, css: {shared:currentConnection.salt_metadata.keywords().includes($data)}" ></span>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
-                                <!--div class="container-label">OVERLAPS CAUSING SIMILARITY BETWEEN ITEMS</div>
-                                <div class="bottom-container dark row">
-                                    <div class="col-sm-3">
-                                        <div class="card info-card">
-                                            <div class="card-header search_res-border">
-                                                KNOWLEDGE API
-                                            </div>
-                                            <div class="card-body knowledge-keywords">
-                                                Keywords
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <div class="card info-card">
-                                            <div class="card-header object_match-border">
-                                                OBJECT RECOGNITION
-                                            </div>
-                                            <div class="card-body object-keywords">
-                                                Keywords
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <div class="card info-card">
-                                            <div class="card-header vis_similarity-border">
-                                                VISUAL SIMILARITY
-                                            </div>
-                                            <div class="card-body">
-                                                <div class="scale-container">
-                                                    <div class="scale-indicator">
-                                                        <div class="scale-text">
-                                                            32%
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-3">
-                                        <div class="card info-card">
-                                            <div class="card-header salt_metadata-border">
-                                                SALT DATA TAGS
-                                            </div>
-                                            <div class="card-body salt-keywords">
-                                                Keywords
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div!-->
                             </div>
                         </div>
                     </div>
@@ -268,10 +214,8 @@
                                 <div class="bottom-container dark row" data-bind="foreach: Object.keys(rootInfo.metadata)">
                                         <div class="info-row">
                                             <div class="info-label" data-bind="text: rootInfo.metadata[$data].label">
-                                                Title
                                             </div>
-                                            <div class="info-text" data-bind="text: rootInfo.metadata[$data].value">
-                                                Info Text
+                                            <div class="info-text" data-bind="text: rootInfo.metadata[$data].value.fullText">
                                             </div>
                                         </div>
                                     </div>

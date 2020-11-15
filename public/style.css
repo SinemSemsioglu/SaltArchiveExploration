@@ -432,6 +432,9 @@ a:hover {
   font-weight: 300;
   margin-left: 8px;
 }
+#connectionInfoModal .info-row .info-text .shared {
+  color: #E91750;
+}
 #connectionInfoModal .info-card {
   border: none;
   background-color: transparent;
@@ -520,6 +523,7 @@ a:hover {
   display: flex;
   justify-content: space-between;
   padding: 0 8px;
+  cursor: pointer;
 }
 #connectionInfoModal .connection .connection-info-container .connection-info .textual-info .keywords {
   font-weight: 300;

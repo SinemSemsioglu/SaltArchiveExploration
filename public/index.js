@@ -11,84 +11,7 @@ let squareSize = 60;
 let lastChangeRequest = moment();
 let visitedNodes = ko.observableArray([]);
 let starterNodes = ko.observableArray([]);
-let rootInfo = {
-    "thumb_url": ko.observable(""),
-    "salt_url": ko.observable(""),
-    metadata: {
-        "title": {
-            "label": "Title",
-            "value": ko.observable("")
-        },
-        "description": {
-            "label": "Description",
-            "value": ko.observable("")
-        },
-        "creator": {
-            "label": "Created by",
-            "value": ko.observable("")
-        },
-        "date_issued": {
-            "label": "Date Issued",
-            "value": ko.observable("")
-        },
-        "subject": {
-            "label": "Topics",
-            "value": ko.observable("")
-        },
-        "type": {
-            "label": "Medium",
-            "value": ko.observable("")
-        },
-        "spatial": {
-            "label": "Location",
-            "value": ko.observable("")
-        },
-        "format": {
-            "label": "Format",
-            "value": ko.observable("")
-        }
-    }
-};
-
-let connectedInfo = {
-    "thumb_url": ko.observable(""),
-    "salt_url": ko.observable(""),
-    metadata: {
-        "title": {
-            "label": "Title",
-            "value": ko.observable("")
-        },
-        "description": {
-            "label": "Description",
-            "value": ko.observable("")
-        },
-        "creator": {
-            "label": "Created by",
-            "value": ko.observable("")
-        },
-        "date_issued": {
-            "label": "Date Issued",
-            "value": ko.observable("")
-        },
-        "subject": {
-            "label": "Topics",
-            "value": ko.observable("")
-        },
-        "type": {
-            "label": "Medium",
-            "value": ko.observable("")
-        },
-        "spatial": {
-            "label": "Location",
-            "value": ko.observable("")
-        },
-        "format": {
-            "label": "Format",
-            "value": ko.observable("")
-        }
-    }
-};
-
+let infoLabels = ["Title", "Description", "Created by", "Date Issued", "Topics", "Medium", "Location", "Format"];
 let infoActive = ko.observable(false);
 let pageInit = ko.observable(false);
 let currentConnection = {};
@@ -126,7 +49,12 @@ const scoreAngleOffsets = {
     "salt_metadata": 2
 }
 
+let rootInfo;
+let connectedInfo;
+
 const initPage = () => {
+    rootInfo = initInfoStructure();
+    connectedInfo = initInfoStructure();
     initKO();
     $("#initModal").modal("show");
 }
@@ -315,26 +243,12 @@ const initClick = () => {
             currentConnection[scoreType].scoreText(Math.round(score * 100) + '%');
         })
         currentConnection.overallScore(Math.round(scoresObj.overall * 100) + '%');
+        currentConnection.object_match.keywords(scoresObj.matched_objects);
+        currentConnection.search_res.keywords(scoresObj.search_keywords);
+        currentConnection.salt_metadata.keywords(scoresObj.metadata_keywords);
 
-        // todo below is currently unnecessary
-        let percentVal = Math.round(scoresObj.vis_similarity * 100) + '%';
 
-        // if screen size is small, adjusts the width as the scale indicator is horizontal
-        if (window.innerWidth <= smallBreakpoint) {
-            $('.scale-indicator').width(percentVal);
-        } else {
-            $('.scale-indicator').height(percentVal);
-        }
-
-        $('.scale-text').text(percentVal);
-
-        // todo process other score info here
-        let objKeywords = scoresObj.matched_objects.length > 0 ? scoresObj.matched_objects.join(', ') : "No common objects found";
-        let knowledgeKeywords = scoresObj.search_keywords.length > 0 ? scoresObj.search_keywords.join(', ') : "No common keywords found";
-        let saltKeywords = scoresObj.metadata_keywords.length > 0 ? scoresObj.metadata_keywords.join(', ') : "No common tags found";
-        $('.object-keywords').text(objKeywords);
-        $('.knowledge-keywords').text(knowledgeKeywords);
-        $('.salt-keywords').text(saltKeywords);
+        $('[data-toggle="tooltip"]').tooltip()
         $('#connectionInfoModal').modal('show')
     })
 
@@ -423,13 +337,18 @@ const initKO = () => {
         }
     });
 
+
+    currentConnection = {
+        overallScore: ko.observable('0%')
+    };
+
     scoreComponents.forEach((scoreType) => {
         currentConnection[scoreType] = {
             aboveThreshold: ko.observable(false),
-            scoreText: ko.observable('0%')
+            scoreText: ko.observable('0%'),
+            keywords: ko.observableArray([])
         }
     })
-    currentConnection.overallScore = ko.observable('0%');
 
     currFilterToggle = scoreInfo[0].disabled;
 
@@ -586,8 +505,15 @@ const setInfo = (newInfo, isRoot) => {
     let infoObj = isRoot? rootInfo : connectedInfo;
     infoObj.thumb_url(newInfo.thumb_url);
     infoObj.salt_url(newInfo.salt_url);
-    Object.keys(infoObj.metadata).forEach((key) => {
-        infoObj.metadata[key].value(newInfo[key] || "-");
+    infoLabels.forEach((key) => {
+        key = key.toLowerCase();
+        infoObj.metadata[key].value.fullText(newInfo[key] || "-");
+        // split keywords
+        let keywords = newInfo[key] ? newInfo[key].split(',') : [];
+        // todo this may be removed from both the data structure and here
+        // split keyword within itself as that is the format of the shared keywords data
+        // then flatten the array and trim the whitespace at the beggining and end of the words
+        infoObj.metadata[key].value.keywords( keywords.map(keyword => keyword.split('-')).flat().map(keyword => keyword.trim()));
     })
 }
 
@@ -606,5 +532,25 @@ const filterByProp = (arr, filterVal, filterProp, returnProp) => {
     }
     return {valid, invalid};
 }
+
+const initInfoStructure = () => {
+    let infoObj = {
+        "thumb_url": ko.observable(""),
+        "salt_url": ko.observable(""),
+        metadata: {}
+    };
+
+    infoLabels.forEach((label) => {
+        infoObj.metadata[label.toLowerCase()] = {
+            label: label,
+            value: {
+                fullText: ko.observable(""),
+                keywords: ko.observableArray([])
+            }
+        }
+    });
+
+    return infoObj;
+};
 
 initPage();
