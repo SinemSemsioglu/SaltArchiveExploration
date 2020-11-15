@@ -1,6 +1,6 @@
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #b7b7b7;
+  background-color: #b4b4b4;
   font-size: 0.8rem;
 }
 a {
@@ -259,7 +259,7 @@ a:hover {
 .bg-base .scale-label {
   position: absolute;
   font-weight: 600;
-  right: calc(50% + (300px / 2) * (3 + 1) - 8px);
+  right: calc(50% + (300px / 2) * (4 + 1) - 8px);
   padding-right: 20px;
 }
 .bg {
@@ -274,11 +274,20 @@ a:hover {
   text-align: left;
   font-weight: 600;
 }
+.bg.bg-4 {
+  min-width: 1500px;
+  width: 1500px;
+  height: 1500px;
+  background-color: #c3c3c3;
+}
+.bg.bg-4 .num {
+  right: calc(50% + (300px / 2) * (4 + 1) - 8px);
+}
 .bg.bg-3 {
   min-width: 1200px;
   width: 1200px;
   height: 1200px;
-  background-color: #c9c9c9;
+  background-color: #d2d2d2;
 }
 .bg.bg-3 .num {
   right: calc(50% + (300px / 2) * (3 + 1) - 8px);
@@ -287,7 +296,7 @@ a:hover {
   min-width: 900px;
   width: 900px;
   height: 900px;
-  background-color: #dbdbdb;
+  background-color: #e1e1e1;
 }
 .bg.bg-2 .num {
   right: calc(50% + (300px / 2) * (2 + 1) - 8px);
@@ -296,7 +305,7 @@ a:hover {
   min-width: 600px;
   width: 600px;
   height: 600px;
-  background-color: #ededed;
+  background-color: #f0f0f0;
 }
 .bg.bg-1 .num {
   right: calc(50% + (300px / 2) * (1 + 1) - 8px);

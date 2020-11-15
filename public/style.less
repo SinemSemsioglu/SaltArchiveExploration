@@ -1,7 +1,8 @@
 @bg-radius: 300px;
 @bg-gray: rgba(100,100,100,0.1);
 @dark-overlay: rgba(0, 0, 0, 0.5);
-@bg-gray-unit: 18;
+@bg-gray-unit: 15;
+@num-bg-layers: 5;
 
 @salt: #E91750;
 @object: #FCCD05;
@@ -34,7 +35,7 @@
 // general
 body {
   font-family: 'Roboto', sans-serif;
-  @gray-level: 255 - (4 * @bg-gray-unit);
+  @gray-level: 255 - (@num-bg-layers * @bg-gray-unit);
   background-color: rgb(@gray-level, @gray-level, @gray-level);
   font-size: @regular-font;
 }
@@ -346,7 +347,7 @@ a {
   .scale-label {
     position: absolute;
     font-weight: 600;
-    .scale-num(3);
+    .scale-num(@num-bg-layers - 1);
     padding-right: @large-spacing;
   }
 }
@@ -375,6 +376,13 @@ a {
     position: absolute;
     text-align: left;
     font-weight: 600;
+  }
+
+  &.bg-4 {
+    .bg-layer(4);
+    .num {
+      .scale-num(4);
+    }
   }
 
   &.bg-3 {

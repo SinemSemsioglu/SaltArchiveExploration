@@ -28,9 +28,10 @@ const thresholds = {
     search_res: 0.1,
     salt_metadata: 0.2,
     overall: {
-        zero: 0.3,
-        one: 0.15,
-        two: 0
+        zero: 0.75,
+        one: 0.50,
+        two: 0.25,
+        three: 0,
     }
 }
 
@@ -172,7 +173,7 @@ const resetToggles = () => {
 
 const toggleHighlightedNodes = (scoreType, disabled) => {
     let threshold;
-    if (scoreType == 'overall') threshold = thresholds.overall.two; // the outermost
+    if (scoreType == 'overall') threshold = thresholds.overall.three; // the outermost
     else threshold = thresholds[scoreType];
 
     let {valid, invalid} = filterByProp(scores[rootId].children, threshold, scoreType, 'name');
@@ -493,7 +494,8 @@ const parseScoresFile = (file) => {
             let depth;
             if(scoreObj.overall > thresholds.overall.zero) depth = 0;
             else if (scoreObj.overall >= thresholds.overall.one) depth = 1;
-            else depth = 2;
+            else if (scoreObj.overall >= thresholds.overall.two) depth = 2;
+            else depth = 3;
             scoreObj.depth = depth;
             scores[rootId].children.push(scoreObj);
         });
