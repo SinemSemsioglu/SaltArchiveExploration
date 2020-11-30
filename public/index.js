@@ -50,12 +50,16 @@ const scoreAngleOffsets = {
     "salt_metadata": 2
 }
 
+let prevInfo; // for temp storage of previously visited node's info
+let currInfo; // to show the data of nodes in the history
+
 let rootInfo;
 let connectedInfo;
 
 const initPage = () => {
     rootInfo = initInfoStructure();
     connectedInfo = initInfoStructure();
+    currInfo = initInfoStructure();
     initKO();
     $("#initModal").modal("show");
 }
@@ -233,7 +237,7 @@ const initClick = () => {
         connectedId = id;
 
         // set metadata info for the selected node
-        setInfo(findByProp(nodes, id, 'id'), false);
+        setInfo(findByProp(nodes, id, 'id'), connectedInfo);
 
         let scoresObj = findByProp(scores[rootId].children, id, 'name');
 
@@ -263,14 +267,28 @@ const centerConnectedImage = () => {
     if (connectedId != null) {
         getDataById(connectedId, () => {
             $('#connectionInfoModal').modal('hide');
-            visitedNodes.push(findByProp(nodes, rootId, 'id','thumb_url'));
-            rootId = connectedId;
+            visitedNodes.push(prevInfo);
+            //rootId = connectedId;
             connectedId = null;
         });
     }
 }
 
-let zoomLevel = ko.observable(100);
+const centerHistoryImage = (id) => {
+    getDataById(id, () => {
+        $('#historyInfoModal').modal('hide');
+        $('#connectionInfoModal').modal('hide');
+        visitedNodes.push(prevInfo);
+        connectedId = null;
+    });
+}
+
+const showHistoryNodeInfo = (info) => {
+    setCurrInfo(info, currInfo);
+    $('#historyInfoModal').modal('show');
+}
+
+let zoomLevel = ko.observable(70);
 
 const zoom = (deltaLevel) => {
     // Set page zoom via CSS
@@ -359,6 +377,8 @@ const initKO = () => {
             toggleHighlightedNodes,
             getNewScores,
             centerConnectedImage,
+            centerHistoryImage,
+            showHistoryNodeInfo,
             currentConnection,
             visitedNodes,
             zoomLevel,
@@ -369,6 +389,7 @@ const initKO = () => {
             initJourney,
             rootInfo,
             connectedInfo,
+            currInfo,
             pageInit
         };
 
@@ -382,9 +403,10 @@ const getDataById = (id, extracallback) => {
         data: {id},
         success: async (resp) => {
             if (resp.success) {
+                prevInfo = ko.toJS(rootInfo);
                 rootId = id;
                 nodes = resp.data.nodes;
-                setInfo(findByProp(nodes, rootId, 'id'), true);
+                setInfo(findByProp(nodes, rootId, 'id'), rootInfo);
                 parseScoresFile(resp.data.scores);
                 initializePhotoDefs();
                 initializeGraph();
@@ -466,7 +488,7 @@ const getNewScores = () => {
         success: async (resp) => {
             if (resp.success) {
                 nodes = resp.data.nodes;
-                setInfo(findByProp(nodes, rootId, 'id'), true);
+                setInfo(findByProp(nodes, rootId, 'id'), rootInfo);
                 parseScoresFile(resp.data.scores);
                 initializePhotoDefs();
                 initializeGraph();
@@ -503,8 +525,19 @@ const parseScoresFile = (file) => {
 }
 
 // util functions
-const setInfo = (newInfo, isRoot) => {
-    let infoObj = isRoot? rootInfo : connectedInfo;
+const setCurrInfo = (info) => {
+    currInfo.id(info.id);
+    currInfo.thumb_url(info.thumb_url);
+    currInfo.salt_url(info.salt_url);
+    infoLabels.forEach((key) => {
+        key = key.toLowerCase();
+        currInfo.metadata[key].value.fullText(info.metadata[key].value.fullText);
+        currInfo.metadata[key].value.keywords(info.metadata[key].value.keywords)
+    });
+}
+
+const setInfo = (newInfo, infoObj) => {
+    infoObj.id(newInfo.id);
     infoObj.thumb_url(newInfo.thumb_url);
     infoObj.salt_url(newInfo.salt_url);
     infoLabels.forEach((key) => {
@@ -537,6 +570,7 @@ const filterByProp = (arr, filterVal, filterProp, returnProp) => {
 
 const initInfoStructure = () => {
     let infoObj = {
+        "id": ko.observable(-1),
         "thumb_url": ko.observable(""),
         "salt_url": ko.observable(""),
         metadata: {}

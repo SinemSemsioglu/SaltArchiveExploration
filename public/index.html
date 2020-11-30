@@ -9,6 +9,7 @@
     <script src="https://d3js.org/d3.v6.min.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap" rel="stylesheet">
     <script type='text/javascript' src='lib/knockout-3.5.1.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout.mapping/2.4.1/knockout.mapping.min.js" integrity="sha512-1LyBPWtezbX0LO4X4QzhfZd9jSetVu5W0IFpMV9ecq4lJUQBR6hx8uiNfUI2Aoe7LCF4rK1NV3rY+uil4VJ3QQ==" crossorigin="anonymous"></script>
     <!-- CSS only -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
@@ -24,7 +25,7 @@
         <div class="fixed-elements">
             <div class="project-header">
                 <div class="project-name">
-                    <img class="logo" src="logo/salt_relatioscape_logo_small.png">
+                    <img class="logo" src="logo/logo.png">
                 </div>
                 <div class="info-trigger" data-bind="click: () => {$('#projectInfoModal').modal('show')}">
                     INFO
@@ -35,8 +36,8 @@
             </div>
 
             <div class="zoom-buttons">
-                <div class="top" data-bind="css: {disabled: zoomLevel() >= 180}, click: () => { if (zoomLevel() <= 140) zoom(40)}"> + </div>
-                <div class="bottom" data-bind="css: {disabled: zoomLevel() <= 60}, click: () => { if (zoomLevel() >= 100) zoom(-40)}"> - </div>
+                <div class="top" data-bind="css: {disabled: zoomLevel() >= 160}, click: () => { if (zoomLevel() <= 140) zoom(30)}"> + </div>
+                <div class="bottom" data-bind="css: {disabled: zoomLevel() <= 10}, click: () => { if (zoomLevel() >= 40) zoom(-30)}"> - </div>
             </div>
 
             <div class="toggles">
@@ -47,7 +48,7 @@
 
                     </div>
                     <div class="color-code score-component">
-                        <div class="toggle-container">
+                        <div class="toggle-container" data-bind="class: scoreType + '-border'">
                             <div class="toggle" data-bind="class: scoreType + '-bg', css: {disabled: disabled()}, click: () => {$parent.toggleHighlightedNodes(scoreType, disabled)}"></div>
                         </div>
                     </div>
@@ -67,7 +68,7 @@
         </div>
 
         <!-- the graphic representation -->
-        <div class="main-content">
+        <div class="main-content zoom-70">
             <!-- the svg container -->
             <svg id="demo7">
                 <g class="main-svg">
@@ -101,44 +102,50 @@
         <div class="modal fade blur" id="connectionInfoModal" tabindex="-1" role="dialog" aria-labelledby="connectionInfoModalLabel" aria-hidden="true">
             <div class="close-button" data-bind="click: () => {$('#connectionInfoModal').modal('hide')}"></div>
 
-            <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
                 <div class="modal-content transparent">
                     <div class="modal-body">
                         <div class="container-fluid">
-                            <!-- ko if: visitedNodes().length > 0 -->
-                            <div class="node-history">
-                                <div class="">Your Journey</div>
-                                <div class="nodes">
-                                    <!-- ko foreach: visitedNodes -->
-                                    <div class="node">
-                                        <div class="square-img-container">
-                                            <img class="square-img" data-bind="attr: {src: $data}" />
+                            <div class="row">
+                                <div class="node-history col-2">
+                                    <!-- ko if: visitedNodes().length > 0 -->
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="label">Your Journey</div>
+                                            <div class="nodes">
+                                                <!-- ko foreach: visitedNodes -->
+                                                <div class="node">
+                                                    <div class="square-img-container">
+                                                        <img class="square-img" data-bind="attr: {src: thumb_url}, click: () => {showHistoryNodeInfo($data)}" />
+                                                    </div>
+                                                </div>
+                                                <!-- /ko -->
+                                            </div>
                                         </div>
                                     </div>
                                     <!-- /ko -->
                                 </div>
-                            </div>
-                            <!-- /ko -->
-                            <div class="info">
-                                <div class="top-container row">
-                                    <div class="root-node-col col">
-                                        <div class="im-interaction label">
-                                            Current Item
+                                <div class="info col-8">
+                                    <div class="top-container row">
+                                        <div class="root-node-col col">
+                                            <div class="im-interaction label">
+                                                Current Item
+                                            </div>
+                                            <div class="square-img-container">
+                                                <img class="root-img square-img"  data-bind="attr: {src: rootInfo.thumb_url}" />
+                                            </div>
+                                            <div class="im-interaction">
+                                                <a target="_blank" class="url-button" data-bind="attr: {href: rootInfo.salt_url}">VISIT ARCHIVE</a>
+                                            </div>
                                         </div>
-                                        <div class="square-img-container">
-                                            <img class="root-img square-img"  data-bind="attr: {src: rootInfo.thumb_url}" />
-                                        </div>
-                                        <div class="im-interaction">
-                                            <a target="_blank" data-bind="attr: {href: rootInfo.salt_url}">VISIT ARCHIVE</a>
-                                        </div>
-                                    </div>
-                                    <div class="connection col">
-                                        <div class="im-interaction label">
-                                            Relations causing similarity
-                                        </div>
+                                        <div class="connection col">
+                                            <div class="im-interaction label multi-row-label">
+                                                <div> Relations causing similarity </div>
+                                                <div> Hover on connection lines to see details</div>
+                                            </div>
 
-                                        <div class="connection-info-container">
-                                            <!-- ko foreach: scoreInfo -->
+                                            <div class="connection-info-container">
+                                                <!-- ko foreach: scoreInfo -->
                                                 <!-- ko if: scoreType !== 'overall' -->
                                                 <div class="connection-info">
                                                     <!-- ko if: $parent.currentConnection[scoreType].aboveThreshold -->
@@ -150,41 +157,46 @@
                                                     <!-- /ko -->
                                                 </div>
                                                 <!-- /ko -->
+                                                <!-- /ko -->
+                                            </div>
+
+                                            <div class="overall-score"><span class="overall-score-label"><span>OVERALL</span> <span>SCORE</span></span> <span class="overall-score-value" data-bind="text: currentConnection.overallScore"></span></div>
+
+                                        </div>
+                                        <div class="connected-node-col col">
+                                            <div class="im-interaction right-align label">
+                                                Item in relation
+                                            </div>
+                                            <div class="square-img-container">
+                                                <img class="connected-img square-img"  data-bind="click: () => {centerConnectedImage()}, attr: {src: connectedInfo.thumb_url}" />
+                                            </div>
+                                            <div class="im-interaction">
+                                                <a target="_blank" class="url-button" data-bind="attr: {href: connectedInfo.salt_url}">VISIT ARCHIVE</a>
+                                                <span class="center-button" data-bind="click: () => {centerConnectedImage()}">SWITCH VISUAL</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col" data-bind="foreach: Object.keys(rootInfo.metadata)">
+                                            <!-- ko if: rootInfo.metadata[$data].value.keywords().length > 0 -->
+                                            <div class="info-row">
+                                                <div class="info-label" data-bind="text: rootInfo.metadata[$data].label + ':'"></div>
+                                                <div class="info-text" data-bind="foreach: rootInfo.metadata[$data].value.keywords">
+                                                    <span data-bind="text: $data, css: {shared: currentConnection.salt_metadata.keywords().includes($data)}" ></span>
+                                                </div>
+                                            </div>
                                             <!-- /ko -->
                                         </div>
-
-                                        <div class="overall-score"><span class="overall-score-label"><span>OVERALL</span> <span>SCORE</span></span> <span class="overall-score-value" data-bind="text: currentConnection.overallScore"></span></div>
-
-                                    </div>
-                                    <div class="connected-node-col col">
-                                        <div class="im-interaction right-align label">
-                                            Item in relation
-                                        </div>
-                                        <div class="square-img-container">
-                                            <img class="connected-img square-img"  data-bind="attr: {src: connectedInfo.thumb_url}" />
-                                        </div>
-                                        <div class="im-interaction">
-                                            <a target="_blank" class="connected-url" data-bind="attr: {href: connectedInfo.salt_url}">VISIT ARCHIVE</a>
-                                            <span class="center-button" data-bind="click: () => {centerConnectedImage()}">MOVE TO CENTER</span>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="row">
-                                    <div class="col" data-bind="foreach: Object.keys(rootInfo.metadata)">
-                                        <div class="info-row">
-                                            <div class="info-label" data-bind="text: rootInfo.metadata[$data].label"></div>
-                                            <div class="info-text" data-bind="foreach: rootInfo.metadata[$data].value.keywords">
-                                                <span data-bind="text: $data, css: {shared: currentConnection.salt_metadata.keywords().includes($data)}" ></span>
+                                        <div class="col" data-bind="foreach: Object.keys(connectedInfo.metadata)">
+                                            <!-- ko if: connectedInfo.metadata[$data].value.keywords().length > 0 -->
+                                            <div class="info-row">
+                                                <div class="info-label" data-bind="text: connectedInfo.metadata[$data].label + ':'"></div>
+                                                <div class="info-text" data-bind="foreach: connectedInfo.metadata[$data].value.keywords">
+                                                    <span data-bind="text: $data, css: {shared:currentConnection.salt_metadata.keywords().includes($data)}" ></span>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </div>
-                                    <div class="col" data-bind="foreach: Object.keys(connectedInfo.metadata)">
-                                        <div class="info-row">
-                                            <div class="info-label" data-bind="text: connectedInfo.metadata[$data].label + ':'"></div>
-                                            <div class="info-text" data-bind="foreach: connectedInfo.metadata[$data].value.keywords">
-                                                <span data-bind="text: $data, css: {shared:currentConnection.salt_metadata.keywords().includes($data)}" ></span>
-                                            </div>
+                                            <!-- /ko -->
                                         </div>
                                     </div>
                                 </div>
@@ -194,6 +206,7 @@
                 </div>
             </div>
         </div>
+
 
         <!-- Node Info Modal -->
         <div class="modal fade blur" id="nodeInfoModal" tabindex="-1" role="dialog" aria-labelledby="nodeInfoModalLabel" aria-hidden="true">
@@ -579,12 +592,12 @@
                             <div class="info">
                                 <div class="top-container row node-history-horizontal">
                                     <!-- ko if: visitedNodes().length == 0 -->
-                                    <div class="col">You haven't visited any other nodes yet. You can do that by clicking on an outer item, then selecting move to center. </div>
+                                    <div class="col">You haven't visited any other nodes yet. You can do that by clicking on an outer item, then selecting SWITCH VISUAL. </div>
                                     <!-- /ko -->
                                     <!-- ko foreach: visitedNodes -->
                                     <div class="col-sm history-im">
                                         <div class="square-img-container">
-                                            <img class="square-img" data-bind="attr: {src: $data}" />
+                                            <img class="square-img" data-bind="attr: {src: thumb_url}, click: () => {showHistoryNodeInfo($data)}" />
                                         </div>
                                     </div>
                                     <!-- /ko -->
@@ -600,6 +613,42 @@
         </div>
     </div>
 
-<script src="index.js"></script>
+    <!-- History Info Modal -->
+    <div class="modal fade blur" id="historyInfoModal" tabindex="-1" role="dialog" aria-labelledby="historyInfoModalLabel" aria-hidden="true">
+        <div class="close-button" data-bind="click: () => {$('#historyInfoModal').modal('hide')}"> </div>
+
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content transparent">
+                <div class="modal-body">
+                    <div class="container-fluid">
+                        <div class="info">
+                            <div class="top-container row">
+                                <div class="col im-container">
+                                    <div class="square-img-container">
+                                        <img class=" node-info-img square-img"  data-bind="attr: {src: currInfo.thumb_url()}" />
+                                    </div>
+                                    <div class="im-interaction">
+                                        <a target="_blank" class="url-button" data-bind="attr: {href: currInfo.salt_url()}">VISIT ARCHIVE</a>
+                                        <span class="center-button" data-bind="click: () => {centerHistoryImage(currInfo.id())}">SWITCH VISUAL</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="bottom-container dark row" data-bind="foreach: Object.keys(currInfo.metadata)">
+                                <div class="info-row">
+                                    <div class="info-label" data-bind="text: currInfo.metadata[$data].label">
+                                    </div>
+                                    <div class="info-text" data-bind="text: currInfo.metadata[$data].value.fullText">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="index.js"></script>
 </body>
 </html>
