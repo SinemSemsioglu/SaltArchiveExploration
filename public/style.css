@@ -5,7 +5,7 @@ body {
 }
 a {
   font-weight: 300;
-  font-style: oblique;
+  //font-style: oblique;
   text-decoration: underline;
   color: inherit;
 }
